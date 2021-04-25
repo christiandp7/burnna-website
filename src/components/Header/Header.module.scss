@@ -1,0 +1,30 @@
+.header {
+  background: white;
+}
+.header-container {
+  width: 100%;
+  max-width: 992px;
+  margin: 0 auto;
+}
+
+.menu {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.menuItem {
+  a {
+    color: black;
+    font-weight: bold;
+  }
+}
+
+.logoItem {
+  a {
+    color: red;
+  }
+}
