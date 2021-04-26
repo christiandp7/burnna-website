@@ -1,9 +1,15 @@
 import React from 'react'
-import { Layout } from 'antd';
 
 const Content = () => {
   return (
-    <Layout.Content>Content</Layout.Content>
+    <main>
+      <h2>content starts</h2>
+      <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+      <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+      <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+      <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+      <h2>content end</h2>
+    </main>
   )
 }
 
