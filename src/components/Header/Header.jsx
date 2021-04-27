@@ -8,9 +8,9 @@ import styles from './Header.module.scss'
 
 const Header = () => {
   return (
-    <AppBar position="static">
+    <AppBar color="default" position="static">
       <Toolbar>
-        
+        <Typography></Typography>
       </Toolbar>
     </AppBar>
   )

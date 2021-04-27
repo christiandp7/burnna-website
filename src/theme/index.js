@@ -2,7 +2,11 @@ import { julesText } from './fonts'
 
 const themeSettigs = {
   typography: {
-    fontFamily: 'Jules Text, Sans, Arial',
+    fontFamily: [
+      '"Jules Text"',
+      'Sans',
+      'Arial',
+    ].join(','),
   },
   overrides: {
     MuiCssBaseline: {
