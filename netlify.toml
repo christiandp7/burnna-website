@@ -1,0 +1,9 @@
+[[redirects]]
+from = "/"
+status = 200
+to = "/index.html"
+
+[[redirects]]
+from = "/collection"
+status = 200
+to = "/index.html"
