@@ -39,7 +39,7 @@ const Sidebar = () => {
         padding="0"
         fontFamily="Jules Text"
       >
-        <Typography  variant="h6">
+        <Typography variant="h6">
           <Link className={classes.sidebarLink} underline="none" href="#" onClick={preventDefault}>All</Link>
         </Typography>
         <Typography variant="h6">
@@ -67,7 +67,9 @@ const useStyles = makeStyles( theme => ({
   },
   // Sidebar Links
   sidebarLink: {
-    padding: '5px 8px'
+    padding: '5px 8px',
+    fontSize: '1.1rem',
+    letterSpacing: '1px'
   }
 }));
 
