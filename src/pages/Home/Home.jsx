@@ -87,6 +87,7 @@ const useStyles = makeStyles(theme => ({
     color: 'white',
     fontFamily: 'Jules Text',
     fontSize: theme.typography.h4.fontSize,
+    textDecoration: 'none',
     '&:hover': {
       textDecoration: 'underline'
     }
