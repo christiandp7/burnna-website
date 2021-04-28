@@ -115,8 +115,6 @@ const Footer = () => {
             </Grid>
           </Grid>
         </Box>
-        
-        
       </Container>
     </footer>
   )
@@ -125,7 +123,8 @@ const Footer = () => {
 const useStyles = makeStyles(theme => ({
   footer: {
     textTransform: 'uppercase',
-    color: theme.palette.primary.contrastText
+    color: theme.palette.primary.contrastText,
+    paddingBottom: '70px'
   },
   logoFooter: {
     maxWidth: '450px'

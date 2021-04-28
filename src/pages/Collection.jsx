@@ -7,6 +7,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import FiltersToolbar from '../components/FiltersToolbar/FiltersToolbar'
 // assets
 import { collectionItems } from '../data/collection';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 
 const Collection = () => {
@@ -25,6 +26,8 @@ const Collection = () => {
                 className={classes.image} 
                 src={product.img} 
                 alt={product.name}
+                useIntersectionObserver={true}
+                effect="blur"
               />
             </GridListTile>
           ))}
@@ -37,10 +40,10 @@ const Collection = () => {
 
 const useStyles = makeStyles((theme) => ({
   gridContainer: {
-    // display: 'flex',
-    // flexWrap: 'wrap',
-    // justifyContent: 'space-around',
-    // overflow: 'hidden',
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'space-around',
+    overflow: 'hidden',
   },
   gridList: {
     margin: '0 !important'
