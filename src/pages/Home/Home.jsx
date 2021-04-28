@@ -14,16 +14,26 @@ import styles from './Home.module.scss'
 
 const CardMenu = ({ image }) => {
   const classes = useStyles()
+  const [showLinks, setShowLinks] = useState(false)
+
+  const handleMouseEnter = () => {
+    setShowLinks(true)
+  }
+  const handleMouseLeave = () => {
+    setShowLinks(false)
+  }
   return (
-    <Box className={styles.hero}>
+    <Box className={styles.hero} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
       <LazyLoadImage
         src={image}
         className={styles.heroImg}
       />
       <Box className={`${classes.menuContainer} ${styles.menuContainer}`}>
-        <NavLink className={classes.linkCollection} to="/collection">Swimwear</NavLink>
-        <NavLink className={classes.linkCollection} to="/collection">Shirts</NavLink>
-        <NavLink className={classes.linkCollection} to="/collection">Accesories</NavLink>
+        <Fade bottom opposite cascade when={showLinks}>
+          <NavLink className={classes.linkCollection} to="/collection">Swimwear</NavLink>
+          <NavLink className={classes.linkCollection} to="/collection">Shirts</NavLink>
+          <NavLink className={classes.linkCollection} to="/collection">Accesories</NavLink>
+        </Fade>
       </Box>
     </Box>
     
@@ -32,13 +42,9 @@ const CardMenu = ({ image }) => {
 
 const Home = () => {
   const classes = useStyles()
-  // const [show, setShow] = useState(false)
-  // useEffect(() => {
-    
-  //   return () => {
-  //     cleanup
-  //   }
-  // }, [input])
+  
+
+  
 
   return (
     <Box className={classes.root}>
@@ -79,7 +85,7 @@ const useStyles = makeStyles(theme => ({
     width: '100%',
     height: '100%',
     zIndex: 2,
-    opacity: 0,
+    // opacity: 0,
     transition: 'all ease 0.5s',
   },
   linkCollection: {
