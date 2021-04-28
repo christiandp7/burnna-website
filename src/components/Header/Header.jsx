@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Container from '@material-ui/core/Container';
@@ -26,9 +27,9 @@ const Header = () => {
           <li>
             <Link className={classes.link} underline="none" href="#">Explore</Link>
           </li>
-          <Link underline="none" href="#">
+          <NavLink to="/">
             <img className={classes.logo} src={logo} alt="logotype" />
-          </Link>
+          </NavLink>
           <li>
             <Link className={classes.link} underline="none" href="#">English</Link>
           </li>
