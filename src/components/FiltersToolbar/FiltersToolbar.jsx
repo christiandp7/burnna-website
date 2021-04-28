@@ -12,7 +12,7 @@ const FiltersToolbar = () => {
         color="secundary"
         endIcon={<VscChevronDown />}
         size="large"
-        disableRipple={true}
+        // disableRipple={true}
       >
         Category
       </Button>
@@ -20,7 +20,7 @@ const FiltersToolbar = () => {
         color="secundary"
         endIcon={<VscChevronDown />}
         size="large"
-        disableRipple={true}
+        // disableRipple={true}
       >
         Availability
       </Button>
@@ -28,7 +28,7 @@ const FiltersToolbar = () => {
         color="secundary"
         endIcon={<VscChevronDown />}
         size="large"
-        disableRipple={true}
+        // disableRipple={true}
       >
         Size
       </Button>
@@ -36,7 +36,7 @@ const FiltersToolbar = () => {
         color="secundary"
         endIcon={<VscChevronDown />}
         size="large"
-        disableRipple={true}
+        // disableRipple={true}
       >
         Color
       </Button>
@@ -44,7 +44,7 @@ const FiltersToolbar = () => {
         color="secundary"
         endIcon={<VscChevronDown />}
         size="large"
-        disableRipple={true}
+        // disableRipple={true}
       >
         Type
       </Button>
