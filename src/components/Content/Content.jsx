@@ -1,9 +1,12 @@
 import React from 'react'
+import { makeStyles } from '@material-ui/core/styles';
 import styles from './Content.module.scss';
 
 const Content = () => {
+  const classes = useStyles()
+
   return (
-    <main className={styles.main}>
+    <main className={classes.main}>
       <h2>content starts</h2>
       <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
       <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
@@ -13,5 +16,11 @@ const Content = () => {
     </main>
   )
 }
+
+const useStyles = makeStyles(theme => ({
+  main: {
+    backgroundColor: 'white'
+  }
+}))
 
 export default Content
