@@ -49,10 +49,10 @@ const Home = () => {
   return (
     <Box className={classes.root}>
       <Grid container className={classes.container} spacing={0}>
-        <Grid className={classes.column} item xs={12} lg={6}>
+        <Grid className={classes.column} item xs={12} md={6}>
           <CardMenu image={menImg} />
         </Grid>
-        <Grid className={classes.column} item xs={12} lg={6}>
+        <Grid className={classes.column} item xs={12} md={6}>
           <CardMenu image={womenImg} />
         </Grid>
       </Grid>
