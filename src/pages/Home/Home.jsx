@@ -12,7 +12,7 @@ import womenImg from '../../assets/images/home/women.jpg'
 import logo from '../../assets/images/isotype_white.png'
 import styles from './Home.module.scss'
 
-const CardMenu = ({ image }) => {
+const CardMenu = ({ image, links }) => {
 	const classes = useStyles()
 	const [showLinks, setShowLinks] = useState(false)
 
@@ -29,17 +29,12 @@ const CardMenu = ({ image }) => {
 			onMouseLeave={handleMouseLeave}>
 			<LazyLoadImage src={image} className={styles.heroImg} />
 			<Box className={`${classes.menuContainer} ${styles.menuContainer}`}>
-				<Fade bottom opposite cascade when={showLinks}>
-					<NavLink className={classes.linkCollection} to="/collection">
-						Swimwear
-					</NavLink>
-					<NavLink className={classes.linkCollection} to="/collection">
-						Shirts
-					</NavLink>
-					<NavLink className={classes.linkCollection} to="/collection">
-						Accesories
-					</NavLink>
-				</Fade>
+				{showLinks &&
+					links.map(linkItem => (
+						<NavLink className={classes.linkCollection} to={linkItem.link}>
+							{linkItem.title}
+						</NavLink>
+					))}
 			</Box>
 		</Box>
 	)
@@ -48,14 +43,17 @@ const CardMenu = ({ image }) => {
 const Home = () => {
 	const classes = useStyles()
 
+	const womenLinks = [{ title: 'women', link: '/collection' }]
+	const menLinks = [{ title: 'men', link: '/collection' }]
+
 	return (
 		<Box className={classes.root}>
 			<Grid container className={classes.container} spacing={0}>
 				<Grid className={classes.column} item xs={12} md={6}>
-					<CardMenu image={menImg} />
+					<CardMenu image={menImg} links={menLinks} />
 				</Grid>
 				<Grid className={classes.column} item xs={12} md={6}>
-					<CardMenu image={womenImg} />
+					<CardMenu image={womenImg} links={womenLinks} />
 				</Grid>
 			</Grid>
 			<Box className={classes.logoContainer}>
@@ -96,6 +94,7 @@ const useStyles = makeStyles(theme => ({
 		fontFamily: 'Jules Text',
 		fontSize: theme.typography.h4.fontSize,
 		textDecoration: 'none',
+		textTransform: 'uppercase',
 		'&:hover': {
 			textDecoration: 'underline',
 		},
