@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const LogoCompleted = props => {
+const LogoComplete = props => {
 	return (
 		<svg
 			{...props}
@@ -166,3 +166,5 @@ export const LogoCompleted = props => {
 		</svg>
 	)
 }
+
+export default LogoComplete

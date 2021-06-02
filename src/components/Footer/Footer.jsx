@@ -10,11 +10,10 @@ import Link from '@material-ui/core/Link'
 import { makeStyles } from '@material-ui/core/styles'
 import { grey } from '@material-ui/core/colors'
 // assets
-import logoFooter from '../../assets/images/logo_footer.png'
 import { FaFacebookF } from 'react-icons/fa'
 import { GrInstagram } from 'react-icons/gr'
 import { GrSpotify } from 'react-icons/gr'
-import { LogoCompleted } from '../../assets/svg/Logo'
+import LogoComplete from '../../assets/svg/LogoComplete'
 
 const Footer = () => {
 	const classes = useStyles()
@@ -22,7 +21,7 @@ const Footer = () => {
 		<footer className={classes.footer}>
 			<Container>
 				<Box marginBottom="50px" textAlign="center">
-					<LogoCompleted className={classes.logoFooter} />
+					<LogoComplete className={classes.logoFooter} />
 				</Box>
 
 				<Box display="Flex" justifyContent="space-between">
