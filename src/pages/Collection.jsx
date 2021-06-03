@@ -8,7 +8,7 @@ import { collectionItems } from '../data/collection'
 const Collection = () => {
 	return (
 		<>
-			<FiltersToolbar />
+			{/* <FiltersToolbar /> */}
 			<CollectionGrid products={collectionItems} />
 		</>
 	)
