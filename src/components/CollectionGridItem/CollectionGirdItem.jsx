@@ -51,7 +51,7 @@ const CollectionGirdItem = ({ product }) => {
 						</div>
 					</Grow>
 				)}
-				<Fade duration={600} bottom opposite when={showDetails}>
+				<Fade duration={500} bottom when={showDetails}>
 					<div className={classes.productMetadata}>
 						<Typography
 							variant="h5"
@@ -102,7 +102,7 @@ const useStyles = makeStyles(theme => ({
 		width: '100%',
 		height: '100%',
 		objectFit: 'cover',
-		transition: `all ${theme.transitions.easing.easeIn} 500ms !important`,
+		transition: `all ease-out 800ms !important`,
 	},
 	productDetailsContainer: {
 		// display: 'flex',
