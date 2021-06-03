@@ -149,7 +149,7 @@ const Footer = () => {
 const useStyles = makeStyles(theme => ({
 	footer: {
 		textTransform: 'uppercase',
-		color: theme.palette.primary.contrastText,
+		color: theme.palette.primary.main,
 		paddingBottom: '70px',
 		paddingTop: '85px',
 	},
@@ -165,13 +165,13 @@ const useStyles = makeStyles(theme => ({
 	},
 	link: {
 		fontSize: theme.typography.subtitle1.fontSize,
-		color: theme.palette.primary.contrastText,
+		color: theme.palette.primary.main,
 		letterSpacing: '0.5px',
 	},
 	socialIcon: {
 		color: 'white',
 		padding: '8px',
-		backgroundColor: theme.palette.primary.contrastText,
+		backgroundColor: theme.palette.primary.main,
 		'&:hover': {
 			backgroundColor: grey[800],
 		},

@@ -87,15 +87,14 @@ const useStyles = makeStyles(theme => ({
 		left: 0,
 		height: '100vh',
 		width: '200px',
-		background: '#0A0A0A',
+		background: theme.palette.primary.main,
 		display: 'flex',
 		flexDirection: 'column',
 	},
 	// Logo
-	logo: {
-		color: theme.palette.primary.main,
-	},
+	logo: {},
 	logoLink: {
+		color: theme.palette.primary.contrastText,
 		padding: '10px 15px',
 	},
 	// Sidebar Links
@@ -103,6 +102,7 @@ const useStyles = makeStyles(theme => ({
 		padding: '5px 8px',
 		fontSize: '1.1rem',
 		letterSpacing: '1px',
+		color: theme.palette.primary.contrastText,
 	},
 }))
 

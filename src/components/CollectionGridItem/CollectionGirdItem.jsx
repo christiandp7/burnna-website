@@ -84,7 +84,7 @@ const useStyles = makeStyles(theme => ({
 			height: '100%',
 			top: 0,
 			left: 0,
-			backgroundColor: theme.palette.primary.contrastText,
+			backgroundColor: theme.palette.primary.main,
 			opacity: 0,
 			transition: `opacity ${theme.transitions.easing.easeIn} 400ms`,
 			transform: 'scale(1.1)',
@@ -140,7 +140,7 @@ const useStyles = makeStyles(theme => ({
 		display: 'flex',
 		alignItems: 'flex-end',
 		justifyContent: 'space-between',
-		color: theme.palette.primary.main,
+		color: theme.palette.primary.contrastText,
 		cursor: 'pointer',
 	},
 	productTitle: {

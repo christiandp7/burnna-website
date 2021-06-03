@@ -5,8 +5,8 @@ import blue from '@material-ui/core/colors/blue'
 const themeSettigs = createMuiTheme({
 	palette: {
 		primary: {
-			main: '#fff',
-			contrastText: '#0A0A0A',
+			main: '#0A0A0A',
+			contrastText: '#fff',
 		},
 		// secondary: {},
 		neutral: {

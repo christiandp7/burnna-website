@@ -11,7 +11,7 @@ import Collection from './pages/Collection'
 import { create } from 'jss'
 import { StylesProvider, jssPreset } from '@material-ui/core/styles'
 // data
-import theme from './theme'
+import theme from './theme/theme'
 
 const jss = create({
 	plugins: [...jssPreset().plugins],

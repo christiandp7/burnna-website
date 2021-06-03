@@ -12,7 +12,6 @@ import { makeStyles } from '@material-ui/core/styles'
 // assets
 // import logo from '../../assets/images/isotype_black.png'
 import LogoText from '../../assets/svg/LogoText'
-import styles from './Header.module.scss'
 
 const Header = ({ setSidebar }) => {
 	const classes = useStyles()
@@ -95,7 +94,7 @@ const useStyles = makeStyles(theme => ({
 		fontFamily: '"Jules Text"',
 		fontWeight: 700,
 		fontSize: theme.typography.subtitle1.fontSize,
-		color: theme.palette.primary.contrastText,
+		color: theme.palette.primary.main,
 		padding: '5px 8px',
 		'& > span': {
 			fontWeight: 400,
