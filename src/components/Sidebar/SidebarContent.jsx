@@ -2,7 +2,6 @@ import React from 'react'
 import Link from '@material-ui/core/Link'
 import { makeStyles } from '@material-ui/core/styles'
 // assets
-import logo from '../../assets/images/logo.png'
 import Box from '@material-ui/core/Box'
 import Typography from '@material-ui/core/Typography'
 
@@ -83,7 +82,7 @@ const Sidebar = () => {
 
 const useStyles = makeStyles(theme => ({
 	sidebar: {
-		position: 'fixed',
+		// position: 'fixed',
 		top: 0,
 		left: 0,
 		height: '100vh',
