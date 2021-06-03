@@ -5,6 +5,8 @@ import Toolbar from '@material-ui/core/Toolbar'
 import Container from '@material-ui/core/Container'
 import Box from '@material-ui/core/Box'
 import Typography from '@material-ui/core/Typography'
+import IconButton from '@material-ui/core/IconButton'
+import { FiMenu } from 'react-icons/fi'
 import Link from '@material-ui/core/Link'
 import { makeStyles } from '@material-ui/core/styles'
 // assets
@@ -17,10 +19,18 @@ const Header = () => {
 	return (
 		<AppBar className={classes.appBar} color="white" position="static">
 			<Container>
+				<div className={classes.menuButtonContainer}></div>
 				<Toolbar
 					className={classes.toolbar}
 					component="ul"
 					disableGutters={true}>
+					<IconButton
+						edge="start"
+						className={classes.menuButton}
+						color="inherit"
+						aria-label="menu">
+						<FiMenu />
+					</IconButton>
 					<li>
 						<Link className={classes.link} underline="none" href="#">
 							Women <span>- SWIMWEAR</span>
@@ -31,28 +41,27 @@ const Header = () => {
 							Men
 						</Link>
 					</li>
-					<li>
+					{/* <li>
 						<Link className={classes.link} underline="none" href="#">
 							Explore
 						</Link>
-					</li>
+					</li> */}
 					<NavLink to="/">
-						{/* <img className={classes.logo} src={logo} alt="logotype" /> */}
 						<LogoText className={classes.logo} />
 					</NavLink>
 					<li>
 						<Link className={classes.link} underline="none" href="#">
-							English
+							Campaign 21
 						</Link>
 					</li>
 					<li>
 						<Link className={classes.link} underline="none" href="#">
-							Wishlist
+							Español
 						</Link>
 					</li>
 					<li>
 						<Link className={classes.link} underline="none" href="#">
-							Shopping Bag
+							Cart
 						</Link>
 					</li>
 				</Toolbar>
@@ -68,13 +77,16 @@ const useStyles = makeStyles(theme => ({
 		textTransform: 'uppercase',
 		boxShadow: 'none',
 	},
+	// Menu Button
+	menuButtonContainer: {},
+	menuButton: {},
 	// Toolbar
 	toolbar: {
 		justifyContent: 'space-between',
 		listStyle: 'none',
 		padding: 0,
 		'& > li': {
-			marginBottom: '35px',
+			// marginBottom: '35px',
 		},
 	},
 	// Links
@@ -93,7 +105,7 @@ const useStyles = makeStyles(theme => ({
 	// Logo
 	logo: {
 		maxWidth: 180,
-		margin: '0 30px',
+		margin: '0 25px',
 	},
 }))
 
