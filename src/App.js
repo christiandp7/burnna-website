@@ -7,6 +7,7 @@ import MainLayout from './layouts/MainLayout'
 // Pages
 import Home from './pages/Home/Home.jsx'
 import Collection from './pages/Collection'
+import Product from './pages/Product'
 // styles
 import { create } from 'jss'
 import { StylesProvider, jssPreset } from '@material-ui/core/styles'
@@ -31,6 +32,7 @@ function App() {
 					</Route>
 					<MainLayout>
 						<Route exact path="/collection" component={Collection} />
+						<Route exact path="/product" component={Product} />
 					</MainLayout>
 				</Switch>
 			</Router>
