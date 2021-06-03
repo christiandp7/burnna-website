@@ -1,9 +1,13 @@
 import React from 'react'
 import Link from '@material-ui/core/Link'
 import { makeStyles } from '@material-ui/core/styles'
-// assets
 import Box from '@material-ui/core/Box'
 import Typography from '@material-ui/core/Typography'
+import Button from '@material-ui/core/Button'
+// assets
+import Isotype from '../../assets/svg/Isotype'
+// data
+import sidebarNavigation from './SidebarNavigation'
 
 const Sidebar = () => {
 	const classes = useStyles()
@@ -12,70 +16,25 @@ const Sidebar = () => {
 	return (
 		<aside className={classes.sidebar}>
 			{/* <img className={styles.logo} src={logo} alt="logo"/> */}
-			<Box
-				height={150}
-				fontFamily="Jules text"
-				fontSize={24}
-				className={classes.logo}
-				letterSpacing="3px"
-				display="flex"
-				justifyContent="center"
-				alignItems="center">
-				<Link
-					className={classes.logoLink}
-					underline="none"
-					href="#"
-					onClick={preventDefault}>
-					BURNNA
-				</Link>
-			</Box>
-			<Box
-				display="flex"
-				flexDirection="column"
-				height="100%"
-				justifyContent="space-around"
-				paddingBottom="50px"
-				alignItems="center"
-				margin="0"
-				padding="0"
-				fontFamily="Jules Text">
-				<Typography variant="h6">
-					<Link
-						className={classes.sidebarLink}
-						underline="none"
-						href="#"
-						onClick={preventDefault}>
-						All
-					</Link>
-				</Typography>
-				<Typography variant="h6">
-					<Link
-						className={classes.sidebarLink}
-						underline="none"
-						href="#"
-						onClick={preventDefault}>
-						Swimwear
-					</Link>
-				</Typography>
-				<Typography variant="h6">
-					<Link
-						className={classes.sidebarLink}
-						underline="none"
-						href="#"
-						onClick={preventDefault}>
-						Shirts
-					</Link>
-				</Typography>
-				<Typography variant="h6">
-					<Link
-						className={classes.sidebarLink}
-						underline="none"
-						href="#"
-						onClick={preventDefault}>
-						Accesories
-					</Link>
-				</Typography>
-			</Box>
+			<Button
+				className={classes.logoLink}
+				underline="none"
+				onClick={preventDefault}>
+				<Isotype className={classes.logo} />
+			</Button>
+			<div className={classes.sidebarNav}>
+				{sidebarNavigation.map(navItem => (
+					<Typography variant="h6">
+						<Link
+							className={classes.sidebarLink}
+							underline="none"
+							href={navItem.link}
+							onClick={preventDefault}>
+							{navItem.label}
+						</Link>
+					</Typography>
+				))}
+			</div>
 		</aside>
 	)
 }
@@ -86,16 +45,34 @@ const useStyles = makeStyles(theme => ({
 		top: 0,
 		left: 0,
 		height: '100vh',
-		width: '200px',
+		width: '190px',
 		background: theme.palette.primary.main,
 		display: 'flex',
 		flexDirection: 'column',
+		padding: '35px 0',
 	},
 	// Logo
-	logo: {},
+	logo: {
+		maxWidth: '100%',
+		maxHeight: '120px',
+		'& path': {
+			fill: theme.palette.primary.contrastText,
+		},
+	},
 	logoLink: {
 		color: theme.palette.primary.contrastText,
 		padding: '10px 15px',
+	},
+	// Sidebar Nav
+	sidebarNav: {
+		display: 'flex',
+		flexDirection: 'column',
+		height: '100%',
+		justifyContent: 'space-evenly',
+		alignItems: 'center',
+		margin: 0,
+		padding: 0,
+		fontFamily: 'Jules Text',
 	},
 	// Sidebar Links
 	sidebarLink: {
