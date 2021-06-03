@@ -1,3 +1,7 @@
+
+[context.production]
+environment = {CI = false}
+
 [[redirects]]
 from = "/"
 status = 200
