@@ -14,7 +14,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import LogoText from '../../assets/svg/LogoText'
 import styles from './Header.module.scss'
 
-const Header = () => {
+const Header = ({ setSidebar }) => {
 	const classes = useStyles()
 	return (
 		<AppBar className={classes.appBar} color="white" position="static">
@@ -28,7 +28,8 @@ const Header = () => {
 						edge="start"
 						className={classes.menuButton}
 						color="inherit"
-						aria-label="menu">
+						aria-label="menu"
+						onClick={() => setSidebar(true)}>
 						<FiMenu />
 					</IconButton>
 					<li>
