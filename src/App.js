@@ -2,6 +2,7 @@ import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import { ThemeProvider } from '@material-ui/core/styles'
+import SwiperCore, { EffectFade, Navigation, Pagination } from 'swiper/core'
 // layouts
 import MainLayout from './layouts/MainLayout'
 // Pages
@@ -18,7 +19,7 @@ const jss = create({
 	plugins: [...jssPreset().plugins],
 })
 
-// const theme = createMuiTheme(themeSettigs)
+SwiperCore.use([EffectFade, Navigation, Pagination])
 
 function App() {
 	return (

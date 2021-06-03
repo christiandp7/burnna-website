@@ -11,7 +11,9 @@ const Product = () => {
 			<Grid container>
 				<Grid item xs={0} md={1}></Grid>
 				<Grid item xs={12} md={5}>
-					<ProductImage />
+					<div>
+						<ProductImage />
+					</div>
 				</Grid>
 				<Grid item xs={12} md={5}>
 					<ProductMeta />
