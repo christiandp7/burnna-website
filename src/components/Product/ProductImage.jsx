@@ -12,8 +12,7 @@ const ProductImage = () => {
 			loop={true}
 			spaceBetween={30}
 			slidesPerView={1}
-			// autoHeight={true}
-			// navigation={true}
+			navigation={true}
 			effect="fade"
 			pagination={{
 				clickable: true,
@@ -41,23 +40,17 @@ const useStyles = makeStyles(theme => ({
 		'& .swiper-pagination-bullet.swiper-pagination-bullet-active': {
 			background: theme.palette.primary.main,
 		},
+		'& .swiper-button-prev, & .swiper-button-next': {
+			color: theme.palette.primary.main,
+		},
 	},
 	swiperSlide: {
-		// width: '100%',
-		// height: '100%',
-		// backgroundPosition: 'center',
-		// backgroundSize: 'cover',
 		display: 'flex',
 		justifyContent: 'center',
 		alignItems: 'center',
 	},
 	swiperImg: {
-		// display: 'block',
-		// width: '100%',
-		// height: '100%',
-		// height: 'auto',
-		// maxWidth: '100%',
-		// height: '100%',
+		height: '100%',
 		maxHeight: '100%',
 	},
 }))
