@@ -9,7 +9,7 @@ const Product = () => {
 	return (
 		<Container>
 			<Grid container>
-				<Grid item xs={0} md={1}></Grid>
+				<Grid item xs={0} md={2}></Grid>
 				<Grid item xs={12} md={5}>
 					<div>
 						<ProductImage />
@@ -18,7 +18,6 @@ const Product = () => {
 				<Grid item xs={12} md={5}>
 					<ProductMeta />
 				</Grid>
-				<Grid item xs={0} md={1}></Grid>
 			</Grid>
 		</Container>
 	)
