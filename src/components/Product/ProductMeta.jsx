@@ -52,7 +52,14 @@ const ProductMeta = () => {
 			</div>
 			<div className={classes.addToCartContainer}>
 				<AddToCartButton>
-					<Typography variant="h5">Add</Typography>
+					<Grid container justify="space-between">
+						<Grid item>
+							<Typography variant="h5">Add</Typography>
+						</Grid>
+						<Grid item>
+							<Typography variant="h5">$150</Typography>
+						</Grid>
+					</Grid>
 				</AddToCartButton>
 			</div>
 			<div className={classes.accordionContainer}>
@@ -76,6 +83,7 @@ const useStyles = makeStyles(theme => ({
 	},
 	productSubtitle: {},
 	variantsContainer: {
+		paddingRight: '50px',
 		'& h5': {
 			cursor: 'default',
 		},
@@ -85,6 +93,7 @@ const useStyles = makeStyles(theme => ({
 	},
 	addToCartContainer: {
 		padding: '15px 0',
+		paddingRight: '50px',
 	},
 	accordionContainer: {
 		padding: '15px 0',
