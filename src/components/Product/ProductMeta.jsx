@@ -4,27 +4,38 @@ import Typography from '@material-ui/core/Typography'
 // import Button from '@material-ui/core/Button'
 // components
 import AddToCartButton from '../Button/AddToCartButton'
+import ColorSelectorButtonGroup from '../Button/ColorSelectorButtonGroup'
 
 const ProductMeta = () => {
 	const classes = useStyles()
 	return (
 		<div className={classes.root}>
-			<Typography component="h2" variant="h3" className={classes.productTitle}>
-				One Piece Laura
-			</Typography>
-			<Typography
-				component="h3"
-				variant="h4"
-				className={classes.productSubtitle}>
-				One Piece
-			</Typography>
+			<div className={classes.productHeading}>
+				<Typography
+					component="h2"
+					variant="h3"
+					className={classes.productTitle}>
+					One Piece Laura
+				</Typography>
+				<Typography
+					component="h3"
+					variant="h4"
+					className={classes.productSubtitle}>
+					One Piece
+				</Typography>
+			</div>
 			<div className={classes.variantsContainer}>
-				<Typography component="h5" variant="h5">
-					Color
-				</Typography>
-				<Typography component="h5" variant="h5">
-					Size
-				</Typography>
+				<div className={classes.variant}>
+					<Typography component="h5" variant="h5">
+						Color
+					</Typography>
+					<ColorSelectorButtonGroup />
+				</div>
+				<div className={classes.variant}>
+					<Typography component="h5" variant="h5">
+						Size
+					</Typography>
+				</div>
 			</div>
 			<div className={classes.addToCartContainer}>
 				<AddToCartButton>
@@ -40,9 +51,17 @@ const useStyles = makeStyles(theme => ({
 		padding: '30px 18px',
 		textTransform: 'uppercase',
 	},
-	productTitle: {},
+	productHeading: {
+		paddingBottom: '30px',
+	},
+	productTitle: {
+		paddingBottom: '12px',
+	},
 	productSubtitle: {},
 	variantsContainer: {},
+	variant: {
+		padding: '12px 0',
+	},
 	addToCartContainer: {},
 }))
 
