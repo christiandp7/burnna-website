@@ -1,7 +1,9 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/styles'
 import Typography from '@material-ui/core/Typography'
-import Button from '@material-ui/core/Button'
+// import Button from '@material-ui/core/Button'
+// components
+import AddToCartButton from '../Button/AddToCartButton'
 
 const ProductMeta = () => {
 	const classes = useStyles()
@@ -25,7 +27,9 @@ const ProductMeta = () => {
 				</Typography>
 			</div>
 			<div className={classes.addToCartContainer}>
-				<Button class>Add</Button>
+				<AddToCartButton>
+					<Typography variant="h5">Add</Typography>
+				</AddToCartButton>
 			</div>
 		</div>
 	)
@@ -33,6 +37,7 @@ const ProductMeta = () => {
 
 const useStyles = makeStyles(theme => ({
 	root: {
+		padding: '30px 18px',
 		textTransform: 'uppercase',
 	},
 	productTitle: {},
