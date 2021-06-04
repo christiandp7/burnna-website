@@ -13,6 +13,7 @@ const ProductImage = () => {
 			spaceBetween={30}
 			slidesPerView={1}
 			navigation={true}
+			autoplay={true}
 			effect="fade"
 			pagination={{
 				clickable: true,

@@ -17,11 +17,30 @@ const themeSettigs = createMuiTheme({
 	typography: {
 		fontFamily: [
 			// '"Jules Text"',
-			'"Proxima Nova Condensed"',
+			// '"Proxima Nova Condensed"',
+			'"Karla"',
 			'Sans',
 			'Arial',
 		].join(','),
+		fontWeightRegular: 300,
+		fontWeightMedium: 400,
+		h1: {
+			fontSize: '3rem',
+		},
+		h2: {
+			fontSize: '2.5rem',
+		},
+		h3: {
+			fontSize: '2rem',
+		},
+		h4: {
+			fontSize: '1.5rem',
+		},
+		h5: {
+			fontSize: '1.25rem',
+		},
 		h6: {
+			fontSize: '1rem',
 			fontFamily: '"Jules Text"',
 			textTransform: 'uppercase',
 		},
