@@ -9,6 +9,7 @@ import CustomAccordion from '../Accordion/CustomAccordion'
 import SizeSelectorButtonGroup from '../Button/SizeSelectorButtonGroup'
 import Grid from '@material-ui/core/Grid'
 import Button from '@material-ui/core/Button'
+import LinkButton from '../Button/LinkButton'
 
 const ProductMeta = () => {
 	const classes = useStyles()
@@ -44,14 +45,7 @@ const ProductMeta = () => {
 							<SizeSelectorButtonGroup />
 						</Grid>
 						<Grid item style={{ display: 'flex' }} alignItems="center">
-							<Button
-								className={classes.sizeGuideLink}
-								color="primary"
-								variant="text"
-								// disableRipple={true}
-								underline="always">
-								Size guide
-							</Button>
+							<LinkButton>Size guide</LinkButton>
 						</Grid>
 					</Grid>
 				</div>
@@ -88,24 +82,6 @@ const useStyles = makeStyles(theme => ({
 	},
 	variant: {
 		padding: '15px 0',
-	},
-	sizeGuideLink: {
-		fontSize: theme.typography.h5.fontSize,
-		fontWeight: theme.typography.fontWeightRegular,
-		textTransform: 'none',
-		'&:hover': {
-			backgroundColor: 'transparent',
-			textDecoration: 'underline',
-			textDecorationThickness: 'from-font',
-			textUnderlineOffset: '2px',
-		},
-		// '& span': {
-		// 	position: 'relative',
-		// },
-		// '& span::after': {
-		// 	content: '""',
-		// 	width: '100%',
-		// },
 	},
 	addToCartContainer: {
 		padding: '15px 0',
