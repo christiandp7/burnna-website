@@ -11,3 +11,8 @@ to = "/index.html"
 from = "/collection"
 status = 200
 to = "/index.html"
+
+[[redirects]]
+from = "/product"
+status = 200
+to = "/index.html"

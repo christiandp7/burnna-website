@@ -6,13 +6,16 @@ import { LazyLoadImage } from 'react-lazy-load-image-component'
 import Grid from '@material-ui/core/Grid'
 // components
 import CollectionGirdItem from '../CollectionGridItem/CollectionGirdItem'
+import { NavLink } from 'react-router-dom'
 
 const CollectionGrid = ({ products }) => {
 	return (
 		<Grid container>
 			{products.map(product => (
 				<Grid item xs={6} sm={4}>
-					<CollectionGirdItem product={product} />
+					<NavLink to="/product">
+						<CollectionGirdItem product={product} />
+					</NavLink>
 				</Grid>
 			))}
 		</Grid>
