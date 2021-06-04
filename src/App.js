@@ -2,11 +2,13 @@ import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import { ThemeProvider } from '@material-ui/core/styles'
+import SwiperCore, { EffectFade, Navigation, Pagination } from 'swiper/core'
 // layouts
 import MainLayout from './layouts/MainLayout'
 // Pages
 import Home from './pages/Home/Home.jsx'
 import Collection from './pages/Collection'
+import Product from './pages/Product'
 // styles
 import { create } from 'jss'
 import { StylesProvider, jssPreset } from '@material-ui/core/styles'
@@ -17,7 +19,7 @@ const jss = create({
 	plugins: [...jssPreset().plugins],
 })
 
-// const theme = createMuiTheme(themeSettigs)
+SwiperCore.use([EffectFade, Navigation, Pagination])
 
 function App() {
 	return (
@@ -31,6 +33,7 @@ function App() {
 					</Route>
 					<MainLayout>
 						<Route exact path="/collection" component={Collection} />
+						<Route exact path="/product" component={Product} />
 					</MainLayout>
 				</Switch>
 			</Router>
