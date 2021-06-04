@@ -10,6 +10,7 @@ const themeSettigs = createMuiTheme({
 		},
 		// secondary: {},
 		neutral: {
+			light: '#CBCBCB',
 			main: '#707070',
 		},
 	},
