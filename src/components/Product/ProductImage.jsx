@@ -2,8 +2,8 @@ import React from 'react'
 import { makeStyles } from '@material-ui/styles'
 import { Swiper, SwiperSlide } from 'swiper/react'
 // images
-import img1 from '../../assets/images/product/girl-product-1.jpg'
-import img2 from '../../assets/images/product/girl-product-2.jpg'
+import img1 from '../../assets/images/product/girl-product-2.jpg'
+import img2 from '../../assets/images/product/girl-product-3.jpg'
 
 const ProductImage = () => {
 	const classes = useStyles()
