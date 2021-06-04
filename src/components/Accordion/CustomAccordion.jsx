@@ -42,7 +42,8 @@ const AccordionSummary = withStyles({
 
 const AccordionDetails = withStyles(theme => ({
 	root: {
-		paddingBottom: theme.spacing(2),
+		paddingBottom: '26px',
+		paddingTop: 0,
 		paddingLeft: 0,
 		paddingRight: 0,
 		textTransform: 'none',
