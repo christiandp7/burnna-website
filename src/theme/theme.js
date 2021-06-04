@@ -44,6 +44,9 @@ const themeSettigs = createMuiTheme({
 			fontFamily: '"Jules Text"',
 			textTransform: 'uppercase',
 		},
+		link: {
+			fontSize: '1.25rem',
+		},
 	},
 	overrides: {
 		MuiCssBaseline: {
