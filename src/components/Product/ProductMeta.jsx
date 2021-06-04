@@ -5,6 +5,7 @@ import Typography from '@material-ui/core/Typography'
 // components
 import AddToCartButton from '../Button/AddToCartButton'
 import ColorSelectorButtonGroup from '../Button/ColorSelectorButtonGroup'
+import CustomAccordion from '../Accordion/CustomAccordion'
 
 const ProductMeta = () => {
 	const classes = useStyles()
@@ -42,6 +43,9 @@ const ProductMeta = () => {
 					<Typography variant="h5">Add</Typography>
 				</AddToCartButton>
 			</div>
+			<div className={classes.accordionContainer}>
+				<CustomAccordion />
+			</div>
 		</div>
 	)
 }
@@ -53,16 +57,26 @@ const useStyles = makeStyles(theme => ({
 	},
 	productHeading: {
 		paddingBottom: '30px',
+		cursor: 'default',
 	},
 	productTitle: {
-		paddingBottom: '12px',
+		marginBottom: '12px',
 	},
 	productSubtitle: {},
-	variantsContainer: {},
-	variant: {
-		padding: '12px 0',
+	variantsContainer: {
+		'& h5': {
+			cursor: 'default',
+		},
 	},
-	addToCartContainer: {},
+	variant: {
+		padding: '15px 0',
+	},
+	addToCartContainer: {
+		padding: '15px 0',
+	},
+	accordionContainer: {
+		padding: '15px 0',
+	},
 }))
 
 export default ProductMeta
