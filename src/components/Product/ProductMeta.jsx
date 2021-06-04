@@ -15,52 +15,54 @@ const ProductMeta = () => {
 	const classes = useStyles()
 	return (
 		<div className={classes.root}>
-			<div className={classes.productHeading}>
-				<Typography
-					component="h2"
-					variant="h3"
-					className={classes.productTitle}>
-					One Piece Laura
-				</Typography>
-				<Typography
-					component="h3"
-					variant="h4"
-					className={classes.productSubtitle}>
-					One Piece
-				</Typography>
-			</div>
-			<div className={classes.variantsContainer}>
-				<div className={classes.variant}>
-					<Typography component="h5" variant="h5">
-						Color
+			<div className={classes.wrapper}>
+				<div className={classes.productHeading}>
+					<Typography
+						component="h2"
+						variant="h3"
+						className={classes.productTitle}>
+						One Piece Laura
 					</Typography>
-					<ColorSelectorButtonGroup />
-				</div>
-				<div className={classes.variant}>
-					<Typography component="h5" variant="h5">
-						Size
+					<Typography
+						component="h3"
+						variant="h4"
+						className={classes.productSubtitle}>
+						One Piece
 					</Typography>
-					<Grid container justify="space-between">
-						<Grid item>
-							<SizeSelectorButtonGroup />
-						</Grid>
-						<Grid item style={{ display: 'flex' }} alignItems="center">
-							<LinkButton>Size guide</LinkButton>
-						</Grid>
-					</Grid>
 				</div>
-			</div>
-			<div className={classes.addToCartContainer}>
-				<AddToCartButton>
-					<Grid container justify="space-between">
-						<Grid item>
-							<Typography variant="h5">Add</Typography>
+				<div className={classes.variantsContainer}>
+					<div className={classes.variant}>
+						<Typography component="h5" variant="h5">
+							Color
+						</Typography>
+						<ColorSelectorButtonGroup />
+					</div>
+					<div className={classes.variant}>
+						<Typography component="h5" variant="h5">
+							Size
+						</Typography>
+						<Grid container justify="space-between">
+							<Grid item>
+								<SizeSelectorButtonGroup />
+							</Grid>
+							<Grid item style={{ display: 'flex' }} alignItems="center">
+								<LinkButton>Size guide</LinkButton>
+							</Grid>
 						</Grid>
-						<Grid item>
-							<Typography variant="h5">$150</Typography>
+					</div>
+				</div>
+				<div className={classes.addToCartContainer}>
+					<AddToCartButton>
+						<Grid container justify="space-between">
+							<Grid item>
+								<Typography variant="h5">Add</Typography>
+							</Grid>
+							<Grid item>
+								<Typography variant="h5">$150</Typography>
+							</Grid>
 						</Grid>
-					</Grid>
-				</AddToCartButton>
+					</AddToCartButton>
+				</div>
 			</div>
 			<div className={classes.accordionContainer}>
 				<CustomAccordion />
@@ -74,6 +76,11 @@ const useStyles = makeStyles(theme => ({
 		padding: '30px 18px',
 		textTransform: 'uppercase',
 	},
+	wrapper: {
+		[theme.breakpoints.up('md')]: {
+			maxWidth: '85%',
+		},
+	},
 	productHeading: {
 		paddingBottom: '30px',
 		cursor: 'default',
@@ -83,7 +90,6 @@ const useStyles = makeStyles(theme => ({
 	},
 	productSubtitle: {},
 	variantsContainer: {
-		paddingRight: '50px',
 		'& h5': {
 			cursor: 'default',
 		},
@@ -93,7 +99,6 @@ const useStyles = makeStyles(theme => ({
 	},
 	addToCartContainer: {
 		padding: '15px 0',
-		paddingRight: '50px',
 	},
 	accordionContainer: {
 		padding: '15px 0',
