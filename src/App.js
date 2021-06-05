@@ -1,5 +1,10 @@
 import React from 'react'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import {
+	BrowserRouter as Router,
+	Switch,
+	Route,
+	Redirect,
+} from 'react-router-dom'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import { ThemeProvider } from '@material-ui/core/styles'
 import SwiperCore, { EffectFade, Navigation, Pagination } from 'swiper/core'
@@ -9,6 +14,11 @@ import MainLayout from './layouts/MainLayout'
 import Home from './pages/Home.jsx'
 import Collection from './pages/Collection'
 import Product from './pages/Product'
+import About from './pages/About'
+import Explore from './pages/Explore'
+import Contact from './pages/Contact'
+import FAQ from './pages/FAQ'
+import NotFound from './pages/NotFound'
 // data
 import theme from './theme/theme'
 
@@ -20,13 +30,15 @@ function App() {
 			<CssBaseline />
 			<Router>
 				<Switch>
-					<Route exact path="/">
-						<Home />
-					</Route>
-					<MainLayout>
-						<Route exact path="/collection" component={Collection} />
-						<Route exact path="/product" component={Product} />
-					</MainLayout>
+					<Route exact path="/" component={Home} />
+					<Route exact path="/collection" component={Collection} />
+					<Route exact path="/product" component={Product} />
+					<Route exact path="/about" component={About} />
+					<Route exact path="/explore" component={Explore} />
+					<Route exact path="/contact" component={Contact} />
+					<Route exact path="/faq" component={FAQ} />
+					<Route exact path="/404" component={NotFound} />
+					<Redirect from="*" to="/404" />
 				</Switch>
 			</Router>
 		</ThemeProvider>

@@ -1,7 +1,8 @@
 import React from 'react'
+import MainLayout from '../layouts/MainLayout'
 
 const Explore = () => {
-	return <div>Explore</div>
+	return <MainLayout>Explore</MainLayout>
 }
 
 export default Explore

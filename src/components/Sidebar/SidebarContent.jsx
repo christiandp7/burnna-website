@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import Box from '@material-ui/core/Box'
 import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
+import { NavLink } from 'react-router-dom'
 // assets
 import Isotype from '../../assets/svg/Isotype'
 // data
@@ -25,13 +26,16 @@ const Sidebar = () => {
 			<div className={classes.sidebarNav}>
 				{sidebarNavigation.map(navItem => (
 					<Typography variant="h6">
-						<Link
+						{/* <Link
 							className={classes.sidebarLink}
 							underline="none"
 							href={navItem.link}
 							onClick={preventDefault}>
 							{navItem.label}
-						</Link>
+						</Link> */}
+						<NavLink to={navItem.href} className={classes.sidebarLink}>
+							{navItem.label}
+						</NavLink>
 					</Typography>
 				))}
 			</div>
@@ -80,6 +84,7 @@ const useStyles = makeStyles(theme => ({
 		fontSize: '1.1rem',
 		letterSpacing: '1px',
 		color: theme.palette.primary.contrastText,
+		textDecoration: 'none',
 	},
 }))
 
