@@ -9,22 +9,14 @@ import MainLayout from './layouts/MainLayout'
 import Home from './pages/Home/Home.jsx'
 import Collection from './pages/Collection'
 import Product from './pages/Product'
-// styles
-import { create } from 'jss'
-import { StylesProvider, jssPreset } from '@material-ui/core/styles'
 // data
 import theme from './theme/theme'
-
-const jss = create({
-	plugins: [...jssPreset().plugins],
-})
 
 SwiperCore.use([EffectFade, Navigation, Pagination])
 
 function App() {
 	return (
 		<ThemeProvider theme={theme}>
-			{/* <StylesProvider injectFirst jss={jss}> */}
 			<CssBaseline />
 			<Router>
 				<Switch>
@@ -37,7 +29,6 @@ function App() {
 					</MainLayout>
 				</Switch>
 			</Router>
-			{/* </StylesProvider> */}
 		</ThemeProvider>
 	)
 }
