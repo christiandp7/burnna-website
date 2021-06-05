@@ -6,7 +6,7 @@ import SwiperCore, { EffectFade, Navigation, Pagination } from 'swiper/core'
 // layouts
 import MainLayout from './layouts/MainLayout'
 // Pages
-import Home from './pages/Home/Home.jsx'
+import Home from './pages/Home.jsx'
 import Collection from './pages/Collection'
 import Product from './pages/Product'
 // data

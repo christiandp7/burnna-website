@@ -8,9 +8,9 @@ import { makeStyles } from '@material-ui/core/styles'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 import Fade from 'react-reveal/Fade'
 // assets
-import menImg from '../../assets/images/home/men.jpg'
-import womenImg from '../../assets/images/home/women.jpg'
-import logo from '../../assets/images/isotype_white.png'
+import menImg from '../assets/images/home/men.jpg'
+import womenImg from '../assets/images/home/women.jpg'
+import logo from '../assets/images/isotype_white.png'
 
 const HeroCard = ({ image, links }) => {
 	const classes = useStyles()
