@@ -85,6 +85,11 @@ const useStyles = makeStyles(theme => ({
 		letterSpacing: '1px',
 		color: theme.palette.primary.contrastText,
 		textDecoration: 'none',
+		'&:hover': {
+			textDecoration: 'underline',
+			textDecorationThickness: '1px',
+			textUnderlineOffset: '3px',
+		},
 	},
 }))
 

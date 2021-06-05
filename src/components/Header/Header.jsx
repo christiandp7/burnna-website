@@ -96,6 +96,11 @@ const useStyles = makeStyles(theme => ({
 		fontSize: theme.typography.subtitle1.fontSize,
 		color: theme.palette.primary.main,
 		padding: '5px 8px',
+		'&:hover': {
+			textDecoration: 'underline',
+			textDecorationThickness: 'auto',
+			textUnderlineOffset: '2px',
+		},
 		'& > span': {
 			fontWeight: 400,
 			// fontFamily: '"Proxima Nova Condensed"',
