@@ -91,7 +91,7 @@ const useStyles = makeStyles(theme => ({
 	linkCollection: {
 		// padding: '5px 8px',
 		color: 'white',
-		fontFamily: 'Jules Text',
+		fontFamily: theme.typography.h6.fontFamily,
 		fontSize: theme.typography.h4.fontSize,
 		textDecoration: 'none',
 		textTransform: 'uppercase',

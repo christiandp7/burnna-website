@@ -73,7 +73,7 @@ const Header = ({ setSidebar }) => {
 const useStyles = makeStyles(theme => ({
 	// AppBar
 	appBar: {
-		fontFamily: '"Jules Text"',
+		fontFamily: theme.typography.h6.fontFamily,
 		textTransform: 'uppercase',
 		boxShadow: 'none',
 	},
@@ -91,14 +91,14 @@ const useStyles = makeStyles(theme => ({
 	},
 	// Links
 	link: {
-		fontFamily: '"Jules Text"',
+		fontFamily: theme.typography.h6.fontFamily,
 		fontWeight: 700,
 		fontSize: theme.typography.subtitle1.fontSize,
 		color: theme.palette.primary.main,
 		padding: '5px 8px',
 		'& > span': {
 			fontWeight: 400,
-			fontFamily: '"Proxima Nova Condensed"',
+			// fontFamily: '"Proxima Nova Condensed"',
 			letterSpacing: '0.5px',
 		},
 	},

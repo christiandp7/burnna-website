@@ -42,7 +42,7 @@ const themeSettigs = createMuiTheme({
 		},
 		h6: {
 			fontSize: '1rem',
-			fontFamily: '"Jules Text"',
+			fontFamily: '"Bodoni"',
 			textTransform: 'uppercase',
 		},
 	},

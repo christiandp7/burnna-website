@@ -72,7 +72,7 @@ const useStyles = makeStyles(theme => ({
 		alignItems: 'center',
 		margin: 0,
 		padding: 0,
-		fontFamily: 'Jules Text',
+		fontFamily: theme.typography.h6.fontFamily,
 	},
 	// Sidebar Links
 	sidebarLink: {
