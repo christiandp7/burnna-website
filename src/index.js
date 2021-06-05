@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom'
 import App from './App'
 
 // Styles
-import './globals.scss'
 import 'react-lazy-load-image-component/src/effects/blur.css'
 // swiper styles
 import 'swiper/swiper.scss'
