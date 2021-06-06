@@ -8,11 +8,15 @@ import { LazyLoadImage } from 'react-lazy-load-image-component' // import Grid f
 import MainLayout from '../layouts/MainLayout'
 // assets
 import contactImg from '../assets/images/contact/contact-img.jpg'
+import { HugeTitleAbout, HugeTitleContact } from '../assets/svg/Title'
+// import HugeTitle from '../components/Typography/HugeTitle'
 
 const Contact = () => {
 	const classes = useStyles()
 	return (
 		<MainLayout>
+			{/* <HugeTitle>Contact</HugeTitle> */}
+			<HugeTitleContact />
 			<Grid container>
 				<Grid item xs>
 					<LazyLoadImage
