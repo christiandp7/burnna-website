@@ -77,6 +77,7 @@ const useStyles = makeStyles(theme => ({
 		margin: 0,
 		padding: 0,
 		fontFamily: theme.typography.h6.fontFamily,
+		fontWeight: 700,
 	},
 	// Sidebar Links
 	sidebarLink: {
