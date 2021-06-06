@@ -29,6 +29,7 @@ export const exploreItems = [
 		caption: 'art',
 		img: exploreImg5,
 		alt: 'explore',
-		cols: 8,
+		xsCol: 12,
+		mdCol: 8,
 	},
 ]

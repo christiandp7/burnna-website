@@ -14,7 +14,10 @@ const Explore = () => {
 		<MainLayout>
 			<Grid container>
 				{exploreItems.map(exploreItem => (
-					<Grid item xs sm={exploreItem.cols || 4}>
+					<Grid
+						item
+						xs={exploreItem.xsCol || 6}
+						md={exploreItem.mdCol || 4}>
 						<LazyLoadImage
 							wrapperClassName={classes.lazyLoadWrapper}
 							className={classes.image}
