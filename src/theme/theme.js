@@ -57,6 +57,11 @@ const themeSettigs = createMuiTheme({
 				},
 			},
 		},
+		MuiLink: {
+			root: {
+				textUnderlineOffset: '1px',
+			},
+		},
 	},
 })
 

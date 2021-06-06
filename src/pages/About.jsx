@@ -6,6 +6,7 @@ import Typography from '@material-ui/core/Typography'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 //  components
 import MainLayout from '../layouts/MainLayout'
+import Heading from '../components/Typography/Heading'
 // assets
 import aboutImg from '../assets/images/about/about-img.jpg'
 
@@ -25,12 +26,7 @@ const About = () => {
 							effect="blur"
 						/>
 						<div className={classes.rte}>
-							<Typography
-								className={classes.title}
-								component="h2"
-								variant="h4">
-								How where we created?
-							</Typography>
+							<Heading>How where we created?</Heading>
 							<Typography component="p" variant="body1">
 								BURNNA was founded in 2021 by Antonella Camargo and Laura
 								Harada. Both stem their roots in different regions of Latin
@@ -62,12 +58,7 @@ const About = () => {
 					<Grid item xs={12} md={6}>
 						<div className={classes.rteWrapper}>
 							<div className={classes.rte}>
-								<Typography
-									className={classes.title}
-									component="h2"
-									variant="h4">
-									Who are we?
-								</Typography>
+								<Heading>Who are we?</Heading>
 								<Typography component="p" variant="body1">
 									A brand propelled by the firm belief that great things
 									come from connection. Connection to one’s self and
