@@ -12,8 +12,9 @@ import { makeStyles } from '@material-ui/core/styles'
 // assets
 // import logo from '../../assets/images/isotype_black.png'
 import LogoText from '../../assets/svg/LogoText'
+import Button from '@material-ui/core/Button'
 
-const Header = ({ setSidebar }) => {
+const Header = ({ openSidebar, openCart }) => {
 	const classes = useStyles()
 	return (
 		<AppBar className={classes.appBar} color="white" position="static">
@@ -28,7 +29,7 @@ const Header = ({ setSidebar }) => {
 						className={classes.menuButton}
 						color="inherit"
 						aria-label="menu"
-						onClick={() => setSidebar(true)}>
+						onClick={() => openSidebar(true)}>
 						<FiMenu />
 					</IconButton>
 					<li>
@@ -60,9 +61,15 @@ const Header = ({ setSidebar }) => {
 						</Link>
 					</li>
 					<li>
-						<Link className={classes.link} underline="none" href="#">
+						<Button
+							className={`${classes.link} ${classes.buttonLink}`}
+							variant="text"
+							disableRipple={true}
+							// underline="none"
+							// href="#"
+							onClick={() => openCart(true)}>
 							Cart
-						</Link>
+						</Button>
 					</li>
 				</Toolbar>
 			</Container>
@@ -100,8 +107,9 @@ const useStyles = makeStyles(theme => ({
 			textDecoration: 'underline',
 			textDecorationThickness: 'auto',
 			textUnderlineOffset: '2px',
+			background: 'transparent',
 		},
-		'& > span': {
+		'& > span:not(.MuiButton-label)': {
 			fontWeight: 400,
 			// fontFamily: '"Proxima Nova Condensed"',
 			letterSpacing: '0.5px',
