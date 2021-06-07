@@ -2,9 +2,12 @@ import React from 'react'
 import Grid from '@material-ui/core/Grid'
 import IconButton from '@material-ui/core/IconButton'
 import Typography from '@material-ui/core/Typography'
-import productImg from '../../assets/images/product/girl-product-1.jpg'
 import { makeStyles } from '@material-ui/core'
 import { FiTrash2 } from 'react-icons/fi'
+// components
+import QuantitySelector from '../Button/QuantitySelector'
+// assets
+import productImg from '../../assets/images/product/girl-product-1.jpg'
 
 const CartItem = () => {
 	const classes = useStyles()
@@ -17,29 +20,48 @@ const CartItem = () => {
 					alt="product img cart"
 				/>
 			</Grid>
-			<Grid className={classes.detailsWrapper} item xs>
-				<Typography component="h4" variant="h4" color="inherit">
-					N One Piece
-				</Typography>
-				<Typography variant="body1" color="inherit">
-					Color: White
-				</Typography>
-				<Typography variant="body1" color="inherit">
-					Size: L
-				</Typography>
+			<Grid
+				container
+				direction="column"
+				className={classes.detailsWrapper}
+				item
+				xs>
+				<Grid item>
+					<Typography component="h4" variant="h4" color="inherit">
+						N One Piece
+					</Typography>
+				</Grid>
+				<Grid item xs>
+					<Typography variant="body1" color="inherit">
+						Color: White
+					</Typography>
+					<Typography variant="body1" color="inherit">
+						Size: L
+					</Typography>
+				</Grid>
+				<Grid item>
+					<QuantitySelector />
+				</Grid>
 			</Grid>
 			<Grid item>
-				<Grid container direction="column" alignItems="flex-end">
-					<Grid>
+				<Grid
+					container
+					direction="column"
+					className={classes.priceWrapper}
+					alignItems="flex-end"
+					justify="space-between">
+					<Grid item>
 						<Typography variant="h5" color="inherit">
 							$150.00
 						</Typography>
 					</Grid>
-					<Grid>
+					<Grid item>
 						<IconButton
 							disableRipple
+							size="small"
+							edge="end "
 							aria-label="remove"
-							color="inherit">
+							color="secondary">
 							<FiTrash2 />
 						</IconButton>
 					</Grid>
@@ -58,12 +80,16 @@ const useStyles = makeStyles(theme => ({
 	},
 	detailsWrapper: {
 		padding: `0 ${theme.spacing(3)}px`,
+		paddingBottom: theme.spacing(2),
 		'& h4': {
 			fontWeight: 700,
 			marginBottom: theme.spacing(1),
 		},
 	},
-	removeButton: {},
+	priceWrapper: {
+		height: '100%',
+		paddingBottom: theme.spacing(2),
+	},
 }))
 
 export default CartItem

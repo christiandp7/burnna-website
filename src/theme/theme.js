@@ -8,7 +8,9 @@ const themeSettigs = createMuiTheme({
 			main: '#0A0A0A',
 			contrastText: '#fff',
 		},
-		// secondary: {},
+		secondary: {
+			main: '#fff',
+		},
 		neutral: {
 			light: '#CBCBCB',
 			main: '#707070',

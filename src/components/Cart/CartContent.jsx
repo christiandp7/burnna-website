@@ -19,13 +19,16 @@ const CartContent = () => {
 						<IconButton
 							aria-label="close"
 							disableRipple
-							color="inherit"
+							color="secondary"
+							edge="start"
 							className={classes.close}>
 							<FiX />
 						</IconButton>
 					</Toolbar>
 				</AppBar>
-				<Heading underline="none">Cart</Heading>
+				<Heading underline="none" align="center">
+					Cart
+				</Heading>
 			</Grid>
 			<Grid item xs className={classes.body}>
 				<CartItem />
@@ -50,8 +53,7 @@ const useStyles = makeStyles(theme => ({
 		borderBottom: `solid 2px ${theme.palette.neutral.main}`,
 	},
 	close: {
-		padding: 0,
-		fontSize: '1.6rem',
+		// padding: 0,
 	},
 	body: {
 		padding: `${theme.spacing(4)}px 0`,
