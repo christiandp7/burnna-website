@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 
 const Heading = ({ component = 'h2', variant = 'h4', ...props }) => {
-	const classes = useStyles()
+	const classes = useStyles(props)
 	return (
 		<Typography
 			{...props}
@@ -16,14 +16,14 @@ const Heading = ({ component = 'h2', variant = 'h4', ...props }) => {
 }
 
 const useStyles = makeStyles(theme => ({
-	root: {
+	root: props => ({
 		textTransform: 'uppercase',
 		fontWeight: '700',
 		fontFamily: theme.typography.h6.fontFamily,
-		textDecoration: 'underline',
+		textDecoration: props.underline || 'underline',
 		textUnderlineOffset: '4px',
-		marginBottom: '30px',
-	},
+		marginBottom: theme.spacing(3),
+	}),
 }))
 
 export default Heading

@@ -26,7 +26,7 @@ const Cart = ({ open, setOpen }) => {
 
 const useStyles = makeStyles(theme => ({
 	drawerPaper: {
-		width: '550px',
+		width: '580px',
 		maxWidth: '100%',
 		backgroundColor: theme.palette.primary.main,
 	},
