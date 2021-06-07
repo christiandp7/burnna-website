@@ -2,9 +2,9 @@ import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import Drawer from '@material-ui/core/Drawer'
 // components
-import SidebarContent from './SidebarContent'
+// import SidebarContent from './SidebarContent'
 
-const Sidebar = ({ open, setOpen }) => {
+const Cart = ({ open, setOpen }) => {
 	const classes = useStyles()
 
 	return (
@@ -14,7 +14,8 @@ const Sidebar = ({ open, setOpen }) => {
 			classes={{
 				paper: classes.drawerPaper,
 			}}>
-			<SidebarContent />
+			CART
+			{/* <SidebarContent /> */}
 		</Drawer>
 	)
 }
@@ -26,4 +27,4 @@ const useStyles = makeStyles(theme => ({
 	},
 }))
 
-export default Sidebar
+export default Cart
