@@ -1,6 +1,7 @@
 import React from 'react'
 import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
+import Container from '@material-ui/core/Container'
 import Link from '@material-ui/core/Link'
 import { makeStyles } from '@material-ui/core/styles'
 // import Grid from '@material-ui/core/Grid'
@@ -11,7 +12,7 @@ import MainLayout from '../layouts/MainLayout'
 import Heading from '../components/Typography/Heading'
 // assets
 import contactImg from '../assets/images/contact/contact-img.jpg'
-import { HugeTitleAbout, HugeTitleContact } from '../assets/svg/Title'
+import { HugeTitleAbout, HugeTitleContact } from '../assets/svg/HugeTitle'
 // import HugeTitle from '../components/Typography/HugeTitle'
 
 const Contact = () => {
@@ -19,11 +20,11 @@ const Contact = () => {
 	return (
 		<MainLayout>
 			{/* <HugeTitle>Contact</HugeTitle> */}
-			<div className={classes.titleWrapper}>
+			<Container className={classes.titleWrapper}>
 				<HugeTitleContact />
-			</div>
+			</Container>
 			<Grid container>
-				<Grid item xs>
+				<Grid item xs={12} md={6}>
 					<LazyLoadImage
 						className={classes.image}
 						src={contactImg}
@@ -32,7 +33,7 @@ const Contact = () => {
 						effect="blur"
 					/>
 				</Grid>
-				<Grid item xs>
+				<Grid item xs={12} md={6}>
 					<div className={classes.rteWrapper}>
 						<div className={classes.rte}>
 							<Heading>CUSTOMER SERVICE:</Heading>
@@ -95,7 +96,15 @@ const Contact = () => {
 
 const useStyles = makeStyles(theme => ({
 	titleWrapper: {
+		maxWidth: '65%',
 		textAlign: 'center',
+		marginTop: '18px',
+		marginBottom: '12px',
+		[theme.breakpoints.up('md')]: {
+			maxWidth: '50%',
+			marginTop: '30px',
+			marginBottom: '20px',
+		},
 	},
 	image: {
 		width: '100%',
@@ -108,7 +117,6 @@ const useStyles = makeStyles(theme => ({
 	},
 	rte: {
 		padding: '40px 30px',
-		paddingTop: '60px',
 		'& p': {
 			marginBottom: '16px',
 		},
