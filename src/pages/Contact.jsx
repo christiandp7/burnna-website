@@ -98,12 +98,12 @@ const useStyles = makeStyles(theme => ({
 	titleWrapper: {
 		maxWidth: '65%',
 		textAlign: 'center',
-		marginTop: '18px',
+		// marginTop: '18px',
 		marginBottom: '12px',
 		[theme.breakpoints.up('md')]: {
 			maxWidth: '50%',
-			marginTop: '30px',
-			marginBottom: '20px',
+			// marginTop: '30px',
+			marginBottom: '18px',
 		},
 	},
 	image: {
