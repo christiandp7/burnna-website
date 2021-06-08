@@ -1,27 +1,27 @@
 const SidebarNavigation = [
 	{
 		label: 'Men',
-		link: '#',
+		href: '/collection',
 	},
 	{
 		label: 'Women',
-		link: '#',
+		href: '/collection',
 	},
 	{
 		label: 'Explore',
-		link: '#',
+		href: '/explore',
 	},
 	{
 		label: 'About Us',
-		link: '#',
+		href: 'about',
 	},
 	{
 		label: 'Contact',
-		link: '#',
+		href: '/contact',
 	},
 	{
 		label: 'FAQ',
-		link: '#',
+		href: '/faq',
 	},
 ]
 

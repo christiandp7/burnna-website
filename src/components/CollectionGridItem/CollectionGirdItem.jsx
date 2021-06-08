@@ -130,7 +130,6 @@ const useStyles = makeStyles(theme => ({
 		width: '28px',
 		height: '28px',
 		border: 'solid 2px #707070',
-		cursor: 'pointer',
 		transition: `transform ${theme.transitions.easing.easeIn} 150ms`,
 		'&:hover': {
 			transform: 'scale(1.1)',
@@ -141,7 +140,6 @@ const useStyles = makeStyles(theme => ({
 		alignItems: 'flex-end',
 		justifyContent: 'space-between',
 		color: theme.palette.primary.contrastText,
-		cursor: 'pointer',
 	},
 	productTitle: {
 		textTransform: 'uppercase',

@@ -1,40 +1,46 @@
 import React from 'react'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import {
+	BrowserRouter as Router,
+	Switch,
+	Route,
+	Redirect,
+} from 'react-router-dom'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import { ThemeProvider } from '@material-ui/core/styles'
+import SwiperCore, { EffectFade, Navigation, Pagination } from 'swiper/core'
 // layouts
 import MainLayout from './layouts/MainLayout'
 // Pages
-import Home from './pages/Home/Home.jsx'
+import Home from './pages/Home.jsx'
 import Collection from './pages/Collection'
-// styles
-import { create } from 'jss'
-import { StylesProvider, jssPreset } from '@material-ui/core/styles'
+import Product from './pages/Product'
+import About from './pages/About'
+import Explore from './pages/Explore'
+import Contact from './pages/Contact'
+import FAQ from './pages/FAQ'
+import NotFound from './pages/NotFound'
 // data
 import theme from './theme/theme'
 
-const jss = create({
-	plugins: [...jssPreset().plugins],
-})
-
-// const theme = createMuiTheme(themeSettigs)
+SwiperCore.use([EffectFade, Navigation, Pagination])
 
 function App() {
 	return (
 		<ThemeProvider theme={theme}>
-			{/* <StylesProvider injectFirst jss={jss}> */}
 			<CssBaseline />
 			<Router>
 				<Switch>
-					<Route exact path="/">
-						<Home />
-					</Route>
-					<MainLayout>
-						<Route exact path="/collection" component={Collection} />
-					</MainLayout>
+					<Route exact path="/" component={Home} />
+					<Route exact path="/collection" component={Collection} />
+					<Route exact path="/product" component={Product} />
+					<Route exact path="/about" component={About} />
+					<Route exact path="/explore" component={Explore} />
+					<Route exact path="/contact" component={Contact} />
+					<Route exact path="/faq" component={FAQ} />
+					<Route exact path="/404" component={NotFound} />
+					<Redirect from="*" to="/404" />
 				</Switch>
 			</Router>
-			{/* </StylesProvider> */}
 		</ThemeProvider>
 	)
 }

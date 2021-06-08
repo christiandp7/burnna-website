@@ -3,27 +3,40 @@ import { makeStyles } from '@material-ui/core/styles'
 import Sidebar from '../components/Sidebar/Sidebar'
 import Header from '../components/Header/Header'
 import Footer from '../components/Footer/Footer'
+import Cart from '../components/Cart/Cart'
+import { Scrollbars } from 'react-custom-scrollbars-2'
 
-const useStyles = makeStyles({
-	container: {
-		// paddingLeft: '200px',
-	},
-})
+const useStyles = makeStyles(theme => ({
+	main: props => ({
+		paddingTop: props.top || '35px',
+		paddingBottom: props.Bottom || '30px',
+		[theme.breakpoints.down('md')]: {
+			paddingTop: props.top || '18px',
+			paddingBottom: props.Bottom || '12px',
+		},
+	}),
+}))
 
-const MainLayout = ({ children }) => {
+const MainLayout = ({ children, ...props }) => {
 	const [sidebar, setSidebar] = useState(false)
+	const [cart, setCart] = useState(false)
 
-	const classes = useStyles()
+	const classes = useStyles(props)
 
 	return (
-		<div className="Main">
+		<>
 			<Sidebar open={sidebar} setOpen={setSidebar} />
-			<div className={classes.container}>
-				<Header setSidebar={setSidebar} />
-				<main>{children}</main>
+			<Cart open={cart} setOpen={setCart} />
+			<Scrollbars
+				style={{ height: '100vh' }}
+				autoHide
+				autoHideTimeout={2000}
+				autoHideDuration={300}>
+				<Header openSidebar={setSidebar} openCart={setCart} />
+				<main className={classes.main}>{children}</main>
 				<Footer />
-			</div>
-		</div>
+			</Scrollbars>
+		</>
 	)
 }
 

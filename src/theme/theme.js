@@ -8,8 +8,13 @@ const themeSettigs = createMuiTheme({
 			main: '#0A0A0A',
 			contrastText: '#fff',
 		},
-		// secondary: {},
+		secondary: {
+			main: '#fff',
+
+			contastText: '#0A0A0A',
+		},
 		neutral: {
+			light: '#CBCBCB',
 			main: '#707070',
 		},
 	},
@@ -17,13 +22,35 @@ const themeSettigs = createMuiTheme({
 	typography: {
 		fontFamily: [
 			// '"Jules Text"',
-			'"Proxima Nova Condensed"',
+			// '"Proxima Nova Condensed"',
+			'"Karla"',
 			'Sans',
 			'Arial',
 		].join(','),
+		fontWeightRegular: 300,
+		fontWeightMedium: 400,
+		h1: {
+			fontSize: '3rem',
+		},
+		h2: {
+			fontSize: '2.5rem',
+		},
+		h3: {
+			fontSize: '2rem',
+		},
+		h4: {
+			fontSize: '1.5rem',
+		},
+		h5: {
+			fontSize: '1.25rem',
+		},
 		h6: {
-			fontFamily: '"Jules Text"',
+			fontSize: '1rem',
+			fontFamily: '"Bodoni"',
 			textTransform: 'uppercase',
+		},
+		subtitle1: {
+			fontSize: '1.2rem',
 		},
 	},
 	overrides: {
@@ -35,6 +62,16 @@ const themeSettigs = createMuiTheme({
 				body: {
 					backgroundColor: 'white',
 				},
+			},
+		},
+		MuiLink: {
+			root: {
+				textUnderlineOffset: '1px',
+			},
+		},
+		MuiButton: {
+			root: {
+				borderRadius: 0,
 			},
 		},
 	},
