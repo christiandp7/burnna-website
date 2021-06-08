@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Grid from '@material-ui/core/Grid'
 import IconButton from '@material-ui/core/IconButton'
 import Typography from '@material-ui/core/Typography'
@@ -10,10 +10,12 @@ import QuantitySelector from '../Button/QuantitySelector'
 import productImg from '../../assets/images/product/girl-product-1.jpg'
 
 const CartItem = () => {
+	const [counter, setCounter] = useState(1)
 	const classes = useStyles()
+
 	return (
 		<Grid container className={classes.root}>
-			<Grid item xs={3}>
+			<Grid item className={classes.imageGridWrapper}>
 				<img
 					src={productImg}
 					className={classes.image}
@@ -27,7 +29,7 @@ const CartItem = () => {
 				item
 				xs>
 				<Grid item>
-					<Typography component="h4" variant="h4" color="inherit">
+					<Typography component="h4" variant="h5" color="inherit">
 						N One Piece
 					</Typography>
 				</Grid>
@@ -40,7 +42,10 @@ const CartItem = () => {
 					</Typography>
 				</Grid>
 				<Grid item>
-					<QuantitySelector />
+					<QuantitySelector
+						counter={counter}
+						setCounter={setCounter}
+					/>
 				</Grid>
 			</Grid>
 			<Grid item>
@@ -73,22 +78,27 @@ const CartItem = () => {
 
 const useStyles = makeStyles(theme => ({
 	root: {
-		textTransform: 'uppercase',
+		marginBottom: `${theme.spacing(1) + 4}px`,
+	},
+	imageGridWrapper: {
+		flexGrow: '0',
+		maxWidth: '18%',
+		flexBasis: '18%',
 	},
 	image: {
 		width: '100%',
 	},
 	detailsWrapper: {
 		padding: `0 ${theme.spacing(3)}px`,
-		paddingBottom: theme.spacing(2),
+		paddingBottom: theme.spacing(1),
 		'& h4': {
 			fontWeight: 700,
-			marginBottom: theme.spacing(1),
+			marginBottom: '2px',
 		},
 	},
 	priceWrapper: {
 		height: '100%',
-		paddingBottom: theme.spacing(2),
+		paddingBottom: theme.spacing(1),
 	},
 }))
 

@@ -22,7 +22,7 @@ const useStyles = makeStyles(theme => ({
 		fontFamily: theme.typography.h6.fontFamily,
 		textDecoration: props.underline || 'underline',
 		textUnderlineOffset: '4px',
-		marginBottom: theme.spacing(3),
+		marginBottom: theme.spacing(props.mb || 3),
 	}),
 }))
 

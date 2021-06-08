@@ -10,6 +10,8 @@ const themeSettigs = createMuiTheme({
 		},
 		secondary: {
 			main: '#fff',
+
+			contastText: '#0A0A0A',
 		},
 		neutral: {
 			light: '#CBCBCB',
@@ -65,6 +67,11 @@ const themeSettigs = createMuiTheme({
 		MuiLink: {
 			root: {
 				textUnderlineOffset: '1px',
+			},
+		},
+		MuiButton: {
+			root: {
+				borderRadius: 0,
 			},
 		},
 	},
