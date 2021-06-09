@@ -8,7 +8,7 @@ import { NavLink } from 'react-router-dom'
 // assets
 import Isotype from '../../assets/svg/Isotype'
 // data
-import infoSidebarNav from './infoSidebarNav'
+import infoSidebarNav from './FAQSidebarNav'
 
 const InfoSidebar = () => {
 	const classes = useStyles()
@@ -21,9 +21,7 @@ const InfoSidebar = () => {
 			<div className={classes.sidebarNav}>
 				{infoSidebarNav.map(navItem => (
 					<Typography variant="h6">
-						<NavLink
-							to={navItem.href}
-							className={classes.sidebarLink}>
+						<NavLink to={navItem.href} className={classes.sidebarLink}>
 							{navItem.label}
 						</NavLink>
 					</Typography>

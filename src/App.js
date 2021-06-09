@@ -26,7 +26,6 @@ import ShippingPolicy from './pages/FAQ/ShippingPolicy'
 import ProductCare from './pages/FAQ/ProductCare'
 import Payment from './pages/FAQ/Payment'
 import SizeGuide from './pages/FAQ/SizeGuide'
-// import FAQ from './pages/FAQ'
 import NotFound from './pages/NotFound'
 // data
 import theme from './theme/theme'

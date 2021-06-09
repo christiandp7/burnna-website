@@ -1,7 +1,8 @@
 import React from 'react'
+import FAQLayout from '../../layouts/FAQLayout'
 
 const ReturnPolicy = () => {
-	return <div>Return</div>
+	return <FAQLayout>Return</FAQLayout>
 }
 
 export default ReturnPolicy

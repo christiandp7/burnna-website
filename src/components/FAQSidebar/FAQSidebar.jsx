@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import Drawer from '@material-ui/core/Drawer'
 import Hidden from '@material-ui/core/Hidden'
 // components
-import InfoSidebarContent from './InfoSidebarContent'
+import InfoSidebarContent from './FAQSidebarContent'
 
 const drawerWidth = 190
 

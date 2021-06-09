@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
-import InfoSidebar from '../components/InfoSidebar/InfoSidebar'
+import FAQSidebar from '../components/FAQSidebar/FAQSidebar'
 import Header from '../components/Header/Header'
 import Footer from '../components/Footer/Footer'
 import Cart from '../components/Cart/Cart'
@@ -37,7 +37,7 @@ const InfoLayout = ({ children, ...props }) => {
 
 	return (
 		<div className={classes.root}>
-			<InfoSidebar open={sidebar} setOpen={setSidebar} />
+			<FAQSidebar open={sidebar} setOpen={setSidebar} />
 			<Cart open={cart} setOpen={setCart} />
 			<Scrollbars
 				style={{ height: '100vh' }}
