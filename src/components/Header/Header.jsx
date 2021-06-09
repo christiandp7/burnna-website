@@ -6,6 +6,7 @@ import Container from '@material-ui/core/Container'
 import Box from '@material-ui/core/Box'
 import Typography from '@material-ui/core/Typography'
 import IconButton from '@material-ui/core/IconButton'
+import Hidden from '@material-ui/core/Hidden'
 import { FiMenu } from 'react-icons/fi'
 import Link from '@material-ui/core/Link'
 import { makeStyles } from '@material-ui/core/styles'
@@ -14,24 +15,45 @@ import { makeStyles } from '@material-ui/core/styles'
 import LogoText from '../../assets/svg/LogoText'
 import Button from '@material-ui/core/Button'
 
-const Header = ({ openSidebar, openCart }) => {
-	const classes = useStyles()
+const Header = ({
+	openSidebar,
+	openCart,
+	infoLayout = false,
+	...props
+}) => {
+	const classes = useStyles(props)
 	return (
-		<AppBar className={classes.appBar} color="white" position="static">
+		<AppBar
+			className={classes.appBar}
+			color="white"
+			position="static">
 			<Container>
 				<div className={classes.menuButtonContainer}></div>
 				<Toolbar
 					className={classes.toolbar}
 					component="ul"
 					disableGutters={true}>
-					<IconButton
-						edge="start"
-						className={classes.menuButton}
-						color="inherit"
-						aria-label="menu"
-						onClick={() => openSidebar(true)}>
-						<FiMenu />
-					</IconButton>
+					{infoLayout ? (
+						<Hidden mdUp>
+							<IconButton
+								edge="start"
+								className={classes.menuButton}
+								color="inherit"
+								aria-label="menu"
+								onClick={() => openSidebar(true)}>
+								<FiMenu />
+							</IconButton>
+						</Hidden>
+					) : (
+						<IconButton
+							edge="start"
+							className={classes.menuButton}
+							color="inherit"
+							aria-label="menu"
+							onClick={() => openSidebar(true)}>
+							<FiMenu />
+						</IconButton>
+					)}
 					<li>
 						<Link className={classes.link} underline="none" href="#">
 							Women <span>- SWIMWEAR</span>
@@ -86,7 +108,6 @@ const useStyles = makeStyles(theme => ({
 	},
 	// Menu Button
 	menuButtonContainer: {},
-	menuButton: {},
 	// Toolbar
 	toolbar: {
 		justifyContent: 'space-between',
