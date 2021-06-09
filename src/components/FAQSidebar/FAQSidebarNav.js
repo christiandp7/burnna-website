@@ -1,27 +1,23 @@
 const infoSidebarNav = [
 	{
-		label: 'Men',
-		href: '/collection',
+		label: 'Payment',
+		href: '/payment',
 	},
 	{
-		label: 'Women',
-		href: '/collection',
+		label: 'Product Care',
+		href: '/product-care',
 	},
 	{
-		label: 'Explore',
-		href: '/explore',
+		label: 'Size Guide',
+		href: '/size-guide',
 	},
 	{
-		label: 'About Us',
-		href: 'about',
+		label: 'Return Policy',
+		href: 'return-policy',
 	},
 	{
-		label: 'Contact',
-		href: '/contact',
-	},
-	{
-		label: 'FAQ',
-		href: '/faq',
+		label: 'Shipping Policy',
+		href: '/shipping-policy',
 	},
 ]
 
