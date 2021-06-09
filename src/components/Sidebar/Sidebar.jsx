@@ -21,8 +21,7 @@ const Sidebar = ({ open, setOpen }) => {
 
 const useStyles = makeStyles(theme => ({
 	drawerPaper: {
-		// width: '100%',
-		// backgroundColor:
+		backgroundColor: theme.palette.primary.main,
 	},
 }))
 

@@ -1,8 +1,8 @@
 import React from 'react'
-import MainLayout from '../layouts/MainLayout'
+import InfoLayout from '../layouts/InfoLayout'
 
 const FAQ = () => {
-	return <MainLayout>FAQs</MainLayout>
+	return <InfoLayout>FAQs</InfoLayout>
 }
 
 export default FAQ

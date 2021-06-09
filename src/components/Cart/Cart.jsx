@@ -16,7 +16,7 @@ const Cart = ({ open, setOpen }) => {
 				paper: classes.drawerPaper,
 			}}
 			transitionDuration={{
-				enter: 600,
+				enter: 550,
 				exit: 350,
 			}}>
 			<CartContent />
