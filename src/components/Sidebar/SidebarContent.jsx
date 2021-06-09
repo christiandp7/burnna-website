@@ -16,24 +16,15 @@ const Sidebar = () => {
 
 	return (
 		<aside className={classes.sidebar}>
-			{/* <img className={styles.logo} src={logo} alt="logo"/> */}
-			<Button
-				className={classes.logoLink}
-				underline="none"
-				onClick={preventDefault}>
+			<NavLink to="/" className={classes.logoLink}>
 				<Isotype className={classes.logo} />
-			</Button>
+			</NavLink>
 			<div className={classes.sidebarNav}>
 				{sidebarNavigation.map(navItem => (
 					<Typography variant="h6">
-						{/* <Link
-							className={classes.sidebarLink}
-							underline="none"
-							href={navItem.link}
-							onClick={preventDefault}>
-							{navItem.label}
-						</Link> */}
-						<NavLink to={navItem.href} className={classes.sidebarLink}>
+						<NavLink
+							to={navItem.href}
+							className={classes.sidebarLink}>
 							{navItem.label}
 						</NavLink>
 					</Typography>
@@ -45,7 +36,6 @@ const Sidebar = () => {
 
 const useStyles = makeStyles(theme => ({
 	sidebar: {
-		// position: 'fixed',
 		top: 0,
 		left: 0,
 		height: '100vh',
