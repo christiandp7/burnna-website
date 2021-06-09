@@ -8,7 +8,10 @@ import { NavLink } from 'react-router-dom'
 // assets
 import Isotype from '../../assets/svg/Isotype'
 // data
-import infoSidebarNav from './FAQSidebarNav'
+import {
+	infoSidebarNavTop,
+	infoSidebarNavBottom,
+} from './FAQSidebarNav'
 
 const InfoSidebar = () => {
 	const classes = useStyles()
@@ -19,8 +22,16 @@ const InfoSidebar = () => {
 				<Isotype className={classes.logo} />
 			</NavLink>
 			<div className={classes.sidebarNav}>
-				{infoSidebarNav.map(navItem => (
-					<Typography variant="h6">
+				{infoSidebarNavTop.map(navItem => (
+					<Typography variant="h6" className={classes.sidebarLinkItem}>
+						<NavLink to={navItem.href} className={classes.sidebarLink}>
+							{navItem.label}
+						</NavLink>
+					</Typography>
+				))}
+				<div className={classes.divider}></div>
+				{infoSidebarNavBottom.map(navItem => (
+					<Typography variant="h6" className={classes.sidebarLinkItem}>
 						<NavLink to={navItem.href} className={classes.sidebarLink}>
 							{navItem.label}
 						</NavLink>
@@ -50,6 +61,9 @@ const useStyles = makeStyles(theme => ({
 			fill: theme.palette.primary.contrastText,
 		},
 	},
+	divider: {
+		padding: `${theme.spacing(3)}px 0`,
+	},
 	logoLink: {
 		color: theme.palette.primary.contrastText,
 		padding: '10px 15px',
@@ -59,14 +73,18 @@ const useStyles = makeStyles(theme => ({
 		display: 'flex',
 		flexDirection: 'column',
 		height: '100%',
-		justifyContent: 'space-evenly',
+		justifyContent: 'center',
 		alignItems: 'center',
 		margin: 0,
 		padding: 0,
 		fontFamily: theme.typography.h6.fontFamily,
 		fontWeight: 700,
+		paddingBottom: theme.spacing(3),
 	},
 	// Sidebar Links
+	sidebarLinkItem: {
+		marginBottom: theme.spacing(3),
+	},
 	sidebarLink: {
 		padding: '5px 8px',
 		fontSize: '1.1rem',

@@ -1,4 +1,4 @@
-const infoSidebarNav = [
+export const infoSidebarNavTop = [
 	{
 		label: 'Payment',
 		href: '/payment',
@@ -11,6 +11,8 @@ const infoSidebarNav = [
 		label: 'Size Guide',
 		href: '/size-guide',
 	},
+]
+export const infoSidebarNavBottom = [
 	{
 		label: 'Return Policy',
 		href: 'return-policy',
@@ -20,5 +22,3 @@ const infoSidebarNav = [
 		href: '/shipping-policy',
 	},
 ]
-
-export default infoSidebarNav
