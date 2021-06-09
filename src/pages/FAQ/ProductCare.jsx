@@ -1,7 +1,8 @@
 import React from 'react'
+import FAQLayout from '../../layouts/FAQLayout'
 
 const ProductCare = () => {
-	return <div>Product Care</div>
+	return <FAQLayout>Product Care</FAQLayout>
 }
 
 export default ProductCare

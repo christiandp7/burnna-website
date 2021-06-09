@@ -1,7 +1,8 @@
 import React from 'react'
+import FAQLayout from '../../layouts/FAQLayout'
 
 const ShippingPolicy = () => {
-	return <div>Shipping</div>
+	return <FAQLayout>Shipping</FAQLayout>
 }
 
 export default ShippingPolicy
