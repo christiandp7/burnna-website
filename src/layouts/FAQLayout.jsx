@@ -44,7 +44,7 @@ const useStyles = makeStyles(theme => ({
 	main: props => ({
 		paddingTop: props.top || '35px',
 		paddingBottom: props.Bottom || '30px',
-		minHeight: '50vh',
+		minHeight: '70vh',
 		[theme.breakpoints.down('md')]: props => ({
 			paddingTop: props.mobTop || '18px',
 			paddingBottom: props.Bottom || '12px',

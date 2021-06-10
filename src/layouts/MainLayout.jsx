@@ -6,18 +6,6 @@ import Footer from '../components/Footer/Footer'
 import Cart from '../components/Cart/Cart'
 import { Scrollbars } from 'react-custom-scrollbars-2'
 
-const useStyles = makeStyles(theme => ({
-	main: props => ({
-		paddingTop: props.top || '35px',
-		paddingBottom: props.Bottom || '30px',
-		minHeight: '50vh',
-		[theme.breakpoints.down('md')]: {
-			paddingTop: props.top || '18px',
-			paddingBottom: props.Bottom || '12px',
-		},
-	}),
-}))
-
 const MainLayout = ({ children, ...props }) => {
 	const [sidebar, setSidebar] = useState(false)
 	const [cart, setCart] = useState(false)
@@ -40,5 +28,17 @@ const MainLayout = ({ children, ...props }) => {
 		</>
 	)
 }
+
+const useStyles = makeStyles(theme => ({
+	main: props => ({
+		paddingTop: props.top || '35px',
+		paddingBottom: props.Bottom || '30px',
+		minHeight: '70vh',
+		[theme.breakpoints.down('md')]: {
+			paddingTop: props.top || '18px',
+			paddingBottom: props.Bottom || '12px',
+		},
+	}),
+}))
 
 export default MainLayout
