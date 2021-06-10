@@ -21,9 +21,7 @@ const Sidebar = () => {
 			<div className={classes.sidebarNav}>
 				{sidebarNavigation.map(navItem => (
 					<Typography variant="h6">
-						<NavLink
-							to={navItem.href}
-							className={classes.sidebarLink}>
+						<NavLink to={navItem.href} className={classes.sidebarLink}>
 							{navItem.label}
 						</NavLink>
 					</Typography>
@@ -71,7 +69,8 @@ const useStyles = makeStyles(theme => ({
 	// Sidebar Links
 	sidebarLink: {
 		padding: '5px 8px',
-		fontSize: '1.1rem',
+		// fontSize: '1.1rem',
+		fontSize: theme.typography.subtitle1.fontSize,
 		letterSpacing: '1px',
 		color: theme.palette.primary.contrastText,
 		textDecoration: 'none',

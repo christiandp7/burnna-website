@@ -87,7 +87,8 @@ const useStyles = makeStyles(theme => ({
 	},
 	sidebarLink: {
 		padding: '5px 8px',
-		fontSize: '1.1rem',
+		// fontSize: '1.1rem',
+		fontSize: theme.typography.subtitle1.fontSize,
 		letterSpacing: '1px',
 		color: theme.palette.primary.contrastText,
 		textDecoration: 'none',

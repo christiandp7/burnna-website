@@ -50,7 +50,7 @@ const themeSettigs = createMuiTheme({
 			textTransform: 'uppercase',
 		},
 		subtitle1: {
-			fontSize: '1.2rem',
+			fontSize: '1rem', // Header links font-size
 		},
 	},
 	overrides: {
