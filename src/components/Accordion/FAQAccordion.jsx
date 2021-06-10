@@ -28,8 +28,11 @@ const AccordionSummary = withStyles({
 		padding: 0,
 		marginBottom: -1,
 		minHeight: 50,
+		textDecoration: 'underline',
+		textDecorationThickness: '1px',
+		textUnderlineOffset: '2px',
 		'&$expanded': {
-			minHeight: 56,
+			textDecoration: 'none',
 		},
 	},
 	content: {
@@ -42,6 +45,7 @@ const AccordionSummary = withStyles({
 
 const AccordionDetails = withStyles(theme => ({
 	root: {
+		display: 'block',
 		paddingBottom: '26px',
 		paddingTop: 0,
 		paddingLeft: 0,
@@ -50,7 +54,7 @@ const AccordionDetails = withStyles(theme => ({
 	},
 }))(MuiAccordionDetails)
 
-export default function CustomAccordion() {
+const FAQAccordion = ({ faqs }) => {
 	const [expanded, setExpanded] = useState(null)
 
 	const handleChange = panel => (event, newExpanded) => {
@@ -59,7 +63,7 @@ export default function CustomAccordion() {
 
 	return (
 		<div>
-			<Accordion
+			{/* <Accordion
 				square
 				expanded={expanded === 'panel1'}
 				onChange={handleChange('panel1')}>
@@ -100,7 +104,27 @@ export default function CustomAccordion() {
 						blandit leo lobortis eget.
 					</Typography>
 				</AccordionDetails>
-			</Accordion>
+			</Accordion> */}
+
+			{faqs &&
+				faqs.map((faq, i) => (
+					<Accordion
+						key={faq.summary}
+						square
+						expanded={expanded === `panel${i}`}
+						onChange={handleChange(`panel${i}`)}>
+						<AccordionSummary
+							aria-controls="panel2d-content"
+							id={`panel${i}d-header`}>
+							<Typography component="h5" variant="h5">
+								{faq.summary}
+							</Typography>
+						</AccordionSummary>
+						<AccordionDetails>{faq.details}</AccordionDetails>
+					</Accordion>
+				))}
 		</div>
 	)
 }
+
+export default FAQAccordion

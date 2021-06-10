@@ -2,7 +2,12 @@ import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 
-const Heading = ({ component = 'h2', variant = 'h4', ...props }) => {
+const Heading = ({
+	component = 'h2',
+	variant = 'h4',
+	textTransform = 'uppercase',
+	...props
+}) => {
 	const classes = useStyles(props)
 	return (
 		<Typography
@@ -17,7 +22,7 @@ const Heading = ({ component = 'h2', variant = 'h4', ...props }) => {
 
 const useStyles = makeStyles(theme => ({
 	root: props => ({
-		textTransform: 'uppercase',
+		textTransform: props.textTransform,
 		fontWeight: '700',
 		fontFamily: theme.typography.h6.fontFamily,
 		textDecoration: props.underline || 'underline',

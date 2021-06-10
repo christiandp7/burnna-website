@@ -8,27 +8,6 @@ import { Scrollbars } from 'react-custom-scrollbars-2'
 
 const drawerWidth = 190
 
-const useStyles = makeStyles(theme => ({
-	root: {
-		display: 'flex',
-	},
-	main: props => ({
-		paddingTop: props.top || '35px',
-		paddingBottom: props.Bottom || '30px',
-		minHeight: '50vh',
-		[theme.breakpoints.down('md')]: {
-			paddingTop: props.top || '18px',
-			paddingBottom: props.Bottom || '12px',
-		},
-	}),
-	scrollbars: {
-		[theme.breakpoints.up('md')]: {
-			marginLeft: '190px',
-		},
-		// flexGrow: 1,
-	},
-}))
-
 const InfoLayout = ({ children, ...props }) => {
 	const [sidebar, setSidebar] = useState(false)
 	const [cart, setCart] = useState(false)
@@ -57,5 +36,26 @@ const InfoLayout = ({ children, ...props }) => {
 		</div>
 	)
 }
+
+const useStyles = makeStyles(theme => ({
+	root: {
+		display: 'flex',
+	},
+	main: props => ({
+		paddingTop: props.top || '35px',
+		paddingBottom: props.Bottom || '30px',
+		minHeight: '50vh',
+		[theme.breakpoints.down('md')]: props => ({
+			paddingTop: props.mobTop || '18px',
+			paddingBottom: props.Bottom || '12px',
+		}),
+	}),
+	scrollbars: {
+		[theme.breakpoints.up('md')]: {
+			marginLeft: '190px',
+		},
+		// flexGrow: 1,
+	},
+}))
 
 export default InfoLayout
