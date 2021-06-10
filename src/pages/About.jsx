@@ -26,32 +26,33 @@ const About = () => {
 							effect="blur"
 						/>
 						<div className={classes.rte}>
-							<Heading>How where we created?</Heading>
+							<Heading>How were we created?</Heading>
 							<Typography component="p" variant="body1">
-								BURNNA was founded in 2021 by Antonella Camargo and Laura
-								Harada. Both stem their roots in different regions of Latin
-								America, one with an Andean spirit and the other with a
-								Caribbean soul, this complementation became an essential
-								aspect of the decision-making process when offering a
-								multifaceted brand experience.
+								BURNNA was founded in 2021 by Antonella Camargo and
+								Laura Harada. Both stem their roots in different regions
+								of Latin America, one with an Andean spirit and the
+								other with a Caribbean soul, this complementation became
+								an essential aspect of the decision-making process when
+								offering a multifaceted brand experience.
 							</Typography>
 							<Typography component="p" variant="body1">
 								Upon meeting in university they shared a passion for
-								traveling, connecting with new people and experiencing life
-								from outside their comfort zone. This brewed a depth of
-								appreciating different backgrounds and recognising the
-								beauty in the contrasts of each. “Inspired by the ideas and
-								experiences collected over the years, we decided to combine
-								our love of fashion, art, photography, culture, and joie de
-								vivre to create a platform that expresses our beliefs.”
+								traveling, connecting with new people and experiencing
+								life from outside their comfort zone. This brewed a
+								depth of appreciating different backgrounds and
+								recognising the beauty in the contrasts of each.
+								“Inspired by the ideas and experiences collected over
+								the years, we decided to combine our love of fashion,
+								art, photography, culture, and joie de vivre to create a
+								platform that expresses our beliefs.”
 							</Typography>
 							<Typography component="p" variant="body1">
-								Despite the newborn challenges sparked during and post the
-								pandemic, they ceased to see an opportunity with buoyancy
-								and resilience in every step of the way, approaching the
-								whole process of starting a brand with much more
-								perspective and resourcefulness than it would’ve been
-								required in different times.
+								Despite the newborn challenges sparked during and post
+								the pandemic, they ceased to see an opportunity with
+								buoyancy and resilience in every step of the way,
+								approaching the whole process of starting a brand with
+								much more perspective and resourcefulness than it
+								would’ve been required in different times.
 							</Typography>
 						</div>
 					</Grid>
@@ -66,11 +67,12 @@ const About = () => {
 									vision and act upon it.
 								</Typography>
 								<Typography component="p" variant="body1">
-									BURNNA was created, not with the sole purpose of selling
-									beach and resort-wear, but rather more with the intention
-									of advocating for a lifestyle propelled by the leisure
-									and exoticism that fill our native lands through digital
-									narratives and actionable content.
+									BURNNA was created, not with the sole purpose of
+									selling beach and resort-wear, but rather more with
+									the intention of advocating for a lifestyle propelled
+									by the leisure and exoticism that fill our native
+									lands through digital narratives and actionable
+									content.
 								</Typography>
 							</div>
 						</div>

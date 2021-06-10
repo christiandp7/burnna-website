@@ -12,7 +12,10 @@ import MainLayout from '../layouts/MainLayout'
 import Heading from '../components/Typography/Heading'
 // assets
 import contactImg from '../assets/images/contact/contact-img.jpg'
-import { HugeTitleAbout, HugeTitleContact } from '../assets/svg/HugeTitle'
+import {
+	HugeTitleAbout,
+	HugeTitleContact,
+} from '../assets/svg/HugeTitle'
 // import HugeTitle from '../components/Typography/HugeTitle'
 
 const Contact = () => {
@@ -46,7 +49,7 @@ const Contact = () => {
 							<Typography component="p" variant="body1">
 								+57 34700000 - Colombia & Ecuador
 								<br />
-								+31 0000000 - Republica Domenicana
+								+31 0000000 - República Dominicana
 							</Typography>
 							<Typography component="p" variant="body1">
 								<b>General:</b>{' '}
