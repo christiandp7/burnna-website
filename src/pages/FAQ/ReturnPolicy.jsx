@@ -13,7 +13,7 @@ const ReturnPolicy = () => {
 	return (
 		<FAQLayout top="50px" mobTop="30px" alignItemsCenter>
 			<Container>
-				<Heading textTransform="initial">Return Policy</Heading>
+				<Heading textTransform="initial">Return policy</Heading>
 				<FAQAccordion faqs={returnPolicyFaqs} />
 			</Container>
 		</FAQLayout>
