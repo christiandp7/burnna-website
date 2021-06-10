@@ -5,6 +5,7 @@ import Grid from '@material-ui/core/Grid'
 import MainLayout from '../layouts/MainLayout'
 import ProductImage from '../components/Product/ProductImage'
 import ProductMeta from '../components/Product/ProductMeta'
+import SizeGuideSidebar from '../components/SizeGuideSidebar/SizeGuideSidebar'
 
 const Product = () => {
 	return (
@@ -20,6 +21,7 @@ const Product = () => {
 					</Grid>
 				</Grid>
 			</Container>
+			<SizeGuideSidebar />
 		</MainLayout>
 	)
 }
