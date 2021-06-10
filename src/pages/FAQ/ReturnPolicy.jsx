@@ -6,10 +6,12 @@ import Heading from '../../components/Typography/Heading'
 import Typography from '@material-ui/core/Typography'
 // data
 import returnPolicyFaqs from '../../data/returnPolicy'
+// import { makeStyles } from '@material-ui/core/styles'
 
 const ReturnPolicy = () => {
+	// const classes = useStyles()
 	return (
-		<FAQLayout top="50px" mobTop="30px">
+		<FAQLayout top="50px" mobTop="30px" alignItemsCenter>
 			<Container>
 				<Heading textTransform="initial">Return Policy</Heading>
 				<FAQAccordion faqs={returnPolicyFaqs} />
@@ -17,5 +19,7 @@ const ReturnPolicy = () => {
 		</FAQLayout>
 	)
 }
+
+// const useStyles = makeStyles(theme => ({}))
 
 export default ReturnPolicy

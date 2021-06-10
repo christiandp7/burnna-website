@@ -45,6 +45,8 @@ const useStyles = makeStyles(theme => ({
 		paddingTop: props.top || '35px',
 		paddingBottom: props.Bottom || '30px',
 		minHeight: '70vh',
+		display: props.alignItemsCenter ? 'flex' : 'block',
+		alignItems: 'center',
 		[theme.breakpoints.down('md')]: props => ({
 			paddingTop: props.mobTop || '18px',
 			paddingBottom: props.Bottom || '12px',
