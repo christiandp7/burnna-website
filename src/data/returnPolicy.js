@@ -71,16 +71,46 @@ const returnPolicyFaqs = [
 		),
 	},
 	{
-		summary: '',
-		details: <Typography paragraph>ddddd</Typography>,
+		summary: 'Important Information',
+		details: (
+			<ul>
+				<Typography component="li" paragraph>
+					Items must be returned to us in perfect condition accompanied
+					by the return information label.
+				</Typography>
+				<Typography component="li" paragraph>
+					Make sure all products are exactly as you received them, with
+					tag and seal still attached.
+				</Typography>
+				<Typography component="li" paragraph>
+					All shoes must be tried on a carpeted surface until you have
+					decided to keep them.
+				</Typography>
+				<Typography component="li" paragraph>
+					All products that come in their own box, including but not
+					limited to shoes and accessories, must be returned in their
+					original, undamaged box as this is considered part of the
+					product.
+				</Typography>
+				<Typography component="li" paragraph>
+					Please make sure to return tall products that come in their
+					own box inside another solid carton box to not damage the
+					original packaging.
+				</Typography>
+			</ul>
+		),
 	},
 	{
-		summary: '',
-		details: <Typography paragraph>ddddd</Typography>,
-	},
-	{
-		summary: '',
-		details: <Typography paragraph>ddddd</Typography>,
+		summary: 'Lost, damaged & stole items',
+		details: (
+			<Typography paragraph>
+				BURNNA is not responsible for any lost, damaged or stolen
+				packages once it is shipped from out facility. In addition,
+				packages that say delivered that have not arrived fall in the
+				lost, damaged and stolen category. Please contact the shipping
+				carrier and open an enquiry directly.
+			</Typography>
+		),
 	},
 ]
 
