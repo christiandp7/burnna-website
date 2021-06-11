@@ -3,27 +3,11 @@ import { makeStyles } from '@material-ui/core/styles'
 import AppBar from '@material-ui/core/AppBar'
 import Tabs from '@material-ui/core/Tabs'
 import Tab from '@material-ui/core/Tab'
-import Typography from '@material-ui/core/Typography'
-import Box from '@material-ui/core/Box'
-
-function TabPanel(props) {
-	const { children, value, index, ...other } = props
-
-	return (
-		<div
-			role="tabpanel"
-			hidden={value !== index}
-			id={`full-width-tabpanel-${index}`}
-			aria-labelledby={`full-width-tab-${index}`}
-			{...other}>
-			{value === index && (
-				<Box p={3}>
-					<Typography>{children}</Typography>
-				</Box>
-			)}
-		</div>
-	)
-}
+import SwipeableViews from 'react-swipeable-views'
+// components
+import SGTabs from '../SizeGuideTabs/SGTabs'
+import SGTab from '../SizeGuideTabs/SGTab'
+import SGTabPanel from '../SizeGuideTabs/SGTabPanel'
 
 const SizeGuideSidebarContent = () => {
 	const classes = useStyles()
@@ -36,21 +20,28 @@ const SizeGuideSidebarContent = () => {
 	return (
 		<div className={classes.root}>
 			<AppBar position="static">
-				<Tabs
+				<SGTabs
 					value={value}
 					onChange={handleChange}
-					aria-label="simple tabs example"
-					centered>
-					<Tab label="Women Swinms" />
-					<Tab label="Men Swimns" />
-				</Tabs>
+					fullWidth
+					aria-label="Size Guide">
+					<SGTab label="Women Swinms" />
+					<SGTab label="Men Swimns" />
+				</SGTabs>
 			</AppBar>
-			<TabPanel value={value} index={0}>
-				Item One
-			</TabPanel>
-			<TabPanel value={value} index={1}>
-				Item Two
-			</TabPanel>
+			<SwipeableViews
+				axis="x"
+				index={value}
+				enableMouseEvents
+				disableLazyLoading
+				onChangeIndex={index => setValue(index)}>
+				<SGTabPanel value={value} index={0}>
+					Item One
+				</SGTabPanel>
+				<SGTabPanel value={value} index={1}>
+					Item Two
+				</SGTabPanel>
+			</SwipeableViews>
 		</div>
 	)
 }
