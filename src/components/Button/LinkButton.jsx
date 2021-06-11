@@ -8,7 +8,6 @@ const LinkButton = props => {
 		<Button
 			{...props}
 			className={classes.root}
-			color="primary"
 			variant="text"
 			disableRipple={true}
 			underline="always">
