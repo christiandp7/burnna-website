@@ -70,7 +70,8 @@ const SizeGuideSidebarBody = ({ value, handleSwipable }) => {
 
 const useStyles = makeStyles(theme => ({
 	body: {
-		marginTop: theme.spacing(1),
+		paddingTop: theme.spacing(2),
+		paddingBottom: theme.spacing(2),
 	},
 	swipableViews: {
 		height: '100%',
@@ -88,7 +89,7 @@ const useStyles = makeStyles(theme => ({
 	},
 	accordionWrapper: {},
 	accordionTitle: {
-		marginBottom: theme.spacing(1),
+		marginBottom: `${theme.spacing(1) - 2}px`,
 		fontWeight: theme.typography.fontWeightBold,
 		// letterSpacing: '2px',
 	},
