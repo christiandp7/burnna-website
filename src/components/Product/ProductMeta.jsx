@@ -15,7 +15,7 @@ import DrawerContext from '../../context/DrawerContext'
 const ProductMeta = () => {
 	const classes = useStyles()
 
-	const { setCartOpen } = useContext(DrawerContext)
+	const { setCartOpen, setSizeGuideOpen } = useContext(DrawerContext)
 
 	return (
 		<div className={classes.root}>
@@ -53,7 +53,9 @@ const ProductMeta = () => {
 								item
 								style={{ display: 'flex' }}
 								alignItems="center">
-								<LinkButton className={classes.sizeGuideButton}>
+								<LinkButton
+									className={classes.sizeGuideButton}
+									onClick={() => setSizeGuideOpen(true)}>
 									Size guide
 								</LinkButton>
 							</Grid>

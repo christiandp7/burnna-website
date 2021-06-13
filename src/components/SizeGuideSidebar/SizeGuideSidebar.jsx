@@ -1,17 +1,18 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import Drawer from '@material-ui/core/Drawer'
 // components
 import SizeGuideSidebarContent from './SizeGuideSidebarContent'
+import DrawerContext from '../../context/DrawerContext'
 
 const SizeGuideSizebar = () => {
-	const [open, setOpen] = useState(true)
+	const { sizeGuideOpen, setSizeGuideOpen } = useContext(DrawerContext)
 	const classes = useStyles()
 
 	return (
 		<Drawer
-			open={open}
-			onClose={() => setOpen(false)}
+			open={sizeGuideOpen}
+			onClose={() => setSizeGuideOpen(false)}
 			anchor="left"
 			classes={{
 				paper: classes.drawerPaper,

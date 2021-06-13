@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import AppBar from '@material-ui/core/AppBar'
 import Grid from '@material-ui/core/Grid'
@@ -9,9 +9,12 @@ import { FiX } from 'react-icons/fi'
 import SGTabs from '../SizeGuideTabs/SGTabs'
 import SGTab from '../SizeGuideTabs/SGTab'
 import SGTabPanel from '../SizeGuideTabs/SGTabPanel'
+import DrawerContext from '../../context/DrawerContext'
 
 const SizeGuideSidebarHeader = ({ value, handleChange }) => {
+	const { setSizeGuideOpen } = useContext(DrawerContext)
 	const classes = useStyles()
+
 	return (
 		<Grid item className={classes.header}>
 			<AppBar
@@ -25,7 +28,8 @@ const SizeGuideSidebarHeader = ({ value, handleChange }) => {
 						disableRipple
 						color="secondary"
 						style={{ marginLeft: 'auto' }}
-						edge="end">
+						edge="end"
+						onClick={() => setSizeGuideOpen(false)}>
 						<FiX />
 					</IconButton>
 				</Toolbar>
