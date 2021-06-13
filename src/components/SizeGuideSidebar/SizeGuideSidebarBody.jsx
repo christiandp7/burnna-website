@@ -60,8 +60,32 @@ const SizeGuideSidebarBody = ({ value, handleSwipable }) => {
 						</div>
 					</div>
 				</SGTabPanel>
-				<SGTabPanel value={value} index={1}>
-					Item Two
+				<SGTabPanel
+					className={classes.tabPanel}
+					value={value}
+					index={1}>
+					<div className={classes.tabPanelWrapper}>
+						<div className={classes.accordionWrapper}>
+							<Typography
+								className={classes.accordionTitle}
+								variant="subtitle2">
+								Body Size
+							</Typography>
+							<SizeGuideAccordion
+								sizeGuideItems={bodySizeAccordionItems}
+							/>
+						</div>
+						<div className={classes.accordionWrapper}>
+							<Typography
+								className={classes.accordionTitle}
+								variant="subtitle2">
+								Measurements
+							</Typography>
+							<SizeGuideAccordion
+								sizeGuideItems={measurementsAccordionItems}
+							/>
+						</div>
+					</div>
 				</SGTabPanel>
 			</SwipeableViews>
 		</Grid>
