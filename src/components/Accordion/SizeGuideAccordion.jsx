@@ -10,7 +10,7 @@ const Accordion = withStyles(theme => ({
 		backgroundColor: 'transparent',
 		color: theme.palette.primary.contrastText,
 		border: 0,
-		borderBottom: `solid 1px ${theme.palette.neutral.main}`,
+		borderBottom: `solid 1px ${theme.palette.primary.contrastText}`,
 		boxShadow: 'none',
 		'&:before': {
 			display: 'none',
