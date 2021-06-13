@@ -82,28 +82,34 @@ const SizeGuideSidebarContent = () => {
 						axis="x"
 						index={value}
 						enableMouseEvents
+						className={classes.swipableViews}
 						disableLazyLoading
 						onChangeIndex={index => setValue(index)}>
-						<SGTabPanel value={value} index={0}>
-							<div className={classes.accordionWrapper}>
-								<Typography
-									className={classes.accordionTitle}
-									variant="h6">
-									Body Size
-								</Typography>
-								<SizeGuideAccordion
-									sizeGuideItems={bodySizeAccordionItems}
-								/>
-							</div>
-							<div className={classes.accordionWrapper}>
-								<Typography
-									className={classes.accordionTitle}
-									variant="h6">
-									Measurements
-								</Typography>
-								<SizeGuideAccordion
-									sizeGuideItems={measurementsAccordionItems}
-								/>
+						<SGTabPanel
+							className={classes.tabPanel}
+							value={value}
+							index={0}>
+							<div className={classes.tabPanelWrapper}>
+								<div className={classes.accordionWrapper}>
+									<Typography
+										className={classes.accordionTitle}
+										variant="h6">
+										Body Size
+									</Typography>
+									<SizeGuideAccordion
+										sizeGuideItems={bodySizeAccordionItems}
+									/>
+								</div>
+								<div className={classes.accordionWrapper}>
+									<Typography
+										className={classes.accordionTitle}
+										variant="h6">
+										Measurements
+									</Typography>
+									<SizeGuideAccordion
+										sizeGuideItems={measurementsAccordionItems}
+									/>
+								</div>
 							</div>
 						</SGTabPanel>
 						<SGTabPanel value={value} index={1}>
@@ -138,7 +144,21 @@ const useStyles = makeStyles(theme => ({
 	body: {
 		marginTop: theme.spacing(1),
 	},
-	accordionWrapper: { marginBottom: theme.spacing(4) },
+	swipableViews: {
+		height: '100%',
+		'& .react-swipeable-view-container': {
+			height: '100%',
+		},
+	},
+	tabPanel: { height: '100%' },
+	tabPanelWrapper: {
+		display: 'flex',
+		flexDirection: 'column',
+		justifyContent: 'space-evenly',
+		height: '100%',
+		// alignItems: 'center',
+	},
+	accordionWrapper: {},
 	accordionTitle: {},
 	footer: {
 		// marginTop: theme.spacing(1),
