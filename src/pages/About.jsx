@@ -9,6 +9,7 @@ import MainLayout from '../layouts/MainLayout'
 import Heading from '../components/Typography/Heading'
 // assets
 import aboutImg from '../assets/images/about/about-img.jpg'
+import { HugeTitleAbout } from '../assets/svg/HugeTitle'
 
 const About = () => {
 	const classes = useStyles()
@@ -58,7 +59,7 @@ const About = () => {
 					</Grid>
 					<Grid item xs={12} md={6}>
 						<div className={classes.rteWrapper}>
-							<div className={classes.rte}>
+							<div className={`${classes.rte} ${classes.rteAbout}`}>
 								<Heading>Who are we?</Heading>
 								<Typography component="p" variant="body1">
 									A brand propelled by the firm belief that great things
@@ -74,6 +75,7 @@ const About = () => {
 									lands through digital narratives and actionable
 									content.
 								</Typography>
+								<HugeTitleAbout />
 							</div>
 						</div>
 
@@ -104,15 +106,18 @@ const useStyles = makeStyles(theme => ({
 	// Text
 	rteWrapper: {
 		[theme.breakpoints.up('md')]: {
-			paddingTop: '30px',
-			paddingBottom: '70px',
+			paddingTop: theme.spacing(2),
+			// paddingBottom: '70px',
 		},
 	},
 	rte: {
-		padding: '40px 30px',
+		padding: `${theme.spacing(4)}px ${theme.spacing(3)}px`,
 		'& p': {
 			marginBottom: '16px',
 		},
+	},
+	rteAbout: {
+		paddingBottom: 0,
 	},
 	title: {
 		textTransform: 'uppercase',

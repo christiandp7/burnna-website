@@ -3,8 +3,8 @@ import React from 'react'
 export const HugeTitleAbout = () => (
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
-		width="854"
-		height="340"
+		width="100%"
+		height="auto"
 		viewBox="0 0 854 340">
 		<text
 			id="ABOUT"
