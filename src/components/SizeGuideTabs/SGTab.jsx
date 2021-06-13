@@ -5,8 +5,10 @@ import { withStyles } from '@material-ui/core/styles'
 const SGTab = withStyles(theme => ({
 	root: {
 		// textTransform: 'none',
-		minWidth: 72,
-		// fontWeight: theme.typography.fontWeightRegular,
+		minWidth: 60,
+		fontFamily: theme.typography.h6.fontFamily,
+		fontWeight: theme.typography.fontWeightBold,
+		letterSpacing: '1px',
 		// marginRight: theme.spacing(3),
 		'&:hover': {
 			// color: '#40a9ff',

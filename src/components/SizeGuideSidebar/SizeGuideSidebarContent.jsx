@@ -93,7 +93,7 @@ const SizeGuideSidebarContent = () => {
 								<div className={classes.accordionWrapper}>
 									<Typography
 										className={classes.accordionTitle}
-										variant="h6">
+										variant="subtitle2">
 										Body Size
 									</Typography>
 									<SizeGuideAccordion
@@ -103,7 +103,7 @@ const SizeGuideSidebarContent = () => {
 								<div className={classes.accordionWrapper}>
 									<Typography
 										className={classes.accordionTitle}
-										variant="h6">
+										variant="subtitle2">
 										Measurements
 									</Typography>
 									<SizeGuideAccordion
@@ -159,7 +159,11 @@ const useStyles = makeStyles(theme => ({
 		// alignItems: 'center',
 	},
 	accordionWrapper: {},
-	accordionTitle: {},
+	accordionTitle: {
+		marginBottom: theme.spacing(1),
+		fontWeight: theme.typography.fontWeightBold,
+		// letterSpacing: '2px',
+	},
 	footer: {
 		// marginTop: theme.spacing(1),
 		paddingBottom: theme.spacing(3),

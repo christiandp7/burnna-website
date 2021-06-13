@@ -52,6 +52,11 @@ const themeSettigs = createMuiTheme({
 		subtitle1: {
 			fontSize: '1rem', // Header links font-size
 		},
+		subtitle2: {
+			fontSize: '0.875rem',
+			fontFamily: '"Bodoni"',
+			textTransform: 'uppercase',
+		},
 	},
 	overrides: {
 		MuiCssBaseline: {
