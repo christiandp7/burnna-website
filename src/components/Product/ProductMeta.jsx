@@ -45,8 +45,13 @@ const ProductMeta = () => {
 							<Grid item>
 								<SizeSelectorButtonGroup />
 							</Grid>
-							<Grid item style={{ display: 'flex' }} alignItems="center">
-								<LinkButton>Size guide</LinkButton>
+							<Grid
+								item
+								style={{ display: 'flex' }}
+								alignItems="center">
+								<LinkButton className={classes.sizeGuideButton}>
+									Size guide
+								</LinkButton>
 							</Grid>
 						</Grid>
 					</div>
@@ -96,6 +101,9 @@ const useStyles = makeStyles(theme => ({
 	},
 	variant: {
 		padding: '15px 0',
+	},
+	sizeGuideButton: {
+		fontSize: theme.typography.h5.fontSize,
 	},
 	addToCartContainer: {
 		padding: '15px 0',

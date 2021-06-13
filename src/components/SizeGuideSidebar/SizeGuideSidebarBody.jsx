@@ -21,60 +21,54 @@ import SizeGuideAccordion from '../Accordion/SizeGuideAccordion'
 import { bodySizeAccordionItems } from '../../data/bodySize'
 import { measurementsAccordionItems } from '../../data/measurements'
 import Heading from '../Typography/Heading'
-import SizeGuideSidebarHeader from './SizeGuideSidebarHeader'
-import SizeGuideSidebarFooter from './SizeGuideSidebarFooter'
-import SizeGuideSidebarBody from './SizeGuideSidebarBody'
 
-const SizeGuideSidebarContent = () => {
+const SizeGuideSidebarBody = ({ value, handleSwipable }) => {
 	const classes = useStyles()
-	const [value, setValue] = React.useState(0)
-
-	const handleChange = (event, newValue) => {
-		setValue(newValue)
-	}
-
-	const handleSwipable = newValue => {
-		setValue(newValue)
-	}
-
 	return (
-		<Scrollbars
-			// autoHeight
-			// autoHeightMin="100%"
-			style={{ minHeight: '100vh' }}
-			autoHide
-			autoHideTimeout={2000}
-			autoHideDuration={300}>
-			<Grid
-				container
-				wrap="nowrap"
-				direction="column"
-				className={classes.root}>
-				{/* HEADER */}
-				<SizeGuideSidebarHeader
+		<Grid item xs className={classes.body}>
+			<SwipeableViews
+				axis="x"
+				index={value}
+				enableMouseEvents
+				className={classes.swipableViews}
+				disableLazyLoading
+				onChangeIndex={handleSwipable}>
+				<SGTabPanel
+					className={classes.tabPanel}
 					value={value}
-					handleChange={handleChange}
-				/>
-				{/* BODY */}
-				<SizeGuideSidebarBody
-					value={value}
-					handleSwipable={handleSwipable}
-				/>
-				{/* FOOTER */}
-				<SizeGuideSidebarFooter />
-			</Grid>
-		</Scrollbars>
+					index={0}>
+					<div className={classes.tabPanelWrapper}>
+						<div className={classes.accordionWrapper}>
+							<Typography
+								className={classes.accordionTitle}
+								variant="subtitle2">
+								Body Size
+							</Typography>
+							<SizeGuideAccordion
+								sizeGuideItems={bodySizeAccordionItems}
+							/>
+						</div>
+						<div className={classes.accordionWrapper}>
+							<Typography
+								className={classes.accordionTitle}
+								variant="subtitle2">
+								Measurements
+							</Typography>
+							<SizeGuideAccordion
+								sizeGuideItems={measurementsAccordionItems}
+							/>
+						</div>
+					</div>
+				</SGTabPanel>
+				<SGTabPanel value={value} index={1}>
+					Item Two
+				</SGTabPanel>
+			</SwipeableViews>
+		</Grid>
 	)
 }
 
 const useStyles = makeStyles(theme => ({
-	root: {
-		height: '100%',
-		color: theme.palette.primary.contrastText,
-		cursor: 'default',
-		padding: `0 ${theme.spacing(5)}px`,
-	},
-
 	body: {
 		marginTop: theme.spacing(1),
 	},
@@ -100,4 +94,4 @@ const useStyles = makeStyles(theme => ({
 	},
 }))
 
-export default SizeGuideSidebarContent
+export default SizeGuideSidebarBody
