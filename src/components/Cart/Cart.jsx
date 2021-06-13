@@ -1,16 +1,19 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import Drawer from '@material-ui/core/Drawer'
 // components
 import CartContent from './CartContent'
+import DrawerContext from '../../context/DrawerContext'
 
-const Cart = ({ open, setOpen }) => {
+const Cart = () => {
 	const classes = useStyles()
+
+	const { cartOpen, setCartOpen } = useContext(DrawerContext)
 
 	return (
 		<Drawer
-			open={open}
-			onClose={() => setOpen(false)}
+			open={cartOpen}
+			onClose={() => setCartOpen(false)}
 			anchor="right"
 			classes={{
 				paper: classes.drawerPaper,

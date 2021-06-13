@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { NavLink } from 'react-router-dom'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
@@ -10,23 +10,18 @@ import Hidden from '@material-ui/core/Hidden'
 import { FiMenu } from 'react-icons/fi'
 import Link from '@material-ui/core/Link'
 import { makeStyles } from '@material-ui/core/styles'
+// components
+import DrawerContext from '../../context/DrawerContext'
 // assets
-// import logo from '../../assets/images/isotype_black.png'
 import LogoText from '../../assets/svg/LogoText'
 import Button from '@material-ui/core/Button'
 
-const Header = ({
-	openSidebar,
-	openCart,
-	infoLayout = false,
-	...props
-}) => {
+const Header = ({ openSidebar, infoLayout = false, ...props }) => {
 	const classes = useStyles(props)
+	const { setCartOpen } = useContext(DrawerContext)
+
 	return (
-		<AppBar
-			className={classes.appBar}
-			color="white"
-			position="static">
+		<AppBar className={classes.appBar} color="white" position="static">
 			<Container>
 				<div className={classes.menuButtonContainer}></div>
 				<Toolbar
@@ -89,7 +84,7 @@ const Header = ({
 							disableRipple={true}
 							// underline="none"
 							// href="#"
-							onClick={() => openCart(true)}>
+							onClick={() => setCartOpen(true)}>
 							Cart
 						</Button>
 					</li>
