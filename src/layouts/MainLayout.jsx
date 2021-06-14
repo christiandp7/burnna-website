@@ -35,7 +35,7 @@ const useStyles = makeStyles(theme => ({
 		paddingBottom: props.Bottom || '30px',
 		minHeight: '70vh',
 		[theme.breakpoints.down('md')]: {
-			paddingTop: props.top || '18px',
+			paddingTop: props.top || 0,
 			paddingBottom: props.Bottom || '12px',
 		},
 	}),

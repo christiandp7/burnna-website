@@ -48,7 +48,7 @@ const useStyles = makeStyles(theme => ({
 		display: props.alignItemsCenter ? 'flex' : 'block',
 		alignItems: 'center',
 		[theme.breakpoints.down('md')]: props => ({
-			paddingTop: props.mobTop || '18px',
+			paddingTop: props.mobTop || 0,
 			paddingBottom: props.Bottom || '12px',
 		}),
 	}),
