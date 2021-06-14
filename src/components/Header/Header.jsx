@@ -64,7 +64,7 @@ const Header = ({ openSidebar, infoLayout = false, ...props }) => {
 							Explore
 						</Link>
 					</li> */}
-					<NavLink to="/">
+					<NavLink to="/" className={classes.logoLink}>
 						<LogoText className={classes.logo} />
 					</NavLink>
 					<li>
@@ -88,6 +88,16 @@ const Header = ({ openSidebar, infoLayout = false, ...props }) => {
 							Cart
 						</Button>
 					</li>
+					<Hidden mdUp>
+						<IconButton
+							edge="start"
+							className={classes.menuButton}
+							color="inherit"
+							aria-label="menu"
+							onClick={() => openSidebar(true)}>
+							<FiMenu />
+						</IconButton>
+					</Hidden>
 				</Toolbar>
 			</Container>
 		</AppBar>
@@ -105,11 +115,18 @@ const useStyles = makeStyles(theme => ({
 	menuButtonContainer: {},
 	// Toolbar
 	toolbar: {
+		position: 'relative',
 		justifyContent: 'space-between',
 		listStyle: 'none',
 		padding: 0,
+		[theme.breakpoints.down('sm')]: {
+			justifyContent: 'center',
+		},
 		'& > li': {
 			// marginBottom: '35px',
+			[theme.breakpoints.down('sm')]: {
+				display: 'none',
+			},
 		},
 	},
 	// Links
@@ -132,9 +149,22 @@ const useStyles = makeStyles(theme => ({
 		},
 	},
 	// Logo
+	logoLink: {
+		lineHeight: 'initial',
+	},
 	logo: {
 		maxWidth: 180,
 		margin: '0 25px',
+		[theme.breakpoints.down('sm')]: {
+			maxWidth: 120,
+		},
+	},
+	// menuButton
+	menuButton: {
+		[theme.breakpoints.down('sm')]: {
+			position: 'absolute',
+			left: theme.spacing(1),
+		},
 	},
 }))
 
