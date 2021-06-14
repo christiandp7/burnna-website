@@ -64,6 +64,9 @@ const useStyles = makeStyles(theme => ({
 	},
 	column: {
 		height: '100%',
+		[theme.breakpoints.down('sm')]: {
+			height: '50%',
+		},
 	},
 	// Logo
 	logoContainer: {
