@@ -96,6 +96,7 @@ const useStyles = makeStyles(theme => ({
 		},
 	},
 	lazyLoadWrapper: {
+		width: '100%',
 		height: '100%',
 	},
 	image: {

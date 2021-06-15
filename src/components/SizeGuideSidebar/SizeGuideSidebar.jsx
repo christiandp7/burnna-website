@@ -2,19 +2,18 @@ import React, { useContext } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import Drawer from '@material-ui/core/Drawer'
 // components
-import CartContent from './CartContent'
+import SizeGuideSidebarContent from './SizeGuideSidebarContent'
 import DrawerContext from '../../context/DrawerContext'
 
-const Cart = () => {
+const SizeGuideSizebar = () => {
+	const { sizeGuideOpen, setSizeGuideOpen } = useContext(DrawerContext)
 	const classes = useStyles()
-
-	const { cartOpen, setCartOpen } = useContext(DrawerContext)
 
 	return (
 		<Drawer
-			open={cartOpen}
-			onClose={() => setCartOpen(false)}
-			anchor="right"
+			open={sizeGuideOpen}
+			onClose={() => setSizeGuideOpen(false)}
+			anchor="left"
 			classes={{
 				paper: classes.drawerPaper,
 			}}
@@ -22,17 +21,17 @@ const Cart = () => {
 				enter: 550,
 				exit: 350,
 			}}>
-			<CartContent />
+			<SizeGuideSidebarContent />
 		</Drawer>
 	)
 }
 
 const useStyles = makeStyles(theme => ({
 	drawerPaper: {
-		width: '580px',
+		width: '450px',
 		maxWidth: '100%',
 		backgroundColor: theme.palette.primary.main,
 	},
 }))
 
-export default Cart
+export default SizeGuideSizebar

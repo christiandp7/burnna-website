@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { makeStyles } from '@material-ui/styles'
 import Typography from '@material-ui/core/Typography'
 // import Button from '@material-ui/core/Button'
@@ -10,9 +10,13 @@ import SizeSelectorButtonGroup from '../Button/SizeSelectorButtonGroup'
 import Grid from '@material-ui/core/Grid'
 import Button from '@material-ui/core/Button'
 import LinkButton from '../Button/LinkButton'
+import DrawerContext from '../../context/DrawerContext'
 
 const ProductMeta = () => {
 	const classes = useStyles()
+
+	const { setCartOpen, setSizeGuideOpen } = useContext(DrawerContext)
+
 	return (
 		<div className={classes.root}>
 			<div className={classes.wrapper}>
@@ -45,14 +49,21 @@ const ProductMeta = () => {
 							<Grid item>
 								<SizeSelectorButtonGroup />
 							</Grid>
-							<Grid item style={{ display: 'flex' }} alignItems="center">
-								<LinkButton>Size guide</LinkButton>
+							<Grid
+								item
+								style={{ display: 'flex' }}
+								alignItems="center">
+								<LinkButton
+									className={classes.sizeGuideButton}
+									onClick={() => setSizeGuideOpen(true)}>
+									Size guide
+								</LinkButton>
 							</Grid>
 						</Grid>
 					</div>
 				</div>
 				<div className={classes.addToCartContainer}>
-					<AddToCartButton>
+					<AddToCartButton onClick={() => setCartOpen(true)}>
 						<Grid container justify="space-between">
 							<Grid item>
 								<Typography variant="h5">Add</Typography>
@@ -96,6 +107,9 @@ const useStyles = makeStyles(theme => ({
 	},
 	variant: {
 		padding: '15px 0',
+	},
+	sizeGuideButton: {
+		fontSize: theme.typography.h5.fontSize,
 	},
 	addToCartContainer: {
 		padding: '15px 0',

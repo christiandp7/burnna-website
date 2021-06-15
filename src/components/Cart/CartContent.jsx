@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
@@ -10,8 +10,10 @@ import CartItem from './CartItem'
 import Button from '@material-ui/core/Button'
 import { FiX } from 'react-icons/fi'
 import { Scrollbars } from 'react-custom-scrollbars-2'
+import DrawerContext from '../../context/DrawerContext'
 
 const CartContent = () => {
+	const { setCartOpen } = useContext(DrawerContext)
 	const classes = useStyles()
 	return (
 		<Grid
@@ -26,7 +28,8 @@ const CartContent = () => {
 							aria-label="close"
 							disableRipple
 							color="secondary"
-							edge="start">
+							edge="start"
+							onClick={() => setCartOpen(false)}>
 							<FiX />
 						</IconButton>
 					</Toolbar>

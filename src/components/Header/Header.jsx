@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { NavLink } from 'react-router-dom'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
@@ -6,16 +6,20 @@ import Container from '@material-ui/core/Container'
 import Box from '@material-ui/core/Box'
 import Typography from '@material-ui/core/Typography'
 import IconButton from '@material-ui/core/IconButton'
+import Hidden from '@material-ui/core/Hidden'
 import { FiMenu } from 'react-icons/fi'
 import Link from '@material-ui/core/Link'
 import { makeStyles } from '@material-ui/core/styles'
+// components
+import DrawerContext from '../../context/DrawerContext'
 // assets
-// import logo from '../../assets/images/isotype_black.png'
 import LogoText from '../../assets/svg/LogoText'
 import Button from '@material-ui/core/Button'
 
-const Header = ({ openSidebar, openCart }) => {
-	const classes = useStyles()
+const Header = ({ openSidebar, infoLayout = false, ...props }) => {
+	const classes = useStyles(props)
+	const { setCartOpen } = useContext(DrawerContext)
+
 	return (
 		<AppBar className={classes.appBar} color="white" position="static">
 			<Container>
@@ -24,14 +28,27 @@ const Header = ({ openSidebar, openCart }) => {
 					className={classes.toolbar}
 					component="ul"
 					disableGutters={true}>
-					<IconButton
-						edge="start"
-						className={classes.menuButton}
-						color="inherit"
-						aria-label="menu"
-						onClick={() => openSidebar(true)}>
-						<FiMenu />
-					</IconButton>
+					{infoLayout ? (
+						<Hidden mdUp>
+							<IconButton
+								edge="start"
+								className={classes.menuButton}
+								color="inherit"
+								aria-label="menu"
+								onClick={() => openSidebar(true)}>
+								<FiMenu />
+							</IconButton>
+						</Hidden>
+					) : (
+						<IconButton
+							edge="start"
+							className={classes.menuButton}
+							color="inherit"
+							aria-label="menu"
+							onClick={() => openSidebar(true)}>
+							<FiMenu />
+						</IconButton>
+					)}
 					<li>
 						<Link className={classes.link} underline="none" href="#">
 							Women <span>- SWIMWEAR</span>
@@ -47,7 +64,7 @@ const Header = ({ openSidebar, openCart }) => {
 							Explore
 						</Link>
 					</li> */}
-					<NavLink to="/">
+					<NavLink to="/" className={classes.logoLink}>
 						<LogoText className={classes.logo} />
 					</NavLink>
 					<li>
@@ -67,10 +84,20 @@ const Header = ({ openSidebar, openCart }) => {
 							disableRipple={true}
 							// underline="none"
 							// href="#"
-							onClick={() => openCart(true)}>
+							onClick={() => setCartOpen(true)}>
 							Cart
 						</Button>
 					</li>
+					<Hidden mdUp>
+						<IconButton
+							edge="start"
+							className={classes.menuButton}
+							color="inherit"
+							aria-label="menu"
+							onClick={() => openSidebar(true)}>
+							<FiMenu />
+						</IconButton>
+					</Hidden>
 				</Toolbar>
 			</Container>
 		</AppBar>
@@ -86,14 +113,20 @@ const useStyles = makeStyles(theme => ({
 	},
 	// Menu Button
 	menuButtonContainer: {},
-	menuButton: {},
 	// Toolbar
 	toolbar: {
+		position: 'relative',
 		justifyContent: 'space-between',
 		listStyle: 'none',
 		padding: 0,
+		[theme.breakpoints.down('sm')]: {
+			justifyContent: 'center',
+		},
 		'& > li': {
 			// marginBottom: '35px',
+			[theme.breakpoints.down('sm')]: {
+				display: 'none',
+			},
 		},
 	},
 	// Links
@@ -116,9 +149,22 @@ const useStyles = makeStyles(theme => ({
 		},
 	},
 	// Logo
+	logoLink: {
+		lineHeight: 'initial',
+	},
 	logo: {
 		maxWidth: 180,
 		margin: '0 25px',
+		[theme.breakpoints.down('sm')]: {
+			maxWidth: 120,
+		},
+	},
+	// menuButton
+	menuButton: {
+		[theme.breakpoints.down('sm')]: {
+			position: 'absolute',
+			left: theme.spacing(1),
+		},
 	},
 }))
 

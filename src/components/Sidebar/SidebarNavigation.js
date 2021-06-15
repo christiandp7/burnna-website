@@ -21,7 +21,7 @@ const SidebarNavigation = [
 	},
 	{
 		label: 'FAQ',
-		href: '/faq',
+		href: '/return-policy',
 	},
 ]
 

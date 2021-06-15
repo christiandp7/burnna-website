@@ -20,16 +20,17 @@ const Footer = () => {
 	return (
 		<footer className={classes.footer}>
 			<Container>
-				<Box marginBottom="50px" textAlign="center">
+				<div className={classes.logoFooterContainer}>
 					<LogoComplete className={classes.logoFooter} />
-				</Box>
+				</div>
 
 				<Box display="Flex" justifyContent="space-between">
 					<Grid className={classes.colContainer} container>
 						<Grid item xs="12" md="6">
 							<List component="ul">
 								<ListItem component="li">
-									<Typography className={`${classes.subtitle} ${classes.link}`}>
+									<Typography
+										className={`${classes.subtitle} ${classes.link}`}>
 										Support
 									</Typography>
 								</ListItem>
@@ -48,7 +49,8 @@ const Footer = () => {
 						<Grid item xs="12" md="6">
 							<List component="ul">
 								<ListItem component="li">
-									<Typography className={`${classes.subtitle} ${classes.link}`}>
+									<Typography
+										className={`${classes.subtitle} ${classes.link}`}>
 										Information
 									</Typography>
 								</ListItem>
@@ -79,7 +81,8 @@ const Footer = () => {
 						<Grid item xs="12" md="6">
 							<List component="ul">
 								<ListItem component="li">
-									<Typography className={`${classes.subtitle} ${classes.link}`}>
+									<Typography
+										className={`${classes.subtitle} ${classes.link}`}>
 										Social
 									</Typography>
 								</ListItem>
@@ -118,7 +121,8 @@ const Footer = () => {
 						<Grid item xs="12" md="6">
 							<List component="ul">
 								<ListItem component="li">
-									<Typography className={`${classes.subtitle} ${classes.link}`}>
+									<Typography
+										className={`${classes.subtitle} ${classes.link}`}>
 										Company
 									</Typography>
 								</ListItem>
@@ -150,14 +154,34 @@ const useStyles = makeStyles(theme => ({
 	footer: {
 		textTransform: 'uppercase',
 		color: theme.palette.primary.main,
-		paddingBottom: '70px',
 		paddingTop: '85px',
+		paddingBottom: '70px',
+		[theme.breakpoints.down('xs')]: {
+			paddingTop: '55px',
+			paddingBottom: '60px',
+		},
+	},
+	logoFooterContainer: {
+		textAlign: 'center',
+		marginBottom: '50px',
+		[theme.breakpoints.down('xs')]: {
+			marginBottom: '35px',
+		},
 	},
 	logoFooter: {
 		maxWidth: '300px',
+		[theme.breakpoints.down('sm')]: {
+			maxWidth: '50%',
+		},
+		[theme.breakpoints.down('xs')]: {
+			maxWidth: '70%',
+		},
 	},
 	colContainer: {
 		width: '35%',
+		[theme.breakpoints.down('xs')]: {
+			width: '45%',
+		},
 	},
 	subtitle: {
 		fontWeight: 900,

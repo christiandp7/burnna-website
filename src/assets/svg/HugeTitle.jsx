@@ -3,8 +3,8 @@ import React from 'react'
 export const HugeTitleAbout = () => (
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
-		width="854"
-		height="340"
+		width="100%"
+		height="auto"
 		viewBox="0 0 854 340">
 		<text
 			id="ABOUT"
@@ -42,8 +42,8 @@ export const HugeTitleContact = () => (
 export const HugeTitleExplore = () => (
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
-		width="1228"
-		height="367"
+		width="100%"
+		height="auto"
 		viewBox="0 0 1228 367">
 		<text
 			id="Explore"
