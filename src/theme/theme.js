@@ -10,12 +10,14 @@ const themeSettigs = createMuiTheme({
 		},
 		secondary: {
 			main: '#fff',
-
 			contastText: '#0A0A0A',
 		},
 		neutral: {
 			light: '#CBCBCB',
 			main: '#707070',
+		},
+		cream: {
+			main: '#F5F2ED',
 		},
 	},
 
@@ -65,7 +67,7 @@ const themeSettigs = createMuiTheme({
 				// '@font-face': [julesText],
 
 				body: {
-					backgroundColor: 'white',
+					backgroundColor: '#F5F2ED',
 				},
 			},
 		},
