@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import cx from 'classnames'
 import { NavLink } from 'react-router-dom'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
@@ -14,100 +15,113 @@ import { makeStyles } from '@material-ui/core/styles'
 import DrawerContext from '../../context/DrawerContext'
 // assets
 import LogoText from '../../assets/svg/LogoText'
+import Burguer from '../../assets/svg/Burguer'
 import Button from '@material-ui/core/Button'
+import Grid from '@material-ui/core/Grid'
 
 const Header = ({ openSidebar, infoLayout = false, ...props }) => {
 	const classes = useStyles(props)
 	const { setCartOpen } = useContext(DrawerContext)
 
 	return (
-		<AppBar className={classes.appBar} color="white" position="static">
-			<Container>
-				<div className={classes.menuButtonContainer}></div>
-				<Toolbar
-					className={classes.toolbar}
-					component="ul"
-					disableGutters={true}>
-					{infoLayout ? (
-						<Hidden mdUp>
+		<div className={classes.appBarWrapper}>
+			<AppBar
+				className={classes.appBar}
+				color="white"
+				position="static">
+				<Container>
+					<div className={classes.menuButtonContainer}></div>
+					<Toolbar
+						className={classes.toolbar}
+						// component="ul"
+						disableGutters={true}>
+						{infoLayout ? (
+							<Hidden mdUp>
+								<IconButton
+									edge="start"
+									className={classes.menuButton}
+									color="inherit"
+									aria-label="menu"
+									onClick={() => openSidebar(true)}>
+									<Burguer />
+								</IconButton>
+							</Hidden>
+						) : (
 							<IconButton
 								edge="start"
 								className={classes.menuButton}
 								color="inherit"
 								aria-label="menu"
 								onClick={() => openSidebar(true)}>
-								<FiMenu />
+								<Burguer />
 							</IconButton>
-						</Hidden>
-					) : (
-						<IconButton
-							edge="start"
-							className={classes.menuButton}
-							color="inherit"
-							aria-label="menu"
-							onClick={() => openSidebar(true)}>
-							<FiMenu />
-						</IconButton>
-					)}
-					<li>
-						<Link className={classes.link} underline="none" href="#">
-							Women <span>- SWIMWEAR</span>
-						</Link>
-					</li>
-					<li>
-						<Link className={classes.link} underline="none" href="#">
-							Men
-						</Link>
-					</li>
-					{/* <li>
-						<Link className={classes.link} underline="none" href="#">
-							Explore
-						</Link>
-					</li> */}
-					<NavLink to="/" className={classes.logoLink}>
-						<LogoText className={classes.logo} />
-					</NavLink>
-					<li>
-						<Link className={classes.link} underline="none" href="#">
-							Campaign 21
-						</Link>
-					</li>
-					<li>
-						<Link className={classes.link} underline="none" href="#">
-							Español
-						</Link>
-					</li>
-					<li>
-						<Button
-							className={`${classes.link} ${classes.buttonLink}`}
-							variant="text"
-							disableRipple={true}
-							// underline="none"
-							// href="#"
-							onClick={() => setCartOpen(true)}>
-							Cart
-						</Button>
-					</li>
-					<Hidden mdUp>
-						<IconButton
-							edge="start"
-							className={classes.menuButton}
-							color="inherit"
-							aria-label="menu"
-							onClick={() => openSidebar(true)}>
-							<FiMenu />
-						</IconButton>
-					</Hidden>
-				</Toolbar>
-			</Container>
-		</AppBar>
+						)}
+						<Grid container spacing={0}>
+							<Grid item container xs>
+								<ul
+									className={`${classes.linklist} ${classes.linklistLeft}`}>
+									<li>
+										<Link
+											className={classes.link}
+											underline="none"
+											href="#">
+											Women
+										</Link>
+									</li>
+									<li>
+										<Link
+											className={classes.link}
+											underline="none"
+											href="#">
+											Men
+										</Link>
+									</li>
+									<li>
+										<Link
+											className={classes.link}
+											underline="none"
+											href="#">
+											Our World
+										</Link>
+									</li>
+								</ul>
+							</Grid>
+							<Grid item container xs justify="flex-end">
+								<ul className={classes.linklist}>
+									<li>
+										<Link
+											className={classes.link}
+											underline="none"
+											href="#">
+											Español
+										</Link>
+									</li>
+									<li>
+										<Button
+											className={`${classes.link} ${classes.buttonLink}`}
+											variant="text"
+											disableRipple={true}
+											// underline="none"
+											// href="#"
+											onClick={() => setCartOpen(true)}>
+											Cart
+										</Button>
+									</li>
+								</ul>
+							</Grid>
+						</Grid>
+					</Toolbar>
+				</Container>
+			</AppBar>
+		</div>
 	)
 }
 
 const useStyles = makeStyles(theme => ({
 	// AppBar
+	appBarWrapper: {},
 	appBar: {
-		fontFamily: theme.typography.h6.fontFamily,
+		// fontFamily: theme.typography.h6.fontFamily,
 		textTransform: 'uppercase',
 		boxShadow: 'none',
 	},
@@ -122,7 +136,7 @@ const useStyles = makeStyles(theme => ({
 		[theme.breakpoints.down('sm')]: {
 			justifyContent: 'center',
 		},
-		'& > li': {
+		'& li': {
 			// marginBottom: '35px',
 			[theme.breakpoints.down('sm')]: {
 				display: 'none',
@@ -130,9 +144,26 @@ const useStyles = makeStyles(theme => ({
 		},
 	},
 	// Links
+	linklist: {
+		display: 'flex',
+		alignItems: 'center',
+		margin: 0,
+		padding: 0,
+		listStyle: 'none',
+		'& > li': {
+			margin: `0 ${theme.spacing(2)}px`,
+		},
+	},
+	linklistLeft: {
+		flexGrow: 0.6,
+		justifyContent: 'space-evenly',
+	},
+	linklistRight: {
+		justifyContent: 'flex-end',
+	},
 	link: {
-		fontFamily: theme.typography.h6.fontFamily,
-		fontWeight: 700,
+		// fontFamily: theme.typography.h6.fontFamily,
+		fontWeight: 200,
 		fontSize: theme.typography.subtitle1.fontSize,
 		color: theme.palette.primary.main,
 		padding: '5px 8px',
@@ -161,9 +192,24 @@ const useStyles = makeStyles(theme => ({
 	},
 	// menuButton
 	menuButton: {
+		color: theme.palette.neutral.main,
 		[theme.breakpoints.down('sm')]: {
 			position: 'absolute',
 			left: theme.spacing(1),
+		},
+		'& svg': {
+			width: '28px',
+			height: 'auto',
+			'& path': {
+				stroke: theme.palette.neutral.main,
+			},
+		},
+		'&:hover': {
+			'& svg': {
+				'& path': {
+					stroke: theme.palette.primary.main,
+				},
+			},
 		},
 	},
 }))
