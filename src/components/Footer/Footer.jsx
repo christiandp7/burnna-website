@@ -19,133 +19,134 @@ const Footer = () => {
 	const classes = useStyles()
 	return (
 		<footer className={classes.footer}>
-			<Container>
-				<div className={classes.logoFooterContainer}>
-					<LogoComplete className={classes.logoFooter} />
-				</div>
-
-				<Box display="Flex" justifyContent="space-between">
-					<Grid className={classes.colContainer} container>
-						<Grid item xs="12" md="6">
-							<List component="ul">
-								<ListItem component="li">
-									<Typography
-										className={`${classes.subtitle} ${classes.link}`}>
-										Support
-									</Typography>
-								</ListItem>
-								<ListItem>
-									<Link className={classes.link} href="#">
-										Contact
-									</Link>
-								</ListItem>
-								<ListItem>
-									<Link className={classes.link} href="#">
-										Returns
-									</Link>
-								</ListItem>
-							</List>
+			<div className={classes.logoFooterContainer}>
+				<LogoComplete className={classes.logoFooter} />
+			</div>
+			<div className={classes.footerContent}>
+				<Container>
+					<Box display="Flex" justifyContent="space-between">
+						<Grid className={classes.colContainer} container>
+							<Grid item xs="12" md="6">
+								<List component="ul">
+									<ListItem component="li">
+										<Typography
+											className={`${classes.subtitle} ${classes.link}`}>
+											Support
+										</Typography>
+									</ListItem>
+									<ListItem>
+										<Link className={classes.link} href="#">
+											Contact
+										</Link>
+									</ListItem>
+									<ListItem>
+										<Link className={classes.link} href="#">
+											Returns
+										</Link>
+									</ListItem>
+								</List>
+							</Grid>
+							<Grid item xs="12" md="6">
+								<List component="ul">
+									<ListItem component="li">
+										<Typography
+											className={`${classes.subtitle} ${classes.link}`}>
+											Information
+										</Typography>
+									</ListItem>
+									<ListItem>
+										<Link className={classes.link} href="#">
+											Faq
+										</Link>
+									</ListItem>
+									<ListItem>
+										<Link className={classes.link} href="#">
+											Size Guide
+										</Link>
+									</ListItem>
+									<ListItem>
+										<Link className={classes.link} href="#">
+											Payment Methods
+										</Link>
+									</ListItem>
+									<ListItem>
+										<Link className={classes.link} href="#">
+											Shipping
+										</Link>
+									</ListItem>
+								</List>
+							</Grid>
 						</Grid>
-						<Grid item xs="12" md="6">
-							<List component="ul">
-								<ListItem component="li">
-									<Typography
-										className={`${classes.subtitle} ${classes.link}`}>
-										Information
-									</Typography>
-								</ListItem>
-								<ListItem>
-									<Link className={classes.link} href="#">
-										Faq
-									</Link>
-								</ListItem>
-								<ListItem>
-									<Link className={classes.link} href="#">
-										Size Guide
-									</Link>
-								</ListItem>
-								<ListItem>
-									<Link className={classes.link} href="#">
-										Payment Methods
-									</Link>
-								</ListItem>
-								<ListItem>
-									<Link className={classes.link} href="#">
-										Shipping
-									</Link>
-								</ListItem>
-							</List>
+						<Grid className={classes.colContainer} container>
+							<Grid item xs="12" md="6">
+								<List component="ul">
+									<ListItem component="li">
+										<Typography
+											className={`${classes.subtitle} ${classes.link}`}>
+											Social
+										</Typography>
+									</ListItem>
+									<ListItem>
+										<Link className={classes.link} href="#">
+											<IconButton
+												className={classes.socialIcon}
+												size="small"
+												color="inherit">
+												<FaFacebookF />
+											</IconButton>
+										</Link>
+									</ListItem>
+									<ListItem>
+										<Link className={classes.link} href="#">
+											<IconButton
+												className={classes.socialIcon}
+												size="small"
+												color="inherit">
+												<GrSpotify />
+											</IconButton>
+										</Link>
+									</ListItem>
+									<ListItem>
+										<Link className={classes.link} href="#">
+											<IconButton
+												className={classes.socialIcon}
+												size="small"
+												color="inherit">
+												<GrInstagram />
+											</IconButton>
+										</Link>
+									</ListItem>
+								</List>
+							</Grid>
+							<Grid item xs="12" md="6">
+								<List component="ul">
+									<ListItem component="li">
+										<Typography
+											className={`${classes.subtitle} ${classes.link}`}>
+											Company
+										</Typography>
+									</ListItem>
+									<ListItem>
+										<Link className={classes.link} href="#">
+											About
+										</Link>
+									</ListItem>
+									<ListItem>
+										<Link className={classes.link} href="#">
+											Campaigns
+										</Link>
+									</ListItem>
+									<ListItem>
+										<Link className={classes.link} href="#">
+											Collabs
+										</Link>
+									</ListItem>
+								</List>
+							</Grid>
 						</Grid>
-					</Grid>
-					<Grid className={classes.colContainer} container>
-						<Grid item xs="12" md="6">
-							<List component="ul">
-								<ListItem component="li">
-									<Typography
-										className={`${classes.subtitle} ${classes.link}`}>
-										Social
-									</Typography>
-								</ListItem>
-								<ListItem>
-									<Link className={classes.link} href="#">
-										<IconButton
-											className={classes.socialIcon}
-											size="small"
-											color="inherit">
-											<FaFacebookF />
-										</IconButton>
-									</Link>
-								</ListItem>
-								<ListItem>
-									<Link className={classes.link} href="#">
-										<IconButton
-											className={classes.socialIcon}
-											size="small"
-											color="inherit">
-											<GrSpotify />
-										</IconButton>
-									</Link>
-								</ListItem>
-								<ListItem>
-									<Link className={classes.link} href="#">
-										<IconButton
-											className={classes.socialIcon}
-											size="small"
-											color="inherit">
-											<GrInstagram />
-										</IconButton>
-									</Link>
-								</ListItem>
-							</List>
-						</Grid>
-						<Grid item xs="12" md="6">
-							<List component="ul">
-								<ListItem component="li">
-									<Typography
-										className={`${classes.subtitle} ${classes.link}`}>
-										Company
-									</Typography>
-								</ListItem>
-								<ListItem>
-									<Link className={classes.link} href="#">
-										About
-									</Link>
-								</ListItem>
-								<ListItem>
-									<Link className={classes.link} href="#">
-										Campaigns
-									</Link>
-								</ListItem>
-								<ListItem>
-									<Link className={classes.link} href="#">
-										Collabs
-									</Link>
-								</ListItem>
-							</List>
-						</Grid>
-					</Grid>
-				</Box>
-			</Container>
+					</Box>
+				</Container>
+			</div>
 		</footer>
 	)
 }
@@ -153,19 +154,12 @@ const Footer = () => {
 const useStyles = makeStyles(theme => ({
 	footer: {
 		textTransform: 'uppercase',
-		color: theme.palette.primary.main,
-		paddingTop: '85px',
-		paddingBottom: '70px',
-		[theme.breakpoints.down('xs')]: {
-			paddingTop: '55px',
-			paddingBottom: '60px',
-		},
 	},
 	logoFooterContainer: {
 		textAlign: 'center',
-		marginBottom: '50px',
+		margin: '50px 0',
 		[theme.breakpoints.down('xs')]: {
-			marginBottom: '35px',
+			margin: '35px 0',
 		},
 	},
 	logoFooter: {
@@ -175,6 +169,16 @@ const useStyles = makeStyles(theme => ({
 		},
 		[theme.breakpoints.down('xs')]: {
 			maxWidth: '70%',
+		},
+	},
+	footerContent: {
+		color: theme.palette.primary.contrastText,
+		backgroundColor: theme.palette.primary.main,
+		paddingTop: '85px',
+		paddingBottom: '70px',
+		[theme.breakpoints.down('xs')]: {
+			paddingTop: '55px',
+			paddingBottom: '60px',
 		},
 	},
 	colContainer: {
@@ -189,15 +193,15 @@ const useStyles = makeStyles(theme => ({
 	},
 	link: {
 		fontSize: theme.typography.subtitle1.fontSize,
-		color: theme.palette.primary.main,
+		color: theme.palette.primary.contrastText,
 		letterSpacing: '0.5px',
 	},
 	socialIcon: {
-		color: 'white',
+		color: theme.palette.primary.main,
 		padding: '8px',
-		backgroundColor: theme.palette.primary.main,
+		backgroundColor: theme.palette.primary.contrastText,
 		'&:hover': {
-			backgroundColor: grey[800],
+			backgroundColor: grey[400],
 		},
 	},
 }))
