@@ -4,7 +4,7 @@ import Sidebar from '../components/Sidebar/Sidebar'
 import Header from '../components/Header/Header'
 import Footer from '../components/Footer/Footer'
 import Cart from '../components/Cart/Cart'
-import { Scrollbars } from 'react-custom-scrollbars-2'
+// import { Scrollbars } from 'react-custom-scrollbars-2'
 
 const MainLayout = ({ children, ...props }) => {
 	const [sidebar, setSidebar] = useState(false)
@@ -16,15 +16,15 @@ const MainLayout = ({ children, ...props }) => {
 		<>
 			<Sidebar open={sidebar} setOpen={setSidebar} />
 			<Cart open={cart} setOpen={setCart} />
-			<Scrollbars
+			{/* <Scrollbars
 				style={{ height: '100vh' }}
 				autoHide
 				autoHideTimeout={2000}
-				autoHideDuration={300}>
+				autoHideDuration={300}> */}
 				<Header openSidebar={setSidebar} openCart={setCart} />
 				<main className={classes.main}>{children}</main>
 				<Footer />
-			</Scrollbars>
+			{/* </Scrollbars> */}
 		</>
 	)
 }
