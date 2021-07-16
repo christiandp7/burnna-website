@@ -7,7 +7,7 @@ import Typography from '@material-ui/core/Typography'
 
 const Accordion = withStyles(theme => ({
 	root: {
-		// border: '1px solid rgba(0, 0, 0, .125)',
+		background: 'transparent',
 		border: 0,
 		borderBottom: `solid 1px ${theme.palette.neutral.main}`,
 		boxShadow: 'none',
@@ -24,7 +24,6 @@ const Accordion = withStyles(theme => ({
 const AccordionSummary = withStyles({
 	root: {
 		backgroundColor: 'transparent',
-		// borderBottom: '1px solid rgba(0, 0, 0, .125)',
 		padding: 0,
 		marginBottom: -1,
 		minHeight: 50,
