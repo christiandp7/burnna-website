@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import Drawer from '@material-ui/core/Drawer'
 // components
@@ -21,8 +21,7 @@ const Sidebar = ({ open, setOpen }) => {
 
 const useStyles = makeStyles(theme => ({
 	drawerPaper: {
-		// width: '100%',
-		// backgroundColor:
+		backgroundColor: theme.palette.primary.main,
 	},
 }))
 

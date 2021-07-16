@@ -6,6 +6,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component'
 import Grid from '@material-ui/core/Grid'
 // components
 import CollectionGirdItem from '../CollectionGridItem/CollectionGirdItem'
+import { NavLink } from 'react-router-dom'
 
 const CollectionGrid = ({ products }) => {
 	return (

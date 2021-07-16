@@ -63,17 +63,20 @@ export default function CustomAccordion() {
 				square
 				expanded={expanded === 'panel1'}
 				onChange={handleChange('panel1')}>
-				<AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
+				<AccordionSummary
+					aria-controls="panel1d-content"
+					id="panel1d-header">
 					<Typography component="h5" variant="h5">
 						Details
 					</Typography>
 				</AccordionSummary>
 				<AccordionDetails>
 					<Typography>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-						malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum
-						dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
-						lacus ex, sit amet blandit leo lobortis eget.
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+						Suspendisse malesuada lacus ex, sit amet blandit leo
+						lobortis eget. Lorem ipsum dolor sit amet, consectetur
+						adipiscing elit. Suspendisse malesuada lacus ex, sit amet
+						blandit leo lobortis eget.
 					</Typography>
 				</AccordionDetails>
 			</Accordion>
@@ -81,17 +84,20 @@ export default function CustomAccordion() {
 				square
 				expanded={expanded === 'panel2'}
 				onChange={handleChange('panel2')}>
-				<AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
+				<AccordionSummary
+					aria-controls="panel2d-content"
+					id="panel2d-header">
 					<Typography component="h5" variant="h5">
 						Delivery & Returns
 					</Typography>
 				</AccordionSummary>
 				<AccordionDetails>
 					<Typography>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-						malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum
-						dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
-						lacus ex, sit amet blandit leo lobortis eget.
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+						Suspendisse malesuada lacus ex, sit amet blandit leo
+						lobortis eget. Lorem ipsum dolor sit amet, consectetur
+						adipiscing elit. Suspendisse malesuada lacus ex, sit amet
+						blandit leo lobortis eget.
 					</Typography>
 				</AccordionDetails>
 			</Accordion>

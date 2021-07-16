@@ -1,6 +1,6 @@
 
-[context.production]
-environment = {CI = false}
+# [context.production]
+# environment = {CI = false}
 
 [[redirects]]
 from = "/"
@@ -9,5 +9,10 @@ to = "/index.html"
 
 [[redirects]]
 from = "/collection"
+status = 200
+to = "/index.html"
+
+[[redirects]]
+from = "/product"
 status = 200
 to = "/index.html"

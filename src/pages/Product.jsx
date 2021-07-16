@@ -5,6 +5,7 @@ import useMediaQuery from '@material-ui/core/useMediaQuery'
 import ProductImageMobile from '../components/Product/ProductImageMobile'
 import ProductImageDesktop from '../components/Product/ProductImageDesktop'
 import ProductMeta from '../components/Product/ProductMeta'
+import SizeGuideSidebar from '../components/SizeGuideSidebar/SizeGuideSidebar'
 
 const Product = () => {
 	const theme = useTheme()

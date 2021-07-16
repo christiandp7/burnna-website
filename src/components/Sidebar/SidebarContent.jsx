@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import Box from '@material-ui/core/Box'
 import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
+import { NavLink } from 'react-router-dom'
 // assets
 import Isotype from '../../assets/svg/Isotype'
 // data
@@ -11,27 +12,18 @@ import sidebarNavigation from './SidebarNavigation'
 
 const Sidebar = () => {
 	const classes = useStyles()
-	const preventDefault = e => e.preventDefault()
 
 	return (
 		<aside className={classes.sidebar}>
-			{/* <img className={styles.logo} src={logo} alt="logo"/> */}
-			<Button
-				className={classes.logoLink}
-				underline="none"
-				onClick={preventDefault}>
+			<NavLink to="/" className={classes.logoLink}>
 				<Isotype className={classes.logo} />
-			</Button>
+			</NavLink>
 			<div className={classes.sidebarNav}>
 				{sidebarNavigation.map(navItem => (
 					<Typography variant="h6">
-						<Link
-							className={classes.sidebarLink}
-							underline="none"
-							href={navItem.link}
-							onClick={preventDefault}>
+						<NavLink to={navItem.href} className={classes.sidebarLink}>
 							{navItem.label}
-						</Link>
+						</NavLink>
 					</Typography>
 				))}
 			</div>
@@ -41,7 +33,6 @@ const Sidebar = () => {
 
 const useStyles = makeStyles(theme => ({
 	sidebar: {
-		// position: 'fixed',
 		top: 0,
 		left: 0,
 		height: '100vh',
@@ -72,14 +63,22 @@ const useStyles = makeStyles(theme => ({
 		alignItems: 'center',
 		margin: 0,
 		padding: 0,
-		fontFamily: 'Jules Text',
+		fontFamily: theme.typography.h6.fontFamily,
+		fontWeight: 700,
 	},
 	// Sidebar Links
 	sidebarLink: {
 		padding: '5px 8px',
-		fontSize: '1.1rem',
+		// fontSize: '1.1rem',
+		fontSize: theme.typography.subtitle1.fontSize,
 		letterSpacing: '1px',
 		color: theme.palette.primary.contrastText,
+		textDecoration: 'none',
+		'&:hover': {
+			textDecoration: 'underline',
+			textDecorationThickness: '1px',
+			textUnderlineOffset: '3px',
+		},
 	},
 }))
 
