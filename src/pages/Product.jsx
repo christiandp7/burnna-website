@@ -1,23 +1,24 @@
 import React from 'react'
-import { makeStyles } from '@material-ui/styles'
-import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
-import ProductImage from '../components/Product/ProductImage'
+import useTheme from '@material-ui/core/styles/useTheme'
+import useMediaQuery from '@material-ui/core/useMediaQuery'
+import ProductImageMobile from '../components/Product/ProductImageMobile'
+import ProductImageDesktop from '../components/Product/ProductImageDesktop'
 import ProductMeta from '../components/Product/ProductMeta'
 
 const Product = () => {
+	const theme = useTheme()
+	const isDesktop = useMediaQuery(theme.breakpoints.up('md'))
+
 	return (
-		<Container>
-			<Grid container>
-				<Grid item xs={0} md={2}></Grid>
-				<Grid item xs={12} md={5}>
-					<ProductImage />
-				</Grid>
-				<Grid item xs={12} md={5}>
-					<ProductMeta />
-				</Grid>
+		<Grid container>
+			<Grid item xs={12} md={6}>
+				{isDesktop ? <ProductImageDesktop /> : <ProductImageMobile />}
 			</Grid>
-		</Container>
+			<Grid item xs={12} md={6}>
+				<ProductMeta />
+			</Grid>
+		</Grid>
 	)
 }
 
