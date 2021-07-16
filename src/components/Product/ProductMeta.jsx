@@ -84,12 +84,22 @@ const ProductMeta = () => {
 
 const useStyles = makeStyles(theme => ({
 	root: {
-		padding: '30px 18px',
+		padding: `${theme.spacing(4)}px ${theme.spacing(2)}px`,
 		textTransform: 'uppercase',
+		margin: '0 auto',
+		[theme.breakpoints.up('sm')]: {
+			padding: `${theme.spacing(4)}px ${theme.spacing(3)}px`,
+		},
+		[theme.breakpoints.up('md')]: {
+			maxWidth: '500px',
+		},
+		[theme.breakpoints.up('2lg')]: {
+			maxWidth: '600px',
+		},
 	},
 	wrapper: {
 		[theme.breakpoints.up('md')]: {
-			maxWidth: '85%',
+			// maxWidth: '85%',
 		},
 	},
 	productHeading: {
