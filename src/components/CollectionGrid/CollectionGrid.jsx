@@ -13,9 +13,7 @@ const CollectionGrid = ({ products }) => {
 		<Grid container>
 			{products.map(product => (
 				<Grid item xs={6} sm={4}>
-					<NavLink to="/product">
-						<CollectionGirdItem product={product} />
-					</NavLink>
+					<CollectionGirdItem product={product} />
 				</Grid>
 			))}
 		</Grid>
