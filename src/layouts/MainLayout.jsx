@@ -21,9 +21,9 @@ const MainLayout = ({ children, ...props }) => {
 				autoHide
 				autoHideTimeout={2000}
 				autoHideDuration={300}> */}
-				<Header openSidebar={setSidebar} openCart={setCart} />
-				<main className={classes.main}>{children}</main>
-				<Footer />
+			<Header openSidebar={setSidebar} openCart={setCart} />
+			<main className={classes.main}>{children}</main>
+			<Footer />
 			{/* </Scrollbars> */}
 		</>
 	)
