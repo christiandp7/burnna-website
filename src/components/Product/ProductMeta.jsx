@@ -1,6 +1,8 @@
 import React, { useContext } from 'react'
 import { makeStyles } from '@material-ui/styles'
 import Typography from '@material-ui/core/Typography'
+import useTheme from '@material-ui/core/styles/useTheme'
+import useMediaQuery from '@material-ui/core/useMediaQuery'
 // import Button from '@material-ui/core/Button'
 // components
 import AddToCartButton from '../Button/AddToCartButton'
@@ -17,12 +19,14 @@ import Sticky from 'react-sticky-el'
 
 const ProductMeta = () => {
 	const classes = useStyles()
+	const theme = useTheme()
+	const isDesktop = useMediaQuery(theme.breakpoints.up('md'))
 
 	const { setCartOpen, setSizeGuideOpen } = useContext(DrawerContext)
 
 	return (
 		<div className={`${classes.slugContainer} slugContainer`}>
-			<Sticky boundaryElement=".slugContainer">
+			<Sticky disabled={!isDesktop} boundaryElement=".slugContainer">
 				<div className={classes.rootWrapper}>
 					<div className={classes.root}>
 						<div className={classes.wrapper}>
@@ -94,13 +98,17 @@ const ProductMeta = () => {
 
 const useStyles = makeStyles(theme => ({
 	slugContainer: {
-		height: '100%',
+		[theme.breakpoints.up('md')]: {
+			height: '100%',
+		},
 	},
 	rootWrapper: {
-		minHeight: '100vh',
-		display: 'flex',
-		jusifyContent: 'center',
-		alignItems: 'center',
+		[theme.breakpoints.up('md')]: {
+			minHeight: '100vh',
+			display: 'flex',
+			justifyContent: 'center',
+			alignItems: 'center',
+		},
 	},
 	root: {
 		padding: `${theme.spacing(4)}px ${theme.spacing(2)}px`,
