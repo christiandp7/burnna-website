@@ -10,7 +10,7 @@ const SelectorButton = styled(({ bgColor, ...other }) => (
 		width: props.size,
 		height: props.size,
 		backgroundColor: props.bgColor,
-		// borderRadius: '50%',
+		borderRadius: '50%',
 		border: 'solid 1px',
 		borderColor: props.theme.palette.neutral.main,
 		padding: '0',
@@ -31,17 +31,12 @@ const ColorSelectorButtonGroup = () => {
 			<SelectorButton
 				disableRipple={true}
 				bgColor="#340404"
-				size="32px"
+				size="22px"
 			/>
 			<SelectorButton
 				disableRipple={true}
 				bgColor="#A58F8F"
-				size="32px"
-			/>
-			<SelectorButton
-				disableRipple={true}
-				bgColor="#3a3a3a"
-				size="32px"
+				size="22px"
 			/>
 		</div>
 	)
@@ -49,11 +44,10 @@ const ColorSelectorButtonGroup = () => {
 
 const useStyles = makeStyles(theme => ({
 	root: {
-		display: 'flex',
-		margin: `${theme.spacing(2)}px 0`,
-		'& button': {
-			margin: '0 10px',
-			// marginRight: theme.spacing(2),
+		display: 'inline-flex',
+		margin: '15px 0',
+		'& button:not(:last-child)': {
+			marginRight: '12px',
 		},
 	},
 }))

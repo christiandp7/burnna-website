@@ -22,6 +22,7 @@ const Product = () => {
 					<ProductMeta />
 				</Grid>
 			</Grid>
+			<SizeGuideSidebar />
 		</MainLayout>
 	)
 }

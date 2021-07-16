@@ -9,6 +9,7 @@ import CustomAccordion from '../Accordion/CustomAccordion'
 import SizeSelectorButtonGroup from '../Button/SizeSelectorButtonGroup'
 import Grid from '@material-ui/core/Grid'
 import Button from '@material-ui/core/Button'
+import Box from '@material-ui/core/Box'
 import LinkButton from '../Button/LinkButton'
 import DrawerContext from '../../context/DrawerContext'
 
@@ -27,39 +28,40 @@ const ProductMeta = () => {
 						className={classes.productTitle}>
 						One Piece Laura
 					</Typography>
-					<Typography
+					{/* <Typography
 						component="h3"
 						variant="h4"
 						className={classes.productSubtitle}>
 						One Piece
-					</Typography>
+					</Typography> */}
 				</div>
 				<div className={classes.variantsContainer}>
 					<div className={classes.variant}>
 						<Typography component="h5" variant="h5">
 							Color
 						</Typography>
-						<ColorSelectorButtonGroup />
+						<div
+							className={`${classes.selectorWrapper} selectorColorWrapper`}>
+							<ColorSelectorButtonGroup />
+						</div>
 					</div>
 					<div className={classes.variant}>
-						<Typography component="h5" variant="h5">
-							Size
-						</Typography>
-						<Grid container justify="space-between">
-							<Grid item>
-								<SizeSelectorButtonGroup />
-							</Grid>
-							<Grid
-								item
-								style={{ display: 'flex' }}
-								alignItems="center">
-								<LinkButton
-									className={classes.sizeGuideButton}
-									onClick={() => setSizeGuideOpen(true)}>
-									Size guide
-								</LinkButton>
-							</Grid>
-						</Grid>
+						<Box
+							display="flex"
+							justifyContent="space-between"
+							alignItems="center">
+							<Typography component="h5" variant="h5">
+								Size
+							</Typography>
+							<LinkButton
+								className={classes.sizeGuideButton}
+								onClick={() => setSizeGuideOpen(true)}>
+								Size guide
+							</LinkButton>
+						</Box>
+						<div className={classes.selectorWrapper}>
+							<SizeSelectorButtonGroup />
+						</div>
 					</div>
 				</div>
 				<div className={classes.addToCartContainer}>
@@ -103,12 +105,11 @@ const useStyles = makeStyles(theme => ({
 		},
 	},
 	productHeading: {
-		paddingBottom: '30px',
+		// paddingBottom: '30px',
+		paddingBottom: theme.spacing(3),
 		cursor: 'default',
 	},
-	productTitle: {
-		marginBottom: '12px',
-	},
+	productTitle: {},
 	productSubtitle: {},
 	variantsContainer: {
 		'& h5': {
@@ -116,10 +117,19 @@ const useStyles = makeStyles(theme => ({
 		},
 	},
 	variant: {
-		padding: '15px 0',
+		// padding: '15px 0',
+		paddingBottom: theme.spacing(1),
 	},
 	sizeGuideButton: {
 		fontSize: theme.typography.h5.fontSize,
+		paddingTop: 0,
+		paddingBottom: 0,
+		'& span': {
+			lineHeight: theme.typography.h5.lineHeight,
+		},
+	},
+	selectorWrapper: {
+		paddingLeft: theme.spacing(3),
 	},
 	addToCartContainer: {
 		padding: '15px 0',
