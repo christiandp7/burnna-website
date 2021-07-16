@@ -7,7 +7,7 @@ import Typography from '@material-ui/core/Typography'
 
 const Accordion = withStyles(theme => ({
 	root: {
-		// border: '1px solid rgba(0, 0, 0, .125)',
+		background: 'transparent',
 		border: 0,
 		borderBottom: `solid 1px ${theme.palette.neutral.main}`,
 		boxShadow: 'none',
@@ -24,7 +24,6 @@ const Accordion = withStyles(theme => ({
 const AccordionSummary = withStyles({
 	root: {
 		backgroundColor: 'transparent',
-		// borderBottom: '1px solid rgba(0, 0, 0, .125)',
 		padding: 0,
 		marginBottom: -1,
 		minHeight: 50,
@@ -67,7 +66,7 @@ export default function CustomAccordion() {
 					aria-controls="panel1d-content"
 					id="panel1d-header">
 					<Typography component="h5" variant="h5">
-						Details
+						Care & Composition
 					</Typography>
 				</AccordionSummary>
 				<AccordionDetails>
@@ -89,6 +88,27 @@ export default function CustomAccordion() {
 					id="panel2d-header">
 					<Typography component="h5" variant="h5">
 						Delivery & Returns
+					</Typography>
+				</AccordionSummary>
+				<AccordionDetails>
+					<Typography>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+						Suspendisse malesuada lacus ex, sit amet blandit leo
+						lobortis eget. Lorem ipsum dolor sit amet, consectetur
+						adipiscing elit. Suspendisse malesuada lacus ex, sit amet
+						blandit leo lobortis eget.
+					</Typography>
+				</AccordionDetails>
+			</Accordion>
+			<Accordion
+				square
+				expanded={expanded === 'panel3'}
+				onChange={handleChange('panel3')}>
+				<AccordionSummary
+					aria-controls="panel2d-content"
+					id="panel2d-header">
+					<Typography component="h5" variant="h5">
+						Description
 					</Typography>
 				</AccordionSummary>
 				<AccordionDetails>

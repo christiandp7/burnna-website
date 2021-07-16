@@ -18,21 +18,21 @@ const InfoLayout = ({ children, ...props }) => {
 		<div className={classes.root}>
 			<FAQSidebar open={sidebar} setOpen={setSidebar} />
 			<Cart open={cart} setOpen={setCart} />
-			<Scrollbars
+			{/* <Scrollbars
 				style={{ height: '100vh' }}
 				className={classes.scrollbars}
 				autoHide
 				autoHideTimeout={2000}
-				autoHideDuration={300}>
-				<Header
-					openSidebar={setSidebar}
-					openCart={setCart}
-					// menu={false}
-					infoLayout
-				/>
-				<main className={classes.main}>{children}</main>
-				<Footer />
-			</Scrollbars>
+				autoHideDuration={300}> */}
+			<Header
+				openSidebar={setSidebar}
+				openCart={setCart}
+				// menu={false}
+				infoLayout
+			/>
+			<main className={classes.main}>{children}</main>
+			<Footer />
+			{/* </Scrollbars> */}
 		</div>
 	)
 }
