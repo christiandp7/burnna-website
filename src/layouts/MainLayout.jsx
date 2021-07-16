@@ -31,7 +31,7 @@ const MainLayout = ({ children, ...props }) => {
 
 const useStyles = makeStyles(theme => ({
 	main: props => ({
-		paddingTop: props.top || '35px',
+		// paddingTop: props.top || '35px',
 		paddingBottom: props.Bottom || '30px',
 		minHeight: '70vh',
 		[theme.breakpoints.down('md')]: {
