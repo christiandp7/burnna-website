@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import Grid from '@material-ui/core/Grid'
 import Box from '@material-ui/core/Box'
 import Typography from '@material-ui/core/Typography'
+import Link from '@material-ui/core/Link'
 import { makeStyles } from '@material-ui/core/styles'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
-import HomeLayout from '../layouts/HomeLayout'
+import Fade from 'react-reveal/Fade'
 // assets
 import menImg from '../assets/images/home/men.jpg'
 import womenImg from '../assets/images/home/women.jpg'
-import LogoText from '../assets/svg/LogoText'
+import logo from '../assets/images/isotype_white.png'
 
 const HeroCard = ({ image, links }) => {
 	const classes = useStyles()
@@ -19,11 +20,11 @@ const HeroCard = ({ image, links }) => {
 			<LazyLoadImage src={image} className={classes.heroImg} />
 			<Box className={classes.heroLinkContainer}>
 				{links.map(linkItem => (
-					<Link className={classes.heroLink} to={linkItem.link}>
-						<Typography component="h2" variant="h6">
+					<NavLink className={classes.heroLink} to={linkItem.link}>
+						<Typography component="h2" variant="h3">
 							{linkItem.title}
 						</Typography>
-					</Link>
+					</NavLink>
 				))}
 			</Box>
 		</Box>
@@ -33,35 +34,33 @@ const HeroCard = ({ image, links }) => {
 const Home = () => {
 	const classes = useStyles()
 
-	const womenLinks = [{ title: 'shop women', link: '/collection' }]
-	const menLinks = [{ title: 'shop men', link: '/collection' }]
+	const womenLinks = [{ title: 'women', link: '/collection' }]
+	const menLinks = [{ title: 'men', link: '/collection' }]
 
 	return (
-		<HomeLayout>
-			<Box className={classes.heroContainer}>
-				<Grid container className={classes.container} spacing={0}>
-					<Grid className={classes.column} item xs={12} md={6}>
-						<HeroCard image={menImg} links={menLinks} />
-					</Grid>
-					<Grid className={classes.column} item xs={12} md={6}>
-						<HeroCard image={womenImg} links={womenLinks} />
-					</Grid>
+		<Box className={classes.root}>
+			<Grid container className={classes.container} spacing={0}>
+				<Grid className={classes.column} item xs={12} md={6}>
+					<HeroCard image={menImg} links={menLinks} />
 				</Grid>
-				<Box className={classes.logoContainer}>
-					<LogoText className={classes.logoImg} />
-				</Box>
+				<Grid className={classes.column} item xs={12} md={6}>
+					<HeroCard image={womenImg} links={womenLinks} />
+				</Grid>
+			</Grid>
+			<Box className={classes.logoContainer}>
+				<img src={logo} className={classes.logoImg} alt="logotype" />
 			</Box>
-		</HomeLayout>
+		</Box>
 	)
 }
 
 const useStyles = makeStyles(theme => ({
-	// Hero
-	heroContainer: {
+	// Home
+	root: {
 		position: 'relative',
 	},
 	container: {
-		height: 'calc(100vh - 55px)',
+		height: '100vh',
 	},
 	column: {
 		height: '100%',
@@ -76,21 +75,37 @@ const useStyles = makeStyles(theme => ({
 		left: '50%',
 		transform: 'translateX(-50%) translateY(-50%)',
 		zIndex: 2,
-		width: '40%',
 	},
 	logoImg: {
+		maxWidth: '300px',
 		userSelect: 'none',
 		userDrag: 'none',
-		'& path': {
-			fill: theme.palette.primary.contrastText,
-		},
 	},
 	// CardMenu
 	hero: {
 		position: 'relative',
 		height: '100%',
+		overflow: 'hidden',
 		userSelect: 'none',
-		userDrag: 'none',
+		'&:before': {
+			content: "''",
+			width: '100%',
+			height: '100%',
+			position: 'absolute',
+			top: '0',
+			left: '0',
+			backgroundColor: '#000',
+			opacity: 0,
+			transition: 'all ease 0.8s',
+			zIndex: 1,
+		},
+		'&:hover': {
+			'& img': { transform: 'scale(1.08)' },
+			'&:before': { opacity: 0.5 },
+			'& $heroLinkContainer': {
+				opacity: 1,
+			},
+		},
 	},
 	heroImg: {
 		position: 'absolute',
@@ -99,20 +114,31 @@ const useStyles = makeStyles(theme => ({
 		width: '100%',
 		height: '100%',
 		objectFit: 'cover',
+		transition: 'all ease 1.2s',
 	},
 	heroLinkContainer: {
 		position: 'absolute',
-		padding: `${theme.spacing(3)}px ${theme.spacing(4)}px`,
+		display: 'flex',
+		flexDirection: 'column',
+		alignItems: 'center',
+		justifyContent: 'space-around',
+		width: '100%',
+		height: '100%',
+		zIndex: 2,
+		opacity: 0,
+		transition: 'all ease 0.38s',
 	},
 	heroLink: {
-		color: theme.palette.primary.main,
+		color: 'white',
 		textDecoration: 'none',
 		'&:hover': {
 			textDecoration: 'underline',
-			textUnderlineOffset: '1px',
+			textUnderlineOffset: '3px',
 			textDecorationThickness: 'from-font',
 		},
 		'& h2': {
+			fontFamily: theme.typography.h6.fontFamily,
+			fontSize: theme.typography.h3.fontSize,
 			fontWeight: 700,
 			textTransform: 'uppercase',
 		},
