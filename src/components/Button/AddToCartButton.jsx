@@ -15,7 +15,7 @@ const AddToCartButton = styled(Button)(({ theme }) => ({
 	color: 'white',
 	// height: '60px',
 	width: '100%',
-	padding: '25px 30px',
+	padding: `${theme.spacing(2)}px ${theme.spacing(4)}px`,
 	'&:hover': {
 		background: theme.palette.primary.main,
 		boxShadow: '0 2px 10px 1px rgba(10, 10, 10, .3)',
