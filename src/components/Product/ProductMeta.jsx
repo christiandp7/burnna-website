@@ -96,7 +96,12 @@ const useStyles = makeStyles(theme => ({
 	slugContainer: {
 		height: '100%',
 	},
-	rootWrapper: {},
+	rootWrapper: {
+		minHeight: '100vh',
+		display: 'flex',
+		jusifyContent: 'center',
+		alignItems: 'center',
+	},
 	root: {
 		padding: `${theme.spacing(4)}px ${theme.spacing(2)}px`,
 		textTransform: 'uppercase',
