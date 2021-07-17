@@ -168,7 +168,7 @@ const useStyles = makeStyles(theme => ({
 			maxWidth: '50%',
 		},
 		[theme.breakpoints.down('xs')]: {
-			maxWidth: '70%',
+			maxWidth: '60%',
 		},
 	},
 	footerContent: {
