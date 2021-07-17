@@ -155,6 +155,9 @@ const useStyles = makeStyles(theme => ({
 	},
 	selectorWrapper: {
 		paddingLeft: theme.spacing(3),
+		[theme.breakpoints.down('sm')]: {
+			paddingLeft: theme.spacing(1),
+		},
 	},
 	addToCartContainer: {
 		padding: '15px 0',
