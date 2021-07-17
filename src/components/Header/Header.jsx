@@ -9,6 +9,7 @@ import Typography from '@material-ui/core/Typography'
 import IconButton from '@material-ui/core/IconButton'
 import Hidden from '@material-ui/core/Hidden'
 import { FiMenu } from 'react-icons/fi'
+import { HiOutlineShoppingBag } from 'react-icons/hi'
 import Link from '@material-ui/core/Link'
 import { makeStyles } from '@material-ui/core/styles'
 // components
@@ -53,7 +54,12 @@ const Header = ({ openSidebar, infoLayout = false, ...props }) => {
 								<Burguer />
 							</IconButton>
 						)}
-						<Grid container spacing={0}>
+						<Hidden lgUp>
+							<Link to="/" className={classes.logoLink}>
+								<LogoText className={classes.logo} />
+							</Link>
+						</Hidden>
+						<Grid container spacing={0} className={classes.desktopNav}>
 							<Grid item container xs>
 								<ul
 									className={`${classes.linklist} ${classes.linklistLeft}`}>
@@ -107,6 +113,16 @@ const Header = ({ openSidebar, infoLayout = false, ...props }) => {
 								</ul>
 							</Grid>
 						</Grid>
+						<Hidden lgUp>
+							<IconButton
+								edge="end"
+								className={classes.cartButton}
+								color="inherit"
+								aria-label="menu"
+								onClick={() => openSidebar(true)}>
+								<HiOutlineShoppingBag size="28" />
+							</IconButton>
+						</Hidden>
 					</Toolbar>
 				</Container>
 			</AppBar>
@@ -130,7 +146,7 @@ const useStyles = makeStyles(theme => ({
 		justifyContent: 'space-between',
 		listStyle: 'none',
 		padding: 0,
-		[theme.breakpoints.down('sm')]: {
+		[theme.breakpoints.down('md')]: {
 			justifyContent: 'center',
 		},
 		'& li': {
@@ -178,25 +194,33 @@ const useStyles = makeStyles(theme => ({
 	},
 	// Logo
 	logoLink: {
-		lineHeight: 'initial',
+		lineHeight: 0,
 	},
 	logo: {
 		maxWidth: 180,
-		margin: '0 25px',
 		[theme.breakpoints.down('sm')]: {
-			maxWidth: 120,
+			maxWidth: 110,
+		},
+		[theme.breakpoints.down('xs')]: {
+			maxWidth: 95,
+		},
+	},
+	// desktop
+	desktopNav: {
+		[theme.breakpoints.down('md')]: {
+			display: 'none',
 		},
 	},
 	// menuButton
 	menuButton: {
 		color: theme.palette.neutral.main,
-		[theme.breakpoints.down('sm')]: {
+		[theme.breakpoints.down('md')]: {
 			position: 'absolute',
 			left: theme.spacing(1),
 		},
 		'& svg': {
 			width: '28px',
-			height: 'auto',
+			height: '28px',
 			'& path': {
 				stroke: theme.palette.neutral.main,
 			},
@@ -207,6 +231,17 @@ const useStyles = makeStyles(theme => ({
 					stroke: theme.palette.primary.main,
 				},
 			},
+		},
+	},
+	cartButton: {
+		position: 'absolute',
+		right: theme.spacing(1),
+		color: theme.palette.neutral.main,
+		'&:active': {
+			color: theme.palette.primary.main,
+		},
+		'& path': {
+			strokeWidth: '1.3px',
 		},
 	},
 }))
