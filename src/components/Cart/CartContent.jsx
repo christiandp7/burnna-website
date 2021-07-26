@@ -76,6 +76,9 @@ const useStyles = makeStyles(theme => ({
 		color: theme.palette.primary.contrastText,
 		textTransform: 'uppercase',
 		cursor: 'default',
+		[theme.breakpoints.down('md')]: {
+			padding: `${theme.spacing(2)}px ${theme.spacing(3)}px`,
+		},
 	},
 	header: {
 		// paddingBottom: theme.spacing(3),
