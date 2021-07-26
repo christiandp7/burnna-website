@@ -119,7 +119,7 @@ const Header = ({ openSidebar, infoLayout = false, ...props }) => {
 								className={classes.cartButton}
 								color="inherit"
 								aria-label="menu"
-								onClick={() => openSidebar(true)}>
+								onClick={() => setCartOpen(true)}>
 								<HiOutlineShoppingBag size="28" />
 							</IconButton>
 						</Hidden>
