@@ -45,7 +45,7 @@ const useStyles = makeStyles(theme => ({
 	// Logo
 	logo: {
 		maxWidth: '100%',
-		maxHeight: '120px',
+		maxHeight: '85px',
 		'& path': {
 			fill: theme.palette.primary.contrastText,
 		},
