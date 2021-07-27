@@ -26,42 +26,8 @@ const About = () => {
 							useIntersectionObserver={true}
 							effect="blur"
 						/>
-					</Grid>
-					<Grid item xs={12} md={6}>
 						<div className={classes.rte}>
-							<Typography
-								className={classes.pageTitle}
-								component="h1"
-								variant="h6">
-								About
-							</Typography>
-							<Typography
-								className={classes.title}
-								component="h2"
-								variant="h6">
-								Who are we?
-							</Typography>
-							<Typography component="p" variant="body1">
-								A brand propelled by the firm belief that great things
-								come from connection. Connection to one’s self and
-								between extraordinary individuals who have a life’s
-								vision and act upon it.
-							</Typography>
-							<Typography component="p" variant="body1">
-								BURNNA was created, not with the sole purpose of selling
-								beach and resort-wear, but rather more with the
-								intention of advocating for a lifestyle propelled by the
-								leisure and exoticism that fill our native lands through
-								digital narratives and actionable content.
-							</Typography>
-						</div>
-						<div className={classes.rte}>
-							<Typography
-								className={classes.title}
-								component="h2"
-								variant="h6">
-								How were we created?
-							</Typography>
+							<Heading>How were we created?</Heading>
 							<Typography component="p" variant="body1">
 								BURNNA was founded in 2021 by Antonella Camargo and
 								Laura Harada. Both stem their roots in different regions
@@ -91,6 +57,37 @@ const About = () => {
 							</Typography>
 						</div>
 					</Grid>
+					<Grid item xs={12} md={6}>
+						<div className={classes.rteWrapper}>
+							<div className={`${classes.rte} ${classes.rteAbout}`}>
+								<Heading>Who are we?</Heading>
+								<Typography component="p" variant="body1">
+									A brand propelled by the firm belief that great things
+									come from connection. Connection to one’s self and
+									between extraordinary individuals who have a life’s
+									vision and act upon it.
+								</Typography>
+								<Typography component="p" variant="body1">
+									BURNNA was created, not with the sole purpose of
+									selling beach and resort-wear, but rather more with
+									the intention of advocating for a lifestyle propelled
+									by the leisure and exoticism that fill our native
+									lands through digital narratives and actionable
+									content.
+								</Typography>
+								<HugeTitleAbout />
+							</div>
+						</div>
+
+						<LazyLoadImage
+							wrapperClassName={classes.lazyLoadWrapper}
+							className={classes.image}
+							src={aboutImg}
+							alt="About image"
+							useIntersectionObserver={true}
+							effect="blur"
+						/>
+					</Grid>
 				</Grid>
 			</div>
 		</MainLayout>
@@ -99,41 +96,36 @@ const About = () => {
 
 const useStyles = makeStyles(theme => ({
 	pageWrapper: {
-		marginTop: theme.spacing(4),
-		marginBottom: theme.spacing(2),
-		[theme.breakpoints.down('md')]: {
-			marginTop: 0,
-		},
+		marginTop: '35px',
+		marginBottom: '20px',
 	},
 	image: {
 		width: '100%',
 		maxWidth: '100%',
 	},
 	// Text
+	rteWrapper: {
+		[theme.breakpoints.up('md')]: {
+			paddingTop: theme.spacing(2),
+			// paddingBottom: '70px',
+		},
+	},
 	rte: {
-		padding: `${theme.spacing(1)}px ${theme.spacing(3)}px`,
+		padding: `${theme.spacing(4)}px ${theme.spacing(3)}px`,
 		'& p': {
 			marginBottom: '16px',
 		},
 	},
-	pageTitle: {
-		fontWeight: theme.typography.fontWeightMedium,
-		fontSize: theme.spacing(8),
-		marginBottom: theme.spacing(3),
-		[theme.breakpoints.down('sm')]: {
-			fontSize: theme.spacing(6),
-			marginBottom: theme.spacing(2),
-		},
+	rteAbout: {
+		paddingBottom: 0,
 	},
 	title: {
 		textTransform: 'uppercase',
-		fontWeight: 700,
-		fontSize: theme.typography.h5.fontSize,
+		fontWeight: '700',
+		fontFamily: theme.typography.h6.fontFamily,
+		textDecoration: 'underline',
 		textUnderlineOffset: '4px',
-		marginBottom: theme.spacing(3),
-		[theme.breakpoints.down('sm')]: {
-			marginBottom: theme.spacing(2),
-		},
+		marginBottom: '30px',
 	},
 }))
 
