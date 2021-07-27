@@ -64,20 +64,18 @@ const Header = ({ openSidebar, infoLayout = false, ...props }) => {
 								<ul
 									className={`${classes.linklist} ${classes.linklistLeft}`}>
 									<li>
-										<Link
-											className={classes.link}
-											underline="none"
-											href="#">
+										<NavLink
+											to="/collection?women"
+											className={classes.link}>
 											Women
-										</Link>
+										</NavLink>
 									</li>
 									<li>
-										<Link
-											className={classes.link}
-											underline="none"
-											href="#">
+										<NavLink
+											to="/collection?men"
+											className={classes.link}>
 											Men
-										</Link>
+										</NavLink>
 									</li>
 									<li>
 										<Link
@@ -180,10 +178,14 @@ const useStyles = makeStyles(theme => ({
 		fontSize: theme.typography.subtitle1.fontSize,
 		color: theme.palette.primary.main,
 		padding: '5px 8px',
+		textDecoration: 'none',
+		textUnderlineOffset: '2px',
+		textDecorationThickness: 'auto',
+		'&.active': {
+			// textDecoration: 'underline',
+		},
 		'&:hover': {
 			textDecoration: 'underline',
-			textDecorationThickness: 'auto',
-			textUnderlineOffset: '2px',
 			background: 'transparent',
 		},
 		'& > span:not(.MuiButton-label)': {
