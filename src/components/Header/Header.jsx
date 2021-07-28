@@ -28,99 +28,104 @@ const Header = ({ openSidebar, infoLayout = false, ...props }) => {
 		<div className={classes.appBarWrapper}>
 			<AppBar className={classes.appBar} position="fixed">
 				<Container>
-					<div className={classes.menuButtonContainer}></div>
-					<Toolbar
-						className={classes.toolbar}
-						// component="ul"
-						disableGutters={true}>
-						{infoLayout ? (
-							<Hidden mdUp>
-								<IconButton
-									edge="start"
-									className={classes.menuButton}
-									color="inherit"
-									aria-label="menu"
-									onClick={() => openSidebar(true)}>
-									<Burguer />
-								</IconButton>
-							</Hidden>
-						) : (
-							<IconButton
-								edge="start"
-								className={classes.menuButton}
-								color="inherit"
-								aria-label="menu"
-								onClick={() => openSidebar(true)}>
-								<Burguer />
-							</IconButton>
-						)}
-						<Hidden lgUp>
-							<Link to="/" className={classes.logoLink}>
-								<LogoText className={classes.logo} />
-							</Link>
-						</Hidden>
-						<Grid container spacing={0} className={classes.desktopNav}>
-							<Grid item container xs>
-								<ul
-									className={`${classes.linklist} ${classes.linklistLeft}`}>
-									<li>
-										<NavLink
-											to="/collection?women"
-											className={classes.link}>
-											Women
-										</NavLink>
-									</li>
-									<li>
-										<NavLink
-											to="/collection?men"
-											className={classes.link}>
-											Men
-										</NavLink>
-									</li>
-									<li>
-										<Link
-											className={classes.link}
-											underline="none"
-											href="#">
-											Our World
-										</Link>
-									</li>
-								</ul>
+					<Toolbar className={classes.toolbar} disableGutters={true}>
+						<Grid container spacing={0}>
+							<Grid item container alignItems="center" xs>
+								{infoLayout ? (
+									<Hidden mdUp>
+										<IconButton
+											edge="start"
+											className={classes.menuButton}
+											color="inherit"
+											aria-label="menu"
+											onClick={() => openSidebar(true)}>
+											<Burguer />
+										</IconButton>
+									</Hidden>
+								) : (
+									<IconButton
+										edge="start"
+										className={classes.menuButton}
+										color="inherit"
+										aria-label="menu"
+										onClick={() => openSidebar(true)}>
+										<Burguer />
+									</IconButton>
+								)}
+								<Hidden mdDown>
+									<ul
+										className={`${classes.linklist} ${classes.linklistLeft}`}>
+										<li>
+											<NavLink
+												to="/collection?women"
+												className={classes.link}>
+												Women
+											</NavLink>
+										</li>
+										<li>
+											<NavLink
+												to="/collection?men"
+												className={classes.link}>
+												Men
+											</NavLink>
+										</li>
+										<li>
+											<Link
+												className={classes.link}
+												underline="none"
+												href="#">
+												Our World
+											</Link>
+										</li>
+									</ul>
+								</Hidden>
 							</Grid>
-							<Grid item container xs justify="flex-end">
-								<ul className={classes.linklist}>
-									<li>
-										<Link
-											className={classes.link}
-											underline="none"
-											href="#">
-											Español
-										</Link>
-									</li>
-									<li>
-										<Button
-											className={`${classes.link} ${classes.buttonLink}`}
-											variant="text"
-											disableRipple={true}
-											// underline="none"
-											// href="#"
-											onClick={() => setCartOpen(true)}>
-											Cart
-										</Button>
-									</li>
-								</ul>
+							<Grid item container justify="center" xs={4} sm={2}>
+								<NavLink to="/" className={classes.logoLink}>
+									<LogoText className={classes.logo} />
+								</NavLink>
+							</Grid>
+							<Grid
+								item
+								container
+								xs
+								justify="flex-end"
+								alignItems="center">
+								<Hidden mdDown>
+									<ul className={classes.linklist}>
+										<li>
+											<Link
+												className={classes.link}
+												underline="none"
+												href="#">
+												Español
+											</Link>
+										</li>
+										<li>
+											<Button
+												className={`${classes.link} ${classes.buttonLink}`}
+												variant="text"
+												disableRipple={true}
+												// underline="none"
+												// href="#"
+												onClick={() => setCartOpen(true)}>
+												Cart
+											</Button>
+										</li>
+									</ul>
+								</Hidden>
+								<Hidden lgUp>
+									<IconButton
+										edge="end"
+										className={classes.cartButton}
+										color="inherit"
+										aria-label="menu"
+										onClick={() => setCartOpen(true)}>
+										<HiOutlineShoppingBag size="28" />
+									</IconButton>
+								</Hidden>
 							</Grid>
 						</Grid>
-						<Hidden lgUp>
-							<IconButton
-								edge="end"
-								className={classes.cartButton}
-								color="inherit"
-								aria-label="menu"
-								onClick={() => setCartOpen(true)}>
-								<HiOutlineShoppingBag size="28" />
-							</IconButton>
-						</Hidden>
 					</Toolbar>
 				</Container>
 			</AppBar>
@@ -132,13 +137,13 @@ const useStyles = makeStyles(theme => ({
 	// AppBar
 	appBarWrapper: {},
 	appBar: {
-		height: '65px',
 		backgroundColor: theme.palette.cream.main,
 		textTransform: 'uppercase',
 		boxShadow: 'none',
+		[theme.breakpoints.up('md')]: {
+			height: '65px',
+		},
 	},
-	// Menu Button
-	menuButtonContainer: {},
 	// Toolbar
 	toolbar: {
 		position: 'relative',
@@ -147,6 +152,9 @@ const useStyles = makeStyles(theme => ({
 		padding: 0,
 		[theme.breakpoints.down('md')]: {
 			justifyContent: 'center',
+		},
+		[theme.breakpoints.down('sm')]: {
+			minHeight: '40px',
 		},
 		'& li': {
 			// marginBottom: '35px',
@@ -167,7 +175,7 @@ const useStyles = makeStyles(theme => ({
 		},
 	},
 	linklistLeft: {
-		flexGrow: 0.6,
+		flexGrow: 1,
 		justifyContent: 'space-evenly',
 	},
 	linklistRight: {
@@ -200,7 +208,7 @@ const useStyles = makeStyles(theme => ({
 		lineHeight: 0,
 	},
 	logo: {
-		maxWidth: 180,
+		maxWidth: 160,
 		[theme.breakpoints.down('sm')]: {
 			maxWidth: 110,
 		},
@@ -221,9 +229,16 @@ const useStyles = makeStyles(theme => ({
 			position: 'absolute',
 			left: theme.spacing(1),
 		},
+		[theme.breakpoints.down('sm')]: {
+			padding: theme.spacing(1),
+		},
 		'& svg': {
 			width: '28px',
 			height: '28px',
+			[theme.breakpoints.down('sm')]: {
+				width: '24px',
+				height: '24px',
+			},
 			'& path': {
 				stroke: theme.palette.neutral.main,
 			},
@@ -240,8 +255,19 @@ const useStyles = makeStyles(theme => ({
 		position: 'absolute',
 		right: theme.spacing(1),
 		color: theme.palette.neutral.main,
+		[theme.breakpoints.down('sm')]: {
+			padding: theme.spacing(1),
+		},
 		'&:active': {
 			color: theme.palette.primary.main,
+		},
+		'& svg': {
+			width: '28px',
+			height: '28px',
+			[theme.breakpoints.down('sm')]: {
+				width: '24px',
+				height: '24px',
+			},
 		},
 		'& path': {
 			strokeWidth: '1.3px',
