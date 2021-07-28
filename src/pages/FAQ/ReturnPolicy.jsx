@@ -11,7 +11,7 @@ import returnPolicyFaqs from '../../data/returnPolicy'
 const ReturnPolicy = () => {
 	// const classes = useStyles()
 	return (
-		<FAQLayout top="50px" mobTop="30px" alignItemsCenter>
+		<FAQLayout mobTop="30px" alignItemsCenter>
 			<Container>
 				<Heading textTransform="initial">Return policy</Heading>
 				<FAQAccordion faqs={returnPolicyFaqs} />

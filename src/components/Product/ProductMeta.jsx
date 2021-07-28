@@ -105,6 +105,7 @@ const useStyles = makeStyles(theme => ({
 	rootWrapper: {
 		[theme.breakpoints.up('md')]: {
 			minHeight: '100vh',
+			paddingTop: '65px',
 			display: 'flex',
 			justifyContent: 'center',
 			alignItems: 'center',
@@ -115,7 +116,7 @@ const useStyles = makeStyles(theme => ({
 		textTransform: 'uppercase',
 		margin: '0 auto',
 		[theme.breakpoints.up('sm')]: {
-			padding: `${theme.spacing(4)}px ${theme.spacing(3)}px`,
+			padding: `0 ${theme.spacing(3)}px`,
 		},
 		[theme.breakpoints.up('md')]: {
 			maxWidth: '500px',

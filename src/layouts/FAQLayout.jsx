@@ -18,21 +18,21 @@ const InfoLayout = ({ children, ...props }) => {
 		<div className={classes.root}>
 			<FAQSidebar open={sidebar} setOpen={setSidebar} />
 			<Cart open={cart} setOpen={setCart} />
-			{/* <Scrollbars
+			<Scrollbars
 				style={{ height: '100vh' }}
 				className={classes.scrollbars}
 				autoHide
 				autoHideTimeout={2000}
-				autoHideDuration={300}> */}
-			<Header
-				openSidebar={setSidebar}
-				openCart={setCart}
-				// menu={false}
-				infoLayout
-			/>
-			<main className={classes.main}>{children}</main>
-			<Footer />
-			{/* </Scrollbars> */}
+				autoHideDuration={300}>
+				<Header
+					openSidebar={setSidebar}
+					openCart={setCart}
+					// menu={false}
+					infoLayout
+				/>
+				<main className={classes.main}>{children}</main>
+				<Footer />
+			</Scrollbars>
 		</div>
 	)
 }
@@ -42,13 +42,13 @@ const useStyles = makeStyles(theme => ({
 		display: 'flex',
 	},
 	main: props => ({
-		paddingTop: props.top || '35px',
+		paddingTop: props.top || '65px',
 		paddingBottom: props.Bottom || '30px',
-		minHeight: '70vh',
+		minHeight: 'calc(100vh - 65px)',
 		display: props.alignItemsCenter ? 'flex' : 'block',
 		alignItems: 'center',
 		[theme.breakpoints.down('md')]: props => ({
-			paddingTop: props.mobTop || 0,
+			paddingTop: props.mobTop || '40px',
 			paddingBottom: props.Bottom || '12px',
 		}),
 	}),

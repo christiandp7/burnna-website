@@ -10,21 +10,21 @@ const HomeHeader = () => {
 		<ul className={classes.navbar}>
 			<li>
 				<Link to="/collection">
-					<Typography variant="h6" color="primary">
+					<Typography variant="h5" color="primary">
 						Shop All
 					</Typography>
 				</Link>
 			</li>
 			<li>
 				<Link to="/">
-					<Typography variant="h6" color="primary">
+					<Typography variant="h5" color="primary">
 						Our World
 					</Typography>
 				</Link>
 			</li>
 			<li>
 				<Link to="/">
-					<Typography variant="h6" color="primary">
+					<Typography variant="h5" color="primary">
 						Español
 					</Typography>
 				</Link>
@@ -55,12 +55,13 @@ const useStyles = makeStyles(theme => ({
 		},
 		'& a': {
 			textDecoration: 'none',
-			textUnderlineOffset: '1px',
-			textDecorationColor: theme.palette.primary.main,
 			fontWeight: 700,
 		},
 		'& a:hover': {
 			textDecoration: 'underline',
+			textUnderlineOffset: '1px',
+			textDecorationThickness: '1px',
+			textDecorationColor: theme.palette.primary.main,
 		},
 	},
 }))
