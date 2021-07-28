@@ -26,7 +26,7 @@ const Header = ({ openSidebar, infoLayout = false, ...props }) => {
 
 	return (
 		<div className={classes.appBarWrapper}>
-			<AppBar className={classes.appBar} position="static">
+			<AppBar className={classes.appBar} position="fixed">
 				<Container>
 					<div className={classes.menuButtonContainer}></div>
 					<Toolbar
@@ -132,6 +132,7 @@ const useStyles = makeStyles(theme => ({
 	// AppBar
 	appBarWrapper: {},
 	appBar: {
+		height: '65px',
 		backgroundColor: theme.palette.cream.main,
 		textTransform: 'uppercase',
 		boxShadow: 'none',

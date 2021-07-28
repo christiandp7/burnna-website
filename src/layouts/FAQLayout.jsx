@@ -42,7 +42,7 @@ const useStyles = makeStyles(theme => ({
 		display: 'flex',
 	},
 	main: props => ({
-		paddingTop: props.top || '35px',
+		paddingTop: props.top || '65px',
 		paddingBottom: props.Bottom || '30px',
 		minHeight: '70vh',
 		display: props.alignItemsCenter ? 'flex' : 'block',
