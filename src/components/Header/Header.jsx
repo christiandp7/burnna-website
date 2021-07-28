@@ -27,7 +27,9 @@ const Header = ({ openSidebar, infoLayout = false, ...props }) => {
 
 	return (
 		<div className={classes.appBarWrapper}>
-			<AppBar className={classes.appBar} position="fixed">
+			<AppBar
+				className={cx({ infoLayoutHeader: infoLayout }, classes.appBar)}
+				position="fixed">
 				<Container>
 					<Toolbar className={classes.toolbar} disableGutters={true}>
 						<Grid container spacing={0}>
@@ -145,6 +147,11 @@ const useStyles = makeStyles(theme => ({
 		boxShadow: 'none',
 		[theme.breakpoints.up('md')]: {
 			height: '65px',
+		},
+		'&.infoLayoutHeader': {
+			[theme.breakpoints.up('md')]: {
+				paddingLeft: '190px',
+			},
 		},
 	},
 	// Toolbar
