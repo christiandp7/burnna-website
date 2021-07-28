@@ -12,6 +12,7 @@ import { FiMenu } from 'react-icons/fi'
 import { HiOutlineShoppingBag } from 'react-icons/hi'
 import Link from '@material-ui/core/Link'
 import { makeStyles } from '@material-ui/core/styles'
+import Sticky from 'react-sticky-el'
 // components
 import DrawerContext from '../../context/DrawerContext'
 // assets
@@ -81,9 +82,11 @@ const Header = ({ openSidebar, infoLayout = false, ...props }) => {
 								</Hidden>
 							</Grid>
 							<Grid item container justify="center" xs={4} sm={2}>
-								<NavLink to="/" className={classes.logoLink}>
-									<LogoText className={classes.logo} />
-								</NavLink>
+								<div className="logoContainer">
+									<NavLink to="/" className={classes.logoLink}>
+										<LogoText className={classes.logo} />
+									</NavLink>
+								</div>
 							</Grid>
 							<Grid
 								item
@@ -207,6 +210,9 @@ const useStyles = makeStyles(theme => ({
 	logoLink: {
 		lineHeight: 0,
 	},
+	// logoContainer: {
+	// 	position: 'relative',
+	// },
 	logo: {
 		maxWidth: 160,
 		[theme.breakpoints.down('sm')]: {
